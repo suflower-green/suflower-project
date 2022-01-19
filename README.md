@@ -7,6 +7,8 @@
 ### 사이트 주요 기능
 
 ### 사용 기술 스택
+Client Side: HTML, CSS, JavaScript(JQuery), Bootstrap Library(Open Source)
+Server Side: Java 1.8, Spring Framework 4(Maven) 
 
 ### 프로젝트 회고
 <li>이재경</li>
