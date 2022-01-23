@@ -173,6 +173,11 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
 		<!-- MyBatis의 PreparedStatement 안에 ? 처리 확인 기능 -->
 		<dependency>
 			<groupId>org.bgee.log4jdbc-log4j2</groupId>
@@ -183,10 +188,20 @@
 		
 		<!-- Connection Pool HikariCP 추가-->
 		<dependency>
-		   <groupId>com.zaxxer</groupId>
-		   <artifactId>HikariCP</artifactId>
-		   <version>4.0.3</version>
+		    <groupId>com.zaxxer</groupId>
+		    <artifactId>HikariCP</artifactId>
+		    <version>4.0.3</version>
 		</dependency>
+		
+		<!-- AssertJ(Assertions 테스트) -->
+		<dependency>
+			<groupId>org.assertj</groupId> 
+			<artifactId>assertj-core</artifactId> 
+			<version>3.12.2</version> 
+			<scope>test</scope> 
+		</dependency> 
+
+
 	</dependencies>
     <build>
         <plugins>
