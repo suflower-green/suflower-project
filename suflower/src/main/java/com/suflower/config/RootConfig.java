@@ -15,7 +15,7 @@ import com.zaxxer.hikari.HikariDataSource;
 
 //xml 파일을 대신하는 자바 설정 파일
 @Configuration
-@ComponentScan(basePackages= {"com.suflower.*"})
+@ComponentScan(basePackages= {"com.suflower.service"})
 @MapperScan(basePackages= {"com.suflower.mapper"})
 public class RootConfig {
 	

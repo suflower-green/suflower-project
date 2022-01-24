@@ -3,11 +3,13 @@ package com.suflower.domain;
 import lombok.Data;
 
 @Data
-public class ProductVO {
+public class ProductDTO {
 	
 	private Long productId;
 	private String productType;
 	private String productName;
-	private String productExplanation;
-	private long productPrice;
+	private int productQuantity;
+	private Long productPrice;
+	private String regdate;
+	private String updateDate;	
 }
