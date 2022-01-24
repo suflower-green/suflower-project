@@ -42,7 +42,7 @@
 
 	<!-- ProductMapper의 updateProduct -->
 	<update id="updateProduct">
-		set productType=#{productType}, 
+		update tbl_product set productType=#{productType}, 
 		productName=#{productName}, 
 		productQuantity=#{productQuantity}, 
 		productPrice=#{productPrice}
