@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Select;
 
-import com.suflower.domain.ProductVO;
+import com.suflower.domain.ProductDTO;
 
 public interface ProductMapper {
 	@Select("select * from product where productId > 0")
-	public List<ProductVO> productList();
+	public List<ProductDTO> productList();
 }
