@@ -14,12 +14,7 @@ public class MemberDTO {
 	private String memberAddr2;
 	private String memberAddr3;
 	
-	private String memberPhoneNum; // > 이터럴방식
-
-	String a = new String("memberID"); // new String 방식
-	
-	String b = new String("memberID"); // new String 방식
-	
+	private String memberPhoneNum;
 	private int adminCheck;
 	private Date memberRegDate;
 	private int memberMoney;
