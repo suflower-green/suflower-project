@@ -7,6 +7,18 @@ import org.apache.ibatis.annotations.Select;
 import com.suflower.domain.ProductDTO;
 
 public interface ProductMapper {
-	@Select("select * from product where productId > 0")
+
 	public List<ProductDTO> productList();
+	
+	public void insertProductSelectKey(ProductDTO product);
+	
+	public void insertProduct(ProductDTO product);
+	
+	public ProductDTO readProduct(Long productId);
+	
+	public int deleteProduct(Long productId);
+	
+	public int updateProduct(ProductDTO product);
+
+	
 }
