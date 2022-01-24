@@ -8,14 +8,14 @@
 	<!-- ProductMapper의 productList -->
 	<select id="productList" resultType="com.suflower.domain.ProductDTO">
 		<![CDATA[
-		select * from product where productId > 0
+		select * from tbl_product where productId > 0
 		]]>
 	</select>
 	
 	<!-- ProductMapper의 insertProduct -->
 	<insert id="insertProduct">
 		
-		insert into product(productId, productType, productName, productQuantity, productPrice) 
+		insert into tbl_product(productId, productType, productName, productQuantity, productPrice) 
 		values(seq_product.nextval, #{productType}, #{productName}, #{productQuantity}, #{productPrice})
 	</insert>
 	
@@ -26,23 +26,22 @@
 			select seq_product.nextval from dual
 		</selectKey>
 		
-		insert into product (productId, productType, productName, productQuantity, productPrice)
+		insert into tbl_product (productId, productType, productName, productQuantity, productPrice)
 		values (#{productId}, #{productType}, #{productName}, #{productQuantity}, #{productPrice})
 	</insert>
 
 	<!-- ProductMapper의 readProduct -->
 	<select id="readProduct" resultType="com.suflower.domain.ProductDTO">
-		select * from product where productId = #{productId}
+		select * from tbl_product where productId = #{productId}
 	</select>
 	
 	<!-- ProductMapper의 deleteProduct -->
 	<delete id="deleteProduct">
-		delete from product where productId = #{productId}
+		delete from tbl_product where productId = #{productId}
 	</delete>
 
 	<!-- ProductMapper의 updateProduct -->
 	<update id="updateProduct">
-		update product 
 		set productType=#{productType}, 
 		productName=#{productName}, 
 		productQuantity=#{productQuantity}, 
