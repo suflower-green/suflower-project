@@ -1,0 +1,751 @@
+@import "fonts.sass"
+
+$activeColor: #ff5912
+$baseColor: #34404b
+
+ul
+  margin: 0
+
+
+body
+  background-color: #f4f6f8
+  font-family: "HarmoniaSansProCyr"
+header
+  background-color: #fff
+.header-contact
+  padding: 25px 0
+  border-bottom: 1px solid rgba(230, 232, 235, 0.5)
+  &-inform
+    display: inline-block
+    margin-right: 20px
+    font-size: 12px
+    i
+      color: $activeColor
+  ul li
+    display: inline-block
+    margin-left: 15px
+    font-size: 11px
+    list-style: none
+    &:first-child
+      margin-left: 0
+    a
+      color: $baseColor
+      &:hover
+        color: $activeColor
+      text-decoration: none
+.navbar-toggle
+  background-color: #F1F1F3
+  color: #fff
+  span
+    display: block
+    width: 22px
+    height: 3px
+    border-radius: 1px
+    background-color: #fff
+    margin-bottom: 3px
+  span:last-child
+    margin-bottom: 0
+.header-menu
+  padding: 40px 0
+.main-menu
+  margin-left: 60px
+  li a
+    padding: 10px 15px
+    color: #46515c
+    font-size: 16px
+
+  li.active a
+    color: $activeColor
+.nav > li > a:hover, .nav > li > a:focus
+  background: none
+.service-inform
+  li
+    padding: 10px 0
+    margin-left: 20px
+    display: inline-block
+    list-style: none
+    a
+      color: $baseColor
+    a:hover
+      color: $activeColor
+  li:first-child
+    margin-left: 0
+  .basket
+    position: relative
+    a
+      color: $activeColor
+    &-count
+      position: absolute
+      top: -8px
+      left: -2px
+      color: #fff
+      background-color: $baseColor
+      text-align: center
+      padding-top: 3px
+      font-size: 10px
+      height: 18px
+      width: 18px
+      border-radius: 50%
+.item
+  min-height: 650px
+  background-color: #f1f1f3
+.item-1
+  background-image: url(../img/slider-img.png)
+  background-position: right top
+  background-repeat: no-repeat
+  background-size: contain
+
+.wrap
+
+.banner-contain
+  display: flex
+  flex-direction: column
+  justify-content: center
+  width: 100%
+  min-height: 650px
+  padding-left: 100px
+h1
+  font-size: 52px
+  color: $activeColor
+  text-transform: uppercase
+  font-weight: 700
+  line-height: 40px
+  margin-bottom: 20px
+.combo-kit
+  font-size: 18px
+  color: #3c4751
+.description
+  font-size: 16px
+  color: #495662
+.combo-order
+  margin-top: 60px
+  font-size: 18px
+  color: $baseColor
+  a
+    margin-left: 30px
+    color: $activeColor
+    text-decoration: none
+.banner-carousel ol.carousel-indicators
+  left: 11%
+  top: 45%
+  width: 20px
+  margin: 0
+  z-index: 100
+  li
+    display: block
+    width: 10px
+    height: 20px
+    background-color: #fff
+    margin: 0
+    margin-bottom: 5px
+    border-radius: 0
+  li.active
+    height: 36px
+    background-color: $activeColor
+.carousel.fade
+	opacity: 1
+
+.carousel.fade .item
+	display: block
+	position: absolute
+	left: 0
+	top: 0
+	width: 100%
+	opacity: 0
+	transition: opacity .5s
+
+.carousel.fade .item.active
+	position: relative
+	opacity: 1
+
+.new-arrivals
+  text-align: center
+h2
+  margin-top: 120px
+  margin-bottom: 30px
+  font-size: 36px
+  text-transform: uppercase
+  font-weight: 700
+  color: #46515c
+  span
+    color: $activeColor
+
+.products
+  margin-top: 80px
+  .container
+    padding: 0
+.product
+  position: relative
+  max-width: 270px
+  min-height: 365px
+  background-color: #fff
+  padding-top: 30px
+  text-align: center
+  margin: 0 auto 30px
+  img
+    margin-bottom: 25px
+  a
+    font-size: 18px
+    font-weight: 700
+    color: $baseColor
+.price
+  font-size: 18px
+  font-weight: 700
+  color: $activeColor
+  margin-top: 30px
+.product:hover .product-hover
+  opacity: 1
+.product-hover
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  background-color: #fff
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1)
+  padding-top: 30px
+  opacity: 0
+  input[type="radio"]
+    display: none
+  a
+    color: $activeColor
+  img
+    width: 70px
+    height: 90px
+input[type="radio"]:checked + label span
+  box-shadow: 0 0 5px $activeColor
+.size
+  margin-top: 25px
+  span
+    line-height: 10px
+    padding: 2px 10px
+    border: 1px solid #f1f1f3
+.color
+  margin-top: 25px
+  margin-bottom: 25px
+.circle
+  display: inline-block
+  width: 14px
+  height: 14px
+  border-radius: 50%
+  padding: 0
+.circle1
+  background-color: #e12e3f
+.circle2
+  background-color: #34404b
+.circle3
+  background-color: #3ab3ff
+.circle4
+  background-color: #2fd967
+.underline
+  width: 169px
+  height: 1px
+  background-color: #f2f4f7
+.product-buttons
+  margin-top: 25px
+  a
+    color: $baseColor
+    padding: 0
+    margin: 0 15px
+  a.basket
+    color: $activeColor
+.load-more , .load-more-products
+  width: 97%
+  height: 60px
+  background-color: #fff
+  padding: 25px 0 0 0
+  margin-top: 80px
+  border-radius: 0
+  font-size: 10px
+  span
+    display: inline-block
+    width: 8px
+    height: 8px
+    background-color: $activeColor
+    border-radius: 50%
+.load-more-products
+  margin: 0 15px
+.advert
+  margin-top: 120px
+  .sale
+    margin-top: 10px
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    align-items: center
+    justify-content: center
+    width: 100%
+    min-height: 100px
+    padding: 5px
+    background-color: #fff
+    font-size: 12px
+    p
+      margin: 0
+    a
+      font-size: 32px
+      color: $activeColor
+      font-weight: 700
+      height: 32px
+      margin-left: 80px
+      position: relative
+      text-decoration: none
+      &::before
+        content: "\f217"
+        font-family: "FontAwesome"
+        font-size: 22px
+        position: absolute
+        top: 3px
+        left: -40px
+      span
+        font-size: 22px
+.sale-name
+  padding-left: 60px
+  padding-right: 30px
+  border-right: 1px solid #f5f5f6
+h3
+  font-size: 22px
+  font-weight: 700
+  color: $baseColor
+  text-transform: uppercase
+  margin: 0 0 10px 0
+.advert-area
+  margin-top: 10px
+  width: 100%
+  height: 100px
+  background-color: #fff
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  font-size: 16px
+  color: #5f6872
+  span
+    color: $activeColor
+  p
+    margin: 0
+  p.adv-size
+    font-size: 12px
+    opacity: 0.4
+    color: $baseColor
+    letter-spacing: 7.2px
+    margin-top: 10px
+
+.best-sales
+  text-align: center
+
+.sale-orders
+  margin-top: 80px
+.sale-order
+  width: 100%
+  min-height: 161px
+  background-color: #fff
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+  img
+    padding: 0 20px
+  a
+    font-size: 18px
+    font-weight: 700
+    color: $baseColor
+  &:hover
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1)
+.sale-description
+  border-left: 1px solid #f5f5f6
+  padding-left: 20px
+.order-mark
+  width: 100%
+  margin-top: 20px
+  position: relative
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  font-weight: 700
+  font-size: 16px
+  color: $activeColor
+.stars
+  font-size: 14px
+  color: #eef0f5
+  .active
+    color: $activeColor
+.order-mark-hover
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: #fff
+  text-align: center
+  opacity: 0
+  a
+    color: $activeColor
+    text-decoration: none
+    font-weight: 400
+.sale-order:hover .order-mark-hover
+  opacity: 1
+
+
+
+.subscription
+  display: flex
+  flex-wrap: wrap
+  margin: 120px 0
+  width: 100%
+  background-color: #fff
+  align-items: center
+  padding: 30px
+  h4
+    font-size: 18px
+    font-weight: 700
+    text-transform: uppercase
+    color: $activeColor
+    margin: 0
+    margin-right: 20px
+    height: 15px
+    display: inline-block
+  p
+    display: inline-block
+    margin: 0
+    height: 15px
+    font-size: 14px
+    font-style: italic
+.subs
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding-left: 100px
+  input
+    outline: none
+    border: none
+    color: #7c8791
+    font-size: 14px
+    font-style: italic
+    position: relative
+  i
+    color: $activeColor
+    margin-right: 10px
+.join
+  background-color: #ff5912
+  color: #ffffff
+  font-size: 14px
+  font-weight: 400
+  padding: 17px 29px 18px
+  border: none
+
+footer
+  background-color: #fff
+  padding: 90px 0
+  p.copyright
+    font-size: 13px
+    font-weight: 400
+    line-height: 30px
+    margin-top: 20px
+    color: #28313b
+  ul
+    padding-left: 50px
+  ul li, ul li a
+    color: #28313b
+  ul li a:hover, ul li:hover
+    text-decoration: none
+    color: $activeColor
+.footer-col-min
+  padding-left: 20px
+h5
+  color: $activeColor
+  font-size: 16px
+  font-weight: 700
+  line-height: 30px
+  margin-right: 42px
+
+// Prodicts page
+main
+  margin-top: 120px
+.filter
+  max-width: 268px
+  background-color: #fff
+  padding: 40px
+  margin-bottom: 30px
+  font-size: 16px
+  ul
+    padding: 0
+    li
+      list-style: none
+      margin-bottom: 35px
+      line-height: 16px
+      a
+        font-size: 16px
+        font-weight: 700
+        color: $baseColor
+    li:last-child
+      margin-bottom: 0
+  h4
+    margin-bottom: 40px
+  &-category
+    min-height: 302px
+  &-price
+    min-height: 190px
+  &-sizes
+    min-height: 302px
+  &-brands
+    min-height: 302px
+
+
+h4
+  font-size: 18px
+  font-weight: 700
+  color: $activeColor
+  margin: 0
+
+.easy-basket-filter
+  width: 90%
+  margin-top: 60px
+  position: relative
+
+.fill
+  height: 3px
+  width: 100%
+  background-color: #34404b
+  position: absolute
+  top: 20px
+  left: 0
+  z-index: 2
+
+.easy-basket-filter-info
+  box-sizing: border-box
+  padding: 0
+  width: 100%
+  justify-content: space-between
+  position: absolute
+  top: -35px
+
+.easy-basket-filter-info p
+  color: #34404b
+  padding: 4px 6px 2px
+  margin: 0
+  border: 1px solid $baseColor
+
+.easy-basket-filter-info .iLower
+  float: left
+  display: inline-block
+
+.easy-basket-filter-info .iUpper
+  float: right
+  display: inline-block
+
+
+.easy-basket-filter-info input
+  width: inherit
+  border: none
+  color: #34404b
+  font-size: 11px
+  width: 35px
+  text-align: center
+
+/***** Position dual *****/
+.range
+  position: absolute
+  left: 0
+  top: 20px
+
+
+/****** Style range ******/
+input[type=range]
+  -webkit-appearance: none
+  width: 100%
+  margin: 0
+  background: transparent
+
+
+input[type=range]::-webkit-slider-thumb
+  -webkit-appearance: none
+  cursor: pointer
+  position: relative
+  z-index: 3
+
+
+input[type=range]:focus, input[type=text]:focus
+  outline: none
+
+input[type=range]::-webkit-slider-thumb
+  -webkit-appearance: none
+  height: 11px
+  width: 11px
+  box-shadow: 0 1px 5px -1px rgba(0, 0, 0, 0.5)
+  border-radius: 100%
+  background: #34404b
+  cursor: pointer
+  margin-top: -4px
+
+input[type=range]::-webkit-slider-runnable-track
+  width: 100%
+  height: 3px
+  cursor: pointer
+  background: #edf0f2
+  border-radius: 1.3px
+
+input[type="checkbox"]
+  display: none
+
+label.check
+  position: relative
+  margin-left: 20px
+
+label.check::before
+  content: ''
+  position: absolute
+  top: 0px
+  left: -20px
+  padding: 0
+  width: 13px
+  height: 13px
+  border: 4px solid #edf0f2
+  background-color: #edf0f2
+
+input[type="checkbox"]:checked + label.check::before
+  border-color: $activeColor
+
+input[type="checkbox"]:checked  + label
+  color: $activeColor
+
+// Product_show page
+.product-show
+  background-color: #fff
+  padding: 104px 0
+.gallery-panel
+  text-align: center
+  width: 100%
+  min-height: 345px
+.thumbs
+  display: flex
+  justify-content: center
+.thumb
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 95px
+  height: 70px
+  margin-right: 15px
+  background-color: #f4f6f8
+  z-index: 1
+.thumb:last-child
+  margin-right: 0
+.active-thumb
+  background-color: $activeColor
+  z-index: 2
+  img
+    opacity: 0.3
+.product-show h1
+  margin: 0
+  line-height: 52px
+.description-full
+  font-size: 18px
+  margin-top: 25px
+.product-about
+  max-width: 520px
+  font-size: 16px
+  font-weight: 400
+  line-height: 30px
+  color: #495662
+hr
+  width: 100%
+  height: 1px
+  background-color: #edeff1
+  margin: 40px 0
+.choose
+  display: flex
+  justify-content: space-between
+  align-items: center
+  font-size: 18px
+  font-weight: 400
+  color: $baseColor
+  flex-flow: row wrap
+.choose-active
+  display: inline-block
+  margin-left: 21px
+.choose .size
+  display: inline-block
+  width: 15px
+  height: 20px
+  font-size: 14px
+  line-height: 20px
+  margin: 0
+
+input[type="radio"]
+  display: none
+
+input[type="radio"]:checked + label.size
+  font-size: 18px
+  color: $activeColor
+input[type="text"].count-items
+  width: 15px
+  text-align: center
+  padding: 0
+  border: none
+  color: $activeColor
+
+.plus, .minus
+  cursor: pointer
+  border: none
+  outline: none
+  font-size: 18px
+  padding: 0 5px
+  background-color: #fff
+.choose-separate
+  width: 2px
+  height: 26px
+  background-color: #edeff1
+.choose-price
+  color: $baseColor
+  font-weight: 700
+  font-size: 20px
+input.total
+  width: 40px
+  text-align: right
+  border: none
+
+.choose-order
+  i
+    margin: 0 15px
+  i:hover
+    color: $activeColor
+  .submit-order
+    color: #fff
+    background-color: $activeColor
+    width: 134px
+    height: 49px
+    border-radius: 25px
+    outline: none
+
+.related-products
+  margin-top: 120px
+  span
+    color: $activeColor
+  .product-about
+    text-align: center
+    margin: 30px auto 80px
+
+@media (max-width: 1170px)
+  .advert
+    .sale
+      padding-left: 20px
+    .sale-name
+      padding-left: 20px
+  .sale-order
+    img
+      padding: 5px
+  .sale-description
+    padding-left: 10px
+  .subscription
+    h4
+      margin-right: 5px
+@media (max-width: 990px)
+  .item-1, .item-2, .item-3
+    background-size: cover
+  .subs
+    padding-left: 0
+  .sale-order
+    margin-bottom: 10px
+@media (max-width: 450px)
+  .subscription
+    padding: 10px
