@@ -1,4 +1,6 @@
 <%@ page session="false" %>
+  <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
@@ -13,57 +15,9 @@
   <script src="resources/js/bootstrap.min.js"></script>
 </head>
 <body>
-<header>
-  <div class="header-menu">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-2">
-          <div class="logo">
-            <a href="/">
-              <img src="resources/img/logo.png" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-8">
-          <nav class="navbar">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed button-toggle" data-toggle="collapse" data-target="#main-menu">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-            <div class="main-menu collapse navbar-collapse" id="main-menu">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="product/products.html">꽃다발</a></li>
-                <li><a href="#">소품샵</a></li>
-                <li><a href="board/blist">커뮤니티 게시판</a></li>
-                <li><a href="#">카카오 문의</a></li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-        <div class="col-2 text-right">
-          <ul class="service-inform">
-            <li>
-              <a href="#">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li><a href="member/login"><i class="fa fa-user-o  fa-2x" aria-hidden="true"></i></a></li>
-            <li class="basket"><a href="#"><i class="fa fa-shopping-bag  fa-2x" aria-hidden="true"></i><div class="basket-count">5</div></a></li>
-            <li><a href="https://www.instagram.com/sueflower_/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
-          </ul>
-        </div>
-      </div> <!-- // row -->
-    </div> <!-- //container -->
-  </div> <!-- //header-menu -->
-</header>
+<%@ include file ="./includes/header.jsp" %>
 
 <div id="banner-carousel" class="banner-carousel carousel carousel-fade fade" data-ride="carousel" data-interval="10000">
-
   <ol class="carousel-indicators">
     <li class="active" data-slide-to="0" data-target="#banner-carousel"></li>
     <li data-slide-to="1" data-target="#banner-carousel"></li>
@@ -123,6 +77,12 @@
     </div><!--//item-->
   </div><!--//carousel-inner-->
 </div><!--//carousel-->
+<%@ include file ="./includes/footer.jsp" %>
+</body>
+</html>
+
+
+
 
 <!-- <div class="new-arrivals">
   <h2><span>꽃</span> 구경</h2>
@@ -400,43 +360,3 @@
     </div>
   </div>
 </div> -->
-
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-3 col-sm-3">
-        <a href="#"><img src="resources/img/logo.png" alt=""></a>
-        <p class="copyright">
-          shopy c 2022 . your copy right here
-        </p>
-      </div>
-      <div class="col-lg-2 col-md-2 col-sm-2">
-        <ul>
-          <li><a href="#">about us</a></li>
-          <li><a href="#">contact us</a></li>
-          <li><a href="#">support</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-2 col-md-2 col-sm-2">
-        <ul  class="footer-col-min">
-          <li><a href="#">our feed</a></li>
-          <li><a href="#">terms and conditions</a></li>
-          <li><a href="#">our privacy</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-2 col-md-2 col-sm-2">
-        <ul>
-          <li><a href="#">join us</a></li>
-          <li><a href="#">live support</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-2 text-right">
-        <h5>Payment Methods</h5>
-        <img src="resources/img/payment.png" alt="">
-      </div>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>

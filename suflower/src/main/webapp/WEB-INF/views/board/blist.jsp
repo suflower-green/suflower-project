@@ -16,6 +16,8 @@
 </head>
 <style>
 </style>
+<%@ include file ="../includes/header.jsp" %>
+
 <body>
 	<h1>목록페이지입니다.</h1>
 	<div class="table_wrap">
@@ -92,7 +94,7 @@
 	</c:if>
 	<a href="/" class="top_btn" id="popbutton" >Home</a>
 	
-
+<%@ include file ="../includes/footer.jsp" %>
 
 <script type="text/javascript">
    
