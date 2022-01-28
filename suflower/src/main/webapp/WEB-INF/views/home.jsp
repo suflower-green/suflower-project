@@ -39,7 +39,7 @@
                 <li class="active"><a href="/">Home</a></li>
                 <li><a href="product/products.html">꽃다발</a></li>
                 <li><a href="#">소품샵</a></li>
-                <li><a href="#">커뮤니티 게시판</a></li>
+                <li><a href="board/blist">커뮤니티 게시판</a></li>
                 <li><a href="#">카카오 문의</a></li>
               </ul>
             </div>

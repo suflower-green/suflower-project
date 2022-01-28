@@ -22,22 +22,20 @@
 	</select>
 
 	<!-- 게시물 페이징 조회 -->
-	<select id="getListPaging" resultType="com.suflower.domain.BoardDTO">
+    <select id="getListPaging" resultType="com.suflower.domain.BoardDTO">
     <![CDATA[
         select boardNo, boardTitle, boardContent, boardWriter, boardRegDate, boardUpdateDate from(
-                select rownum  as rn, boardNo, boardTitle, boardContent, boardWriter, boardRegDate, boardUpdateDate
-                from tbl_board where rownum <= #{pageNum} * #{amount}
-  
-    ]]>
-		<if test="keyword != null">
-			and boardTitle like '%'||#{keyword}||'%'
-		</if>
-    
+                select /*+INDEX_DESC(tbl_board pk_board) */ rownum as rn, boardNo, boardTitle, boardContent, boardWriter, boardRegDate, boardUpdateDate
+                from tbl_board where rownum <= #{pageNum} * #{amount} 
+    ]]>            
+                <if test="keyword != null">
+                    and boardTitle like '%'||#{keyword}||'%' 
+                </if>
     <![CDATA[
                 )
         where rn > (#{pageNum} -1) * #{amount}
     ]]>
-
+    
 	</select>
 
 	<!-- 게시물 총 갯수 -->

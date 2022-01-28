@@ -12,14 +12,14 @@
 	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 	crossorigin="anonymous" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/myLib/blistStyle.css">
+	href="${pageContext.request.contextPath}/resources/myLib/strapStyle.css">
 </head>
 <style>
 </style>
 <body>
 	<h1>목록페이지입니다.</h1>
 	<div class="table_wrap">
-		<table>
+	<table class="table table-striped table-hover">
 			<thead>
 				<tr>
 					<th class="boardNo_width">게시글 번호</th>
@@ -43,6 +43,7 @@
 							value="${blist.boardUpdateDate}" /></td>
 				</tr>
 			</c:forEach>
+			
 		</table>
 
 		<div class="search_wrap">
