@@ -73,5 +73,11 @@ public class ProductController {
 		return "redirect:/product/list";
 	}
 	
+	@GetMapping("/products")
+	public String products(RedirectAttributes rttr) {
+		
+		return "forward:/product/products";
+	}
+	
 	
 }
