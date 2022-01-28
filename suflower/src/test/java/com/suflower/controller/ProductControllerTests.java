@@ -89,4 +89,13 @@ public class ProductControllerTests {
 //		log.info(resultPage);
 //				
 //	}
+	
+	@Test
+	public void testProducts() throws Exception {
+		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/product/products"))
+				.andReturn()
+				.getModelAndView()
+				.getModelMap());
+		
+	}
 }//ProductControllerTests
