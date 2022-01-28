@@ -1,27 +1,48 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <head>
   <meta charset="utf-8">
-  <title>Sue Flower</title>
-  <link rel="stylesheet" href="resources/css/bootstrap.css">
-  <link rel="stylesheet" href="resources/css/animate.css">
-  <link rel="stylesheet" href="resources/css/font-awesome.min.css">
-  <link rel="stylesheet" href="resources/css/style.css">
+  <title>Product show</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="resources/js/jquery.min.js"></script>
-  <script src="resources/js/bootstrap.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
 <header>
+  <div class="header-contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <div class="header-contact-inform">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp;info@shopy.com
+          </div>
+          <div class="header-contact-inform">
+            <i class="fa fa-mobile" aria-hidden="true"></i> &nbsp;996 - 5553 - 453
+          </div>
+        </div> <!-- //col -->
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+          <ul>
+            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          </ul>
+        </div> <!-- //col -->
+      </div> <!-- //row -->
+    </div> <!-- //container -->
+  </div> <!-- //header-contact -->
   <div class="header-menu">
     <div class="container">
       <div class="row">
         <div class="col-sm-2">
           <div class="logo">
-            <a href="/">
-              <img src="resources/img/logo.png" alt="">
+            <a href="index.html">
+              <img src="img/logo.png" alt="">
             </a>
           </div>
         </div>
@@ -37,25 +58,24 @@
             </div>
             <div class="main-menu collapse navbar-collapse" id="main-menu">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="product/products.html">꽃다발</a></li>
-                <li><a href="#">소품샵</a></li>
-                <li><a href="#">커뮤니티 게시판</a></li>
-                <li><a href="#">카카오 문의</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="products.html">Products</a></li>
+                <li><a href="#">Hot deals</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
               </ul>
             </div>
           </nav>
         </div>
-        <div class="col-2 text-right">
+        <div class="col-sm-2 text-right">
           <ul class="service-inform">
             <li>
               <a href="#">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </a>
             </li>
-            <li><a href="#"><i class="fa fa-user-o  fa-2x" aria-hidden="true"></i></a></li>
-            <li class="basket"><a href="#"><i class="fa fa-shopping-bag  fa-2x" aria-hidden="true"></i><div class="basket-count">5</div></a></li>
-            <li><a href="https://www.instagram.com/sueflower_/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-user-o" aria-hidden="true"></i></a></li>
+            <li class="basket"><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i><div class="basket-count">5</div></a></li>
           </ul>
         </div>
       </div> <!-- // row -->
@@ -63,81 +83,94 @@
   </div> <!-- //header-menu -->
 </header>
 
-<div id="banner-carousel" class="banner-carousel carousel carousel-fade fade" data-ride="carousel" data-interval="10000">
 
-  <ol class="carousel-indicators">
-    <li class="active" data-slide-to="0" data-target="#banner-carousel"></li>
-    <li data-slide-to="1" data-target="#banner-carousel"></li>
-    <li data-slide-to="2" data-target="#banner-carousel"></li>
-  </ol> <!-- //Indicators -->
-
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-
-    <div class="item item-1 active">
-      <div class="container">
-        <div class="banner-contain">
-          <h1>Full winter kit</h1>
-          <p class="combo-kit">Half Jacket + Skiny Trousers + Boot leather</p>
-          <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
-          <div class="combo-order">
-            Price : 120$
-            <a href="#">
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i> Order now
-            </a>
-          </div>
+<div class="product-show">
+  <div class="container">
+    <div class="col-lg-5 col-md-5 col-sm-12">
+      <div class="gallery-panel">
+        <img id="largeImage" src="img/image_03_large.png">
+      </div>
+      <div id="thumbs" class="thumbs">
+        <div class="thumb">
+          <img src="img/image_01_thumb.png" alt="1st image description" />
+        </div>
+        <div class="thumb">
+          <img src="img/image_02_thumb.png" alt="2nd image description" />
+        </div>
+        <div class="thumb active-thumb">
+          <img src="img/image_03_thumb.png" alt="3rd image description" />
         </div>
       </div>
-    </div><!--//item-->
-
-    <div class="item item-2">
-      <div class="container">
-        <div class="banner-contain">
-          <h1>Middle winter kit</h1>
-          <p class="combo-kit">Half Jacket + Skiny Trousers</p>
-          <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
-          <div class="combo-order">
-            Price : 80$
-            <a href="#">
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i> Order now
-            </a>
+    </div> <!-- //col -->
+    <div class="col-lg-7 col-md-7 col-sm-12">
+      <h1>Full winter kit</h1>
+      <p class="description-full">
+        Half Jacket + Skiny Trousers + Boot leather
+      </p>
+      <p class="product-about">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry
+Lorem Ipsum is simply dummy text of the printing
+ and typesetting industry
+      </p>
+      <hr>
+      <div class="choose">
+        <div class="choose-size">
+          Choose Size
+          <div class="choose-active">
+            <input type="radio" id="s1" name="size" />
+            <label for="s1" class="size">S</label>
+            -
+            <input type="radio" id="s2" name="size" />
+            <label for="s2" class="size">M</label>
+            -
+            <input type="radio" id="s3" name="size" />
+            <label for="s3" class="size">L</label>
+            -
+            <input type="radio" id="s4" name="size" />
+            <label for="s4" class="size">XL</label>
           </div>
-        </div>
-      </div>
-    </div><!--//item-->
-
-    <div class="item item-3">
-      <div class="container">
-        <div class="banner-contain">
-          <h1>Light winter kit</h1>
-          <p class="combo-kit">Half Jacket</p>
-          <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
-          <div class="combo-order">
-            Price : 60$
-            <a href="#">
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i> Order now
-            </a>
+        </div> <!-- //choose-size -->
+        <div class="choose-separate"></div>
+        <div class="choose-quanity">
+          Choose Quanity
+          <div class="choose-active">
+            <button class="plus">+</button>
+            <input type="text" readonly name="count-items" id="count-items" value="1" class="count-items">
+            <button class="minus">-</button>
           </div>
+        </div> <!-- //chose-quanity -->
+      </div> <!-- //choose -->
+      <hr>
+      <div class="choose">
+        <div class="choose-price">
+          Price : <input type="text" readonly id="total" class="total" name="total" value="120">$
         </div>
-      </div>
-    </div><!--//item-->
-  </div><!--//carousel-inner-->
-</div><!--//carousel-->
+        <div class="choose-order">
+          <i class="fa fa-globe" aria-hidden="true"></i>
+          <i class="fa fa-cart-plus" aria-hidden="true"></i>
+          <i class="fa fa-heart-o" aria-hidden="true"></i>
+          <input type="submit" class="submit-order" name="submit-order" value="Order Now">
+        </div>
+      </div><!-- //chose -->
+    </div> <!-- //col -->
+  </div> <!-- //container -->
+</div> <!-- //product-show -->
 
-<div class="new-arrivals">
-  <h2><span>New</span> arrivals</h2>
-  <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-  <div class="products">
-    <div class="container">
+<div class="related-products">
+  <div class="container text-center">
+    <h3><span>Related</span> products</h3>
+    <p class="product-about">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry
+    </p>
+    <div class="products">
       <div class="row center-block">
         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
           <div class="product">
-            <img src="resources/img/product1.png" alt=""><br>
+            <img src="img/product1.png" alt=""><br>
             <a href="product_show.html">Reebok Track Jacket</a>
             <p class="price">100$</p>
             <div class="product-hover">
-              <img src="resources/img/product1.png" alt=""><br>
+              <img src="img/product1.png" alt=""><br>
               <a href="product_show.html">Reebok Track Jacket</a>
               <div class="size">
                 size : &nbsp;
@@ -179,11 +212,11 @@
         </div> <!-- //col -->
         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
           <div class="product">
-            <img src="resources/img/product2.png" alt=""><br>
+            <img src="img/product2.png" alt=""><br>
             <a href="product_show.html">Reebok Track Jacket</a>
             <p class="price">100$</p>
             <div class="product-hover">
-              <img src="resources/img/product2.png" alt=""><br>
+              <img src="img/product2.png" alt=""><br>
               <a href="product_show.html">Reebok Track Jacket</a>
               <div class="size">
                 size : &nbsp;
@@ -225,11 +258,11 @@
         </div> <!-- //col -->
         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
           <div class="product">
-            <img src="resources/img/product3.png" alt=""><br>
+            <img src="img/product3.png" alt=""><br>
             <a href="product_show.html">Reebok Track Jacket</a>
             <p class="price">100$</p>
             <div class="product-hover">
-              <img src="resources/img/product3.png" alt=""><br>
+              <img src="img/product3.png" alt=""><br>
               <a href="product_show.html">Reebok Track Jacket</a>
               <div class="size">
                 size : &nbsp;
@@ -271,11 +304,11 @@
         </div> <!-- //col -->
         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 center-block">
           <div class="product">
-            <img src="resources/img/product1.png" alt=""><br>
+            <img src="img/product1.png" alt=""><br>
             <a href="product_show.html">Reebok Track Jacket</a>
             <p class="price">100$</p>
             <div class="product-hover">
-              <img src="resources/img/product1.png" alt=""><br>
+              <img src="img/product1.png" alt=""><br>
               <a href="product_show.html">Reebok Track Jacket</a>
               <div class="size">
                 size : &nbsp;
@@ -315,114 +348,10 @@
             </div> <!-- //product-hover -->
           </div> <!-- //product -->
         </div> <!-- //col -->
-        <a href="#" class="btn load-more">
-          <span></span>
-          <span></span>
-          <span></span>
-        </a>
       </div> <!-- //row -->
-    </div> <!-- //container -->
-  </div> <!-- //products -->
-</div> <!-- //new arrivals -->
-<div class="advert">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-        <div class="sale">
-          <img src="resources/img/sale.png" alt="">
-          <div class="sale-name">
-            <h3>Full winter kit</h3>
-            <p>Half Jacket + Skiny Trousers + Boot leather</p>
-          </div>
-          <a href="#">120<span>$</span></a>
-        </div> <!-- //sale -->
-      </div> <!-- //col -->
-      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-        <div class="advert-area">
-          <p>adv <span>area</span></p>
-          <p class="adv-size">470 x 100</p>
-        </div>
-      </div>
-    </div> <!-- //row -->
-  </div> <!-- //container -->
-</div> <!-- //advert -->
-<div class="best-sales">
-  <h2><span>Best</span> sales</h2>
-  <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-  <div class="container">
-    <div class="sale-orders">
-      <div class="row">
-        <div class="col-lg-4 col-md-4 col-xs-12">
-          <div class="sale-order">
-            <img src="resources/img/product-sale.png" alt="">
-            <div class="sale-description">
-              <a href="product_show.html">Reebok Track Jacket</a>
-              <div class="order-mark">
-                <div class="stars">
-                  <i class="fa fa-star active" aria-hidden="true"></i>
-                  <i class="fa fa-star active" aria-hidden="true"></i>
-                  <i class="fa fa-star active" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-                100$
-                <div class="order-mark-hover">
-                  <a href="#">
-                    <i class="fa fa-cart-plus" aria-hidden="true"></i> add to cart
-                  </a>
-                </div>
-              </div> <!-- //order-mark -->
-            </div> <!-- //sale-description -->
-          </div> <!-- //sale-order -->
-        </div> <!-- //col -->
-        <div class="col-lg-4 col-md-4 col-xs-12">
-          <div class="sale-order">
-            <img src="resources/img/product-sale.png" alt="">
-            <div class="sale-description">
-              <a href="product_show.html">Reebok Track Jacket</a>
-              <div class="order-mark">
-                <div class="stars">
-                  <i class="fa fa-star active" aria-hidden="true"></i>
-                  <i class="fa fa-star active" aria-hidden="true"></i>
-                  <i class="fa fa-star active" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-                100$
-                <div class="order-mark-hover">
-                  <a href="#">
-                    <i class="fa fa-cart-plus" aria-hidden="true"></i> add to cart
-                  </a>
-                </div>
-              </div> <!-- //order-mark -->
-            </div> <!-- //sale-description -->
-          </div> <!-- //sale-order -->
-        </div> <!-- //col -->
-        <div class="col-lg-4 col-md-4 col-xs-12">
-          <div class="sale-order">
-            <img src="resources/img/product-sale.png" alt="">
-            <div class="sale-description">
-              <a href="product_show.html">Reebok Track Jacket</a>
-              <div class="order-mark">
-                <div class="stars">
-                  <i class="fa fa-star active" aria-hidden="true"></i>
-                  <i class="fa fa-star active" aria-hidden="true"></i>
-                  <i class="fa fa-star active" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-                100$
-                <div class="order-mark-hover">
-                  <a href="#">
-                    <i class="fa fa-cart-plus" aria-hidden="true"></i> add to cart
-                  </a>
-                </div>
-              </div> <!-- //order-mark -->
-            </div> <!-- //sale-description -->
-          </div> <!-- //sale-order -->
-        </div> <!-- //col -->
-      </div> <!-- //row -->
-    </div> <!-- //sale-orders -->
-  </div> <!-- //container -->
-</div> <!-- //best-sales -->
-
+    </div> <!-- //products -->
+  </div>
+</div>
 
 <div class="container">
   <div class="subscription">
@@ -446,9 +375,9 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-3 col-md-3 col-sm-3">
-        <a href="#"><img src="resources/img/logo.png" alt=""></a>
+        <a href="#"><img src="img/logo.png" alt=""></a>
         <p class="copyright">
-          shopy c 2022 . your copy right here
+          shopy c 2015 . your copy right here
         </p>
       </div>
       <div class="col-lg-2 col-md-2 col-sm-2">
@@ -473,11 +402,11 @@
       </div>
       <div class="col-lg-3 col-md-3 col-sm-2 text-right">
         <h5>Payment Methods</h5>
-        <img src="resources/img/payment.png" alt="">
+        <img src="img/payment.png" alt="">
       </div>
     </div>
   </div>
 </footer>
-
+<script src="js/custom.js"></script>
 </body>
 </html>
