@@ -1,17 +1,17 @@
-q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <title>Products</title>
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/animate.css">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../resources/css/bootstrap.css">
+  <link rel="stylesheet" href="../resources/css/animate.css">
+  <link rel="stylesheet" href="../resources/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../resources/css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="../resources/js/jquery.min.js"></script>
+  <script src="../resources/js/bootstrap.min.js"></script>
 </head>
 <body>
 <header>
@@ -25,7 +25,7 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
           <div class="header-contact-inform">
             <i class="fa fa-mobile" aria-hidden="true"></i> &nbsp;996 - 5553 - 453
           </div>
-        </div> <!-- //col -->
+        </div> //col
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
           <ul>
             <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -33,10 +33,10 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
             <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
             <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
           </ul>
-        </div> <!-- //col -->
-      </div> <!-- //row -->
-    </div> <!-- //container -->
-  </div> <!-- //header-contact -->
+        </div> //col
+      </div> //row
+    </div> //container
+  </div> //header-contact
   <div class="header-menu">
     <div class="container">
       <div class="row">
@@ -79,9 +79,9 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
             <li class="basket"><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i><div class="basket-count">5</div></a></li>
           </ul>
         </div>
-      </div> <!-- // row -->
-    </div> <!-- //container -->
-  </div> <!-- //header-menu -->
+      </div> // row
+    </div> //container
+  </div> //header-menu
 </header>
 
 <main>
@@ -96,7 +96,7 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
           <li><a href="#">Childrens</a></li>
           <li><a href="#">Hot Deals</a></li>
         </ul>
-      </div> <!-- //filter-category -->
+      </div> //filter-category
       <div class="filter filter-price">
         <h4>Price Filter</h4>
         <div class="easy-basket-filter">
@@ -111,8 +111,8 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
             <input type="range" class="upper range" step="any" min="0" max="5000" value="5000"/>
             <div class="fill"></div>
           </div>
-        </div> <!-- //easy-basket-filter -->
-      </div> <!-- //filter-price -->
+        </div> //easy-basket-filter
+      </div> //filter-price
       <div class="filter filter-sizes">
         <h4>Sizes</h4>
         <ul>
@@ -133,7 +133,7 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
             <label for="check-size4"  class="check">X-Larg</label>
           </li>
         </ul>
-      </div> <!-- //filter-sizes -->
+      </div> //filter-sizes
       <div class="filter filter-brands">
         <h4>Brands</h4>
         <ul>
@@ -155,7 +155,7 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
           </li>
         </ul>
       </div>
-    </div> <!-- //col -->
+    </div> //col
     <div class="col-lg-9 col-md-8 col-xs-12">
       <div class="row center-block">
         <div class="col-lg-4 col-md-6 col-xs-12">
@@ -176,7 +176,7 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
                 <label for="sizeL1"><span>l</span></label>
                 <input type="radio" id="sizeXL1" name="size" />
                 <label for="sizeXL1"><span>xl</span></label>
-              </div> <!-- //size -->
+              </div> //size
               <div class="color">
                 <input type="radio" id="color11" name="color" />
                 <label for="color11">
@@ -194,16 +194,16 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
                 <label for="color14">
                   <span class="circle circle4"></span>
                 </label>
-              </div> <!-- //color -->
+              </div> //color
               <div class="underline center-block"></div>
               <div class="product-buttons">
                 <a href="#" class="btn"><i class="fa fa-globe" aria-hidden="true"></i></a>
                 <a href="#" class="btn basket"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
                 <a href="#" class="btn"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-              </div> <!-- //product-buttons -->
-            </div> <!-- //product-hover -->
-          </div> <!-- //product -->
-        </div> <!-- //col -->
+              </div> //product-buttons
+            </div> //product-hover
+          </div> //product
+        </div> //col
         <div class="col-lg-4 col-md-6 col-xs-12">
           <div class="product">
             <img src="img/product2.png" alt=""><br>
@@ -222,7 +222,7 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
                 <label for="sizeL1"><span>l</span></label>
                 <input type="radio" id="sizeXL1" name="size" />
                 <label for="sizeXL1"><span>xl</span></label>
-              </div> <!-- //size -->
+              </div> //size
               <div class="color">
                 <input type="radio" id="color11" name="color" />
                 <label for="color11">
@@ -240,16 +240,16 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
                 <label for="color14">
                   <span class="circle circle4"></span>
                 </label>
-              </div> <!-- //color -->
+              </div> //color
               <div class="underline center-block"></div>
               <div class="product-buttons">
                 <a href="#" class="btn"><i class="fa fa-globe" aria-hidden="true"></i></a>
                 <a href="#" class="btn basket"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
                 <a href="#" class="btn"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-              </div> <!-- //product-buttons -->
-            </div> <!-- //product-hover -->
-          </div> <!-- //product -->
-        </div> <!-- //col -->
+              </div> //product-buttons
+            </div> //product-hover
+          </div> //product
+        </div> //col
         <div class="col-lg-4 col-md-6 col-xs-12">
           <div class="product">
             <img src="img/product3.png" alt=""><br>
@@ -268,7 +268,7 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
                 <label for="sizeL1"><span>l</span></label>
                 <input type="radio" id="sizeXL1" name="size" />
                 <label for="sizeXL1"><span>xl</span></label>
-              </div> <!-- //size -->
+              </div> //size
               <div class="color">
                 <input type="radio" id="color11" name="color" />
                 <label for="color11">
@@ -286,16 +286,16 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
                 <label for="color14">
                   <span class="circle circle4"></span>
                 </label>
-              </div> <!-- //color -->
+              </div> //color
               <div class="underline center-block"></div>
               <div class="product-buttons">
                 <a href="#" class="btn"><i class="fa fa-globe" aria-hidden="true"></i></a>
                 <a href="#" class="btn basket"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
                 <a href="#" class="btn"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-              </div> <!-- //product-buttons -->
-            </div> <!-- //product-hover -->
-          </div> <!-- //product -->
-        </div> <!-- //col -->
+              </div> //product-buttons
+            </div> //product-hover
+          </div> //product
+        </div> //col
         <div class="col-lg-4 col-md-6 col-xs-12">
           <div class="product">
             <img src="img/product1.png" alt=""><br>
@@ -314,7 +314,7 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
                 <label for="sizeL1"><span>l</span></label>
                 <input type="radio" id="sizeXL1" name="size" />
                 <label for="sizeXL1"><span>xl</span></label>
-              </div> <!-- //size -->
+              </div> //size
               <div class="color">
                 <input type="radio" id="color11" name="color" />
                 <label for="color11">
@@ -332,16 +332,16 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
                 <label for="color14">
                   <span class="circle circle4"></span>
                 </label>
-              </div> <!-- //color -->
+              </div> //color
               <div class="underline center-block"></div>
               <div class="product-buttons">
                 <a href="#" class="btn"><i class="fa fa-globe" aria-hidden="true"></i></a>
                 <a href="#" class="btn basket"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
                 <a href="#" class="btn"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-              </div> <!-- //product-buttons -->
-            </div> <!-- //product-hover -->
-          </div> <!-- //product -->
-        </div> <!-- //col -->
+              </div> //product-buttons
+            </div> //product-hover
+          </div> //product
+        </div> //col
         <div class="col-lg-4 col-md-6 col-xs-12">
           <div class="product">
             <img src="img/product2.png" alt=""><br>
@@ -360,7 +360,7 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
                 <label for="sizeL1"><span>l</span></label>
                 <input type="radio" id="sizeXL1" name="size" />
                 <label for="sizeXL1"><span>xl</span></label>
-              </div> <!-- //size -->
+              </div> //size
               <div class="color">
                 <input type="radio" id="color11" name="color" />
                 <label for="color11">
@@ -378,16 +378,16 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
                 <label for="color14">
                   <span class="circle circle4"></span>
                 </label>
-              </div> <!-- //color -->
+              </div> //color
               <div class="underline center-block"></div>
               <div class="product-buttons">
                 <a href="#" class="btn"><i class="fa fa-globe" aria-hidden="true"></i></a>
                 <a href="#" class="btn basket"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
                 <a href="#" class="btn"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-              </div> <!-- //product-buttons -->
-            </div> <!-- //product-hover -->
-          </div> <!-- //product -->
-        </div> <!-- //col -->
+              </div> //product-buttons
+            </div> //product-hover
+          </div> //product
+        </div> //col
         <div class="col-lg-4 col-md-6 col-xs-12">
           <div class="product">
             <img src="img/product3.png" alt=""><br>
@@ -406,7 +406,7 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
                 <label for="sizeL1"><span>l</span></label>
                 <input type="radio" id="sizeXL1" name="size" />
                 <label for="sizeXL1"><span>xl</span></label>
-              </div> <!-- //size -->
+              </div> //size
               <div class="color">
                 <input type="radio" id="color11" name="color" />
                 <label for="color11">
@@ -424,16 +424,16 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
                 <label for="color14">
                   <span class="circle circle4"></span>
                 </label>
-              </div> <!-- //color -->
+              </div> //color
               <div class="underline center-block"></div>
               <div class="product-buttons">
                 <a href="#" class="btn"><i class="fa fa-globe" aria-hidden="true"></i></a>
                 <a href="#" class="btn basket"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
                 <a href="#" class="btn"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-              </div> <!-- //product-buttons -->
-            </div> <!-- //product-hover -->
-          </div> <!-- //product -->
-        </div> <!-- //col -->
+              </div> //product-buttons
+            </div> //product-hover
+          </div> //product
+        </div> //col
         <div class="col-lg-4 col-md-6 col-xs-12">
           <div class="product">
             <img src="img/product1.png" alt=""><br>
@@ -452,7 +452,7 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
                 <label for="sizeL1"><span>l</span></label>
                 <input type="radio" id="sizeXL1" name="size" />
                 <label for="sizeXL1"><span>xl</span></label>
-              </div> <!-- //size -->
+              </div> //size
               <div class="color">
                 <input type="radio" id="color11" name="color" />
                 <label for="color11">
@@ -470,16 +470,16 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
                 <label for="color14">
                   <span class="circle circle4"></span>
                 </label>
-              </div> <!-- //color -->
+              </div> //color
               <div class="underline center-block"></div>
               <div class="product-buttons">
                 <a href="#" class="btn"><i class="fa fa-globe" aria-hidden="true"></i></a>
                 <a href="#" class="btn basket"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
                 <a href="#" class="btn"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-              </div> <!-- //product-buttons -->
-            </div> <!-- //product-hover -->
-          </div> <!-- //product -->
-        </div> <!-- //col -->
+              </div> //product-buttons
+            </div> //product-hover
+          </div> //product
+        </div> //col
         <div class="col-lg-4 col-md-6 col-xs-12">
           <div class="product">
             <img src="img/product2.png" alt=""><br>
@@ -498,7 +498,7 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
                 <label for="sizeL1"><span>l</span></label>
                 <input type="radio" id="sizeXL1" name="size" />
                 <label for="sizeXL1"><span>xl</span></label>
-              </div> <!-- //size -->
+              </div> //size
               <div class="color">
                 <input type="radio" id="color11" name="color" />
                 <label for="color11">
@@ -516,16 +516,16 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
                 <label for="color14">
                   <span class="circle circle4"></span>
                 </label>
-              </div> <!-- //color -->
+              </div> //color
               <div class="underline center-block"></div>
               <div class="product-buttons">
                 <a href="#" class="btn"><i class="fa fa-globe" aria-hidden="true"></i></a>
                 <a href="#" class="btn basket"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
                 <a href="#" class="btn"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-              </div> <!-- //product-buttons -->
-            </div> <!-- //product-hover -->
-          </div> <!-- //product -->
-        </div> <!-- //col -->
+              </div> //product-buttons
+            </div> //product-hover
+          </div> //product
+        </div> //col
         <div class="col-lg-4 col-md-6 col-xs-12">
           <div class="product">
             <img src="img/product3.png" alt=""><br>
@@ -544,7 +544,7 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
                 <label for="sizeL1"><span>l</span></label>
                 <input type="radio" id="sizeXL1" name="size" />
                 <label for="sizeXL1"><span>xl</span></label>
-              </div> <!-- //size -->
+              </div> //size
               <div class="color">
                 <input type="radio" id="color11" name="color" />
                 <label for="color11">
@@ -562,25 +562,25 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
                 <label for="color14">
                   <span class="circle circle4"></span>
                 </label>
-              </div> <!-- //color -->
+              </div> //color
               <div class="underline center-block"></div>
               <div class="product-buttons">
                 <a href="#" class="btn"><i class="fa fa-globe" aria-hidden="true"></i></a>
                 <a href="#" class="btn basket"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
                 <a href="#" class="btn"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-              </div> <!-- //product-buttons -->
-            </div> <!-- //product-hover -->
-          </div> <!-- //product -->
-        </div> <!-- //col -->
+              </div> //product-buttons
+            </div> //product-hover
+          </div> //product
+        </div> //col
         <a href="#" class="btn load-more-products">
           <span></span>
           <span></span>
           <span></span>
         </a>
-      </div> <!-- //row products -->
-    </div> <!-- //col -->
-  </div> <!-- //row -->
-</div> <!-- //container -->
+      </div> //row products
+    </div> //col
+  </div> //row
+</div> //container
 <div class="container">
   <div class="subscription">
     <div class="col-lg-6 col-md-6 col-xs-12">
@@ -637,5 +637,5 @@ q	11<%@ page language="java" contentType="text/html; charset=UTF-8"
   </div>
 </footer>
 <script src="js/custom.js"></script>
-</body>
+</body> 
 </html>
