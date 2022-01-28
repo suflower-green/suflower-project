@@ -7,21 +7,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> 목록페이지입니다.</title>
+<title>목록페이지입니다.</title>
 <script src="https://code.jquery.com/jquery-3.4.1.js"
 	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 	crossorigin="anonymous" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/myLib/strapStyle.css">
 </head>
 <style>
 </style>
-<%@ include file ="../includes/header.jsp" %>
+<%@ include file="../includes/header.jsp"%>
 
 <body>
-	<h1>목록페이지입니다.</h1>
 	<div class="table_wrap">
-	<table class="table table-striped table-hover">
+		<table class="table table-striped table-hover m-5">
 			<thead>
 				<tr>
 					<th class="boardNo_width">게시글 번호</th>
@@ -35,8 +32,8 @@
 			<c:forEach items="${blist}" var="blist">
 				<tr>
 					<td><c:out value="${blist.boardNo}" /></td>
-					<td>  <a class="move" href='<c:out value="${blist.boardNo}"/>'>
-      				<c:out value="${blist.boardTitle}"/>
+					<td><a class="move" href='<c:out value="${blist.boardNo}"/>'>
+							<c:out value="${blist.boardTitle}" />
 					</a></td>
 					<td><c:out value="${blist.boardWriter}" /></td>
 					<td><fmt:formatDate pattern="yyyy.MM.dd hh:mm"
@@ -45,7 +42,7 @@
 							value="${blist.boardUpdateDate}" /></td>
 				</tr>
 			</c:forEach>
-			
+
 		</table>
 
 		<div class="search_wrap">
@@ -62,13 +59,12 @@
 						<li class="pageInfo_btn previous"><a
 							href="${pageMaker.startPage-1}">Previous</a></li>
 					</c:if>
-
 					<!-- 각 번호 페이지 버튼 -->
-					 <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-                    <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? " active":"" }"><a href="${num}">${num}</a></li>
-                </c:forEach>
-
-
+					<c:forEach var="num" begin="${pageMaker.startPage}"
+						end="${pageMaker.endPage}">
+						<li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a
+							href="${num}">${num}</a></li>
+					</c:forEach>
 
 					<!--  다음 페이지 버튼 -->
 					<c:if test="${pageMaker.next}">
@@ -85,20 +81,20 @@
 		</form>
 	</div>
 	<hr>
-	<c:if test="${empty member.memberId}"> 
-		<a href="/member/login" class="top_btn" id="popbutton">게시판 등록 로그인후 이용해주세요</a>
+	<c:if test="${empty member.memberId}">
+		<a href="/member/login" class="top_btn" id="popbutton">게시판 등록 로그인후
+			이용해주세요</a>
 	</c:if>
 
-	<c:if test="${not empty member.memberId}"> 
+	<c:if test="${not empty member.memberId}">
 		<a href="/board/bwrite" class="top_btn" id="popbutton">게시판 등록</a>
 	</c:if>
-	<a href="/" class="top_btn" id="popbutton" >Home</a>
-	
-<%@ include file ="../includes/footer.jsp" %>
+	<a href="/" class="top_btn" id="popbutton">Home</a>
 
-<script type="text/javascript">
-   
- 		// 등록 완료 alert function 
+	<%@ include file="../includes/footer.jsp"%>
+
+	<script type="text/javascript">
+		// 등록 완료 alert function 
 		$(document).ready(function() {
 
 			var result = '<c:out value="${result}"/>';
@@ -106,25 +102,29 @@
 			function checkAlert(result) {
 				if (result === '') {
 					return;
-					}
+				}
 				if (result === "bwrite success") {
 					alert("작성이 완료됐당..");
-					}
+				}
 				if (result === "modify success") {
 					alert("수정이 완료됐당..");
-					}
 				}
-		}); 
+			}
+		});
 
 		let moveForm = $("#moveForm");
-		$(".move").on("click",function(e) {
-					e.preventDefault();
+		$(".move")
+				.on(
+						"click",
+						function(e) {
+							e.preventDefault();
 
-					moveForm.append("<input type='hidden' name='boardNo' value='"
-							+ $(this).attr("href") + "'>");
-					moveForm.attr("action","/board/get");
-					moveForm.submit();
-				});
+							moveForm
+									.append("<input type='hidden' name='boardNo' value='"
+											+ $(this).attr("href") + "'>");
+							moveForm.attr("action", "/board/get");
+							moveForm.submit();
+						});
 
 		$(".pageInfo a").on("click", function(e) {
 			e.preventDefault();
