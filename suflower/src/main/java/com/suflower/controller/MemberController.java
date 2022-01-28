@@ -30,19 +30,19 @@ public class MemberController {
 	
 	
 	//회원가입 페이지 이동
-	@GetMapping("/join")
+	@GetMapping("/register")
 	public void loginGET() {
 		
 		logger.info("회원가입 페이지 진입");
 	}
 	
 	//회원가입
-	@PostMapping("/join")
+	@PostMapping("/register")
 	public String joinPOST(MemberDTO member) throws Exception{
-		logger.info("join 진입");
+		logger.info("register 진입");
 		// 회원가입 서비스 실행
 		memberservice.memberJoin(member);
-		logger.info("join Service 성공");
+		logger.info("register Service 성공");
 		return "redirect:/";
 		
 	}
