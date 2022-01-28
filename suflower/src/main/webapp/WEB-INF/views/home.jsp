@@ -4,7 +4,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Shopy</title>
+  <title>Sue Flower</title>
   <link rel="stylesheet" href="resources/css/bootstrap.css">
   <link rel="stylesheet" href="resources/css/animate.css">
   <link rel="stylesheet" href="resources/css/font-awesome.min.css">
@@ -15,25 +15,6 @@
 </head>
 <body>
 <header>
-  <div class="header-contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-          <div class="header-contact-inform">
-            <i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp;info@shopy.com
-          </div>
-          <div class="header-contact-inform">
-            <i class="fa fa-mobile" aria-hidden="true"></i> &nbsp;010-9999-9999
-          </div>
-        </div> <!-- //col -->
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
-          <ul>                
-            <li><a href="https://www.instagram.com/sueflower_/" target="_blank"><i class="fa fa-instagram  fa-4x" aria-hidden="true"></i></a></li>
-          </ul>
-        </div> <!-- //col -->
-      </div> <!-- //row -->
-    </div> <!-- //container -->
-  </div> <!-- //header-contact -->
   <div class="header-menu">
     <div class="container">
       <div class="row">
@@ -59,13 +40,13 @@
                 <li class="active"><a href="/">Home</a></li>
                 <li><a href="product/products.html">꽃다발</a></li>
                 <li><a href="#">소품샵</a></li>
-                <li><a href="#">Q&A</a></li>
+                <li><a href="#">커뮤니티 게시판</a></li>
                 <li><a href="#">카카오 문의</a></li>
               </ul>
             </div>
           </nav>
         </div>
-        <div class="col-sm-2 text-right">
+        <div class="col-2 text-right">
           <ul class="service-inform">
             <li>
               <a href="#">
@@ -74,6 +55,7 @@
             </li>
             <li><a href="#"><i class="fa fa-user-o  fa-2x" aria-hidden="true"></i></a></li>
             <li class="basket"><a href="#"><i class="fa fa-shopping-bag  fa-2x" aria-hidden="true"></i><div class="basket-count">5</div></a></li>
+            <li><a href="https://www.instagram.com/sueflower_/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
           </ul>
         </div>
       </div> <!-- // row -->
