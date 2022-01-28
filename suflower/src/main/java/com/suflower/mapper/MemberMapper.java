@@ -22,5 +22,8 @@ public interface MemberMapper {
 	
 	// 내정보 확인
 	public MemberDTO memberInfo(MemberDTO member);
+	
+	// 내정보 수정
+	public int memberUpdate(MemberDTO member);
 
 }

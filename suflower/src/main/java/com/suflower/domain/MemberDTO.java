@@ -13,11 +13,11 @@ public class MemberDTO {
 	private String memberAddr1;
 	private String memberAddr2;
 	private String memberAddr3;
-	
 	private String memberPhoneNum;
 	private int adminCheck;
 	private Date memberRegDate;
 	private int memberMoney;
 	private int memberPoint;
+	
 
 }
