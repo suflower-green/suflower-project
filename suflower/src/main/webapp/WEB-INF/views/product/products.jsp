@@ -16,9 +16,14 @@
 <body>
 <%@ include file ="../includes/header.jsp" %>
 
+	<div>
+        <a href="/product/productDetail">
+        	<img class="card-img-top mb-5 mb-md-0" src="../resources/img/tulip.png" alt="..." />
+        </a> 
+    </div>
 
 
-<%@ include file ="../includes/footer.jsp" %>
 <script src="../resources/js/custom.js"></script>
+<%@ include file ="../includes/footer.jsp" %>
 </body> 
 </html>
