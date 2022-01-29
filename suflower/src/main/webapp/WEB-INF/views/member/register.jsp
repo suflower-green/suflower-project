@@ -42,16 +42,12 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="성">
+                                            placeholder="아이디">
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control form-control-user" id="exampleLastName"
                                             placeholder="이름">
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email Address">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
@@ -63,23 +59,50 @@
                                             id="exampleRepeatPassword" placeholder="Repeat Password">
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <input type="phonenum" class="form-control form-control-user" id="exampleInputPhone"
+                                        placeholder="전화번호">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="이메일">
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="password" class="form-control form-control-user"
+                                            id="exampleInputPassword" placeholder="우편번호">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="password" class="form-control form-control-user"
+                                            id="exampleRepeatPassword" placeholder="도로명">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="phonenum" class="form-control form-control-user" id="exampleInputPhone"
+                                        placeholder="상세주소">
+                                </div>
+                                <div class="form-group">
                                 <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                    Register Account
+                                    주소찾기
                                 </a>
+                                </div>
                                 <hr>
-                                <a href="index.html" class="btn btn-google btn-user btn-block">
-                                    <i class="fab fa-google fa-fw"></i> Register with Google
+                                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                    가입하기
                                 </a>
-                                <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                                </a>
+<!--                                 <a href="index.html" class="btn btn-google btn-user btn-block"> -->
+<!--                                     <i class="fab fa-google fa-fw"></i> Register with Google -->
+<!--                                 </a> -->
+<!--                                 <a href="index.html" class="btn btn-facebook btn-user btn-block"> -->
+<!--                                     <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook -->
+<!--                                 </a> -->
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                <a class="small" href="forgot-password.html">비밀번호 찾기</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="login.html">Already have an account? Login!</a>
+                                <a class="small" href="login.html">이미 가입한 아이디가 있음. 로그인하러 가기</a>
                             </div>
                         </div>
                     </div>
