@@ -28,23 +28,9 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
 
-    <div class="item item-1 active">
-      <div class="container">
-        <div class="banner-contain">
-          <h1>꽃 Flowers</h1>
-          <p class="combo-kit">마음을 선물하세요</p>
-          <p class="description"></p>
-          <div class="combo-order">
-            가격 : 3000원 ~
-            <a href="#">
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i> 보러가기
-            </a>
-          </div>
-        </div>
-      </div>
-    </div><!--//item-->
+    
 
-    <div class="item item-2">
+    <div class="item item-1 active">
       <div class="container">
         <div class="banner-contain">
           <h1>꽃다발 Bouquets</h1>
@@ -59,8 +45,24 @@
         </div>
       </div>
     </div><!--//item-->
+    
+    <!-- <div class="item item-2">
+      <div class="container">
+        <div class="banner-contain">
+          <h1>꽃 Flowers</h1>
+          <p class="combo-kit">마음을 선물하세요</p>
+          <p class="description"></p>
+          <div class="combo-order">
+            가격 : 3000원 ~
+            <a href="#">
+              <i class="fa fa-shopping-bag" aria-hidden="true"></i> 보러가기
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>//item -->
 
-   <div class="item item-3">
+   <!-- <div class="item item-3">
       <div class="container">
         <div class="banner-contain">
           <h1>소품 Props</h1>
@@ -74,7 +76,7 @@
           </div>
         </div>
       </div>
-    </div><!--//item-->
+    </div>//item -->
   </div><!--//carousel-inner-->
 </div><!--//carousel-->
 <%@ include file ="./includes/footer.jsp" %>
