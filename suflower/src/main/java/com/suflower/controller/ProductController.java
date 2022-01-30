@@ -25,11 +25,11 @@ public class ProductController {
 		this.service = service;
 	}
 	
-	@GetMapping("/list")
-	public void list(Model model) {
-		log.info("list");
-		model.addAttribute("list", service.getList());
-	}
+//	@GetMapping("/list")
+//	public void list(Model model) {
+//		log.info("list");
+//		model.addAttribute("list", service.getList());
+//	}
 	
 	@PostMapping("/register")
 	public String register(ProductDTO product, RedirectAttributes rttr) {
@@ -73,12 +73,20 @@ public class ProductController {
 		return "redirect:/product/list";
 	}
 	
-	@GetMapping("/products")
-	public String products(RedirectAttributes rttr) {
+	@GetMapping("/productList")
+	public String productList(Model model) {
 		
-		return "/product/products";
+		log.info("productList Controller method");
+		model.addAttribute("product", service.getList());
+		return "/product/productList";
 	}
 	
+	@GetMapping("/productDetail")
+	public void productDetail(@RequestParam("productId") Long productId, Model model) {
+		
+		log.info("/productDetail");
+		model.addAttribute("product", service.get(productId));
+	}
 	
 	
 	

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8">
@@ -21,7 +22,7 @@
       <div class="gallery-panel">
         <img id="largeImage" src="img/image_03_large.png">
       </div>
-      <div id="thumbs" class="thumbs">
+      <!-- <div id="thumbs" class="thumbs">
         <div class="thumb">
           <img src="img/image_01_thumb.png" alt="1st image description" />
         </div>
@@ -31,11 +32,13 @@
         <div class="thumb active-thumb">
           <img src="img/image_03_thumb.png" alt="3rd image description" />
         </div>
-      </div>
+      </div> -->
     </div> <!-- //col -->
     <div class="col-lg-7 col-md-7 col-sm-12">
-      <h1>튤립</h1>
-      
+      <h1><c:out value="${product.productName}"/></h1>
+      <div class="choose-price">
+          ${product.productPrice}원
+        </div>
       <!-- <p class="description-full">
         Half Jacket + Skiny Trousers + Boot leather
       </p>
@@ -47,15 +50,15 @@ Lorem Ipsum is simply dummy text of the printing
       <hr>
       <div class="choose">
         <div class="choose-size">
-          희망 배송일
+          희망 수령일
           <div class="choose-active">
 
             <input type="date"/>
-            <input type="radio" id="s1" name="size" />
+            <!-- <input type="radio" id="s1" name="size" />
             <label for="s1" class="size">오전</label>
             or
             <input type="radio" id="s2" name="size" />
-            <label for="s2" class="size">오후</label>
+            <label for="s2" class="size">오후</label> -->
             
           </div>
         </div> <!-- //choose-size -->
@@ -71,9 +74,7 @@ Lorem Ipsum is simply dummy text of the printing
       </div> <!-- //choose -->
       <hr>
       <div class="choose">
-        <div class="choose-price">
-          Price : <input type="text" readonly id="total" class="total" name="total" value="0">$
-        </div>
+        
         <div class="choose-order">
           <i class="fa fa-cart-plus" aria-hidden="true"></i>
           <i class="fa fa-heart-o" aria-hidden="true"></i>
