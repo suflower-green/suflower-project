@@ -1,83 +1,107 @@
-<%@ page session="false" %>
-  <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page session="false"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Sue Flower</title>
-  <link rel="stylesheet" href="../resources/css/bootstrap.css">
-  <link rel="stylesheet" href="../resources/css/animate.css">
-  <link rel="stylesheet" href="../resources/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../resources/css/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="../resources/js/jquery.min.js"></script>
-  <script src="../resources/js/bootstrap.min.js"></script>
+<meta charset="utf-8">
+<title>Sue Flower</title>
+<link rel="stylesheet" href="../resources/css/bootstrap.css">
+<link rel="stylesheet" href="../resources/css/animate.css">
+<link rel="stylesheet" href="../resources/css/font-awesome.min.css">
+<link rel="stylesheet" href="../resources/css/style.css">
+<link rel="stylesheet" href="../resources/css/login.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../resources/js/jquery.min.js"></script>
+<script src="../resources/js/bootstrap.min.js"></script>
 </head>
 <body>
-<%@ include file ="./includes/header.jsp" %>
 
-<div id="banner-carousel" class="banner-carousel carousel carousel-fade fade" data-ride="carousel" data-interval="10000">
-  <ol class="carousel-indicators">
-    <li class="active" data-slide-to="0" data-target="#banner-carousel"></li>
-    <li data-slide-to="1" data-target="#banner-carousel"></li>
-    <li data-slide-to="2" data-target="#banner-carousel"></li>
-  </ol> <!-- //Indicators -->
+	<c:if test="${member == null }">
+		<%@ include file="./includes/header.jsp"%>
+	</c:if>
+	<c:if test="${member == null }">
+		<div class="body_header">
+			<c:if test="${member.adminCheck == 1}">
+				<a href="/admin/adminPage">관리자 페이지</a>
+			</c:if>
+				<span>회원:${member.memberName}</span>
+				<span>충전금액:<fmt:formatNumber value="${member.memberMoney}"
+						pattern="\#,##,##" />
+				</span>
+				<span>포인트:<fmt:formatNumber value="${member.memberMoney}"
+						pattern="#,##" />
+				</span>
+		</div>
+	</c:if>
+
+	<div id="banner-carousel"
+		class="banner-carousel carousel carousel-fade fade"
+		data-ride="carousel" data-interval="10000">
+		<ol class="carousel-indicators">
+			<li class="active" data-slide-to="0" data-target="#banner-carousel"></li>
+			<li data-slide-to="1" data-target="#banner-carousel"></li>
+			<li data-slide-to="2" data-target="#banner-carousel"></li>
+		</ol>
+		<!-- //Indicators -->
 
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
 
-    <div class="item item-1 active">
-      <div class="container">
-        <div class="banner-contain">
-          <h1>꽃 Flowers</h1>
-          <p class="combo-kit">마음을 선물하세요</p>
-          <p class="description"></p>
-          <div class="combo-order">
-            가격 : 3000원 ~
-            <a href="#">
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i> 보러가기
-            </a>
-          </div>
-        </div>
-      </div>
-    </div><!--//item-->
+			<div class="item item-1 active">
+				<div class="container">
+					<div class="banner-contain">
+						<h1>꽃 Flowers</h1>
+						<p class="combo-kit">마음을 선물하세요</p>
+						<p class="description"></p>
+						<div class="combo-order">
+							가격 : 3000원 ~ <a href="#"> <i class="fa fa-shopping-bag"
+								aria-hidden="true"></i> 보러가기
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--//item-->
 
-    <div class="item item-2">
-      <div class="container">
-        <div class="banner-contain">
-          <h1>꽃다발 Bouquets</h1>
-          <p class="combo-kit">특별한 날, 꽃으로</p>
-          <p class="description">임명식, 졸업식, 입학식, 생일, 기념일 </p>
-          <div class="combo-order">
-            가격 : 10000원 ~
-            <a href="#">
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i> Order now
-            </a>
-          </div>
-        </div>
-      </div>
-    </div><!--//item-->
+			<div class="item item-2">
+				<div class="container">
+					<div class="banner-contain">
+						<h1>꽃다발 Bouquets</h1>
+						<p class="combo-kit">특별한 날, 꽃으로</p>
+						<p class="description">임명식, 졸업식, 입학식, 생일, 기념일</p>
+						<div class="combo-order">
+							가격 : 10000원 ~ <a href="#"> <i class="fa fa-shopping-bag"
+								aria-hidden="true"></i> Order now
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--//item-->
 
-   <div class="item item-3">
-      <div class="container">
-        <div class="banner-contain">
-          <h1>소품 Props</h1>
-          <p class="combo-kit"></p>
-          <p class="description"></p>
-          <div class="combo-order">
-            Price : 3000원 ~
-            <a href="#">
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i> Order now
-            </a>
-          </div>
-        </div>
-      </div>
-    </div><!--//item-->
-  </div><!--//carousel-inner-->
-</div><!--//carousel-->
-<%@ include file ="./includes/footer.jsp" %>
+			<div class="item item-3">
+				<div class="container">
+					<div class="banner-contain">
+						<h1>소품 Props</h1>
+						<p class="combo-kit"></p>
+						<p class="description"></p>
+						<div class="combo-order">
+							Price : 3000원 ~ <a href="#"> <i class="fa fa-shopping-bag"
+								aria-hidden="true"></i> Order now
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--//item-->
+		</div>
+		<!--//carousel-inner-->
+	</div>
+	<!--//carousel-->
+	<%@ include file="./includes/footer.jsp"%>
 </body>
 </html>
 

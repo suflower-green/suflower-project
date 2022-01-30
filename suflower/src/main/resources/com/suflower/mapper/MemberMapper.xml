@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.suflower.mapper.MemberMapper">
-	<insert id="memberJoin">
+	<insert id="memberJoin" >
 		insert into tbl_member
       (memberId,memberPassword,memberName,memberMail,memberAddr1,memberAddr2,memberAddr3,memberPhoneNum) 
       values
