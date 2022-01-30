@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../resources/css/font-awesome.min.css">
   <link rel="stylesheet" href="../resources/css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="../resources/js/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="../resources/js/bootstrap.min.js"></script>
 <head>
 <meta charset="UTF-8">
@@ -40,7 +40,7 @@
             <div class="main-menu collapse navbar-collapse" id="main-menu">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Home</a></li>
-                <li><a href="product/products">꽃다발</a></li>
+                <li><a href="/product/products">꽃다발</a></li>
                 <li><a href="#">소품샵</a></li>
                 <li><a href="board/blist">커뮤니티 게시판</a></li>
                 <li><a href="#">카카오 문의</a></li>
