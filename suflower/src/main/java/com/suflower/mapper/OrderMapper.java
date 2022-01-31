@@ -12,7 +12,7 @@ public interface OrderMapper {
 	
 	public void insert(OrderDTO order);
 	
-	public int update(Long orderId);
+	public int update(OrderDTO order);
 	
 	public int delete(Long orderId);
 	
