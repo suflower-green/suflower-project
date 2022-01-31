@@ -1,4 +1,3 @@
-<%@ page session="false"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -21,7 +20,7 @@
 	<c:if test="${member == null }">
 		<%@ include file="./includes/header.jsp"%>
 	</c:if>
-	<c:if test="${member == null }">
+	<c:if test="${member != null }">
 		<div class="body_header">
 			<c:if test="${member.adminCheck == 1}">
 				<a href="/admin/adminPage">관리자 페이지</a>

@@ -22,7 +22,7 @@
 	<select id="memberLogin"
 		resultType="com.suflower.domain.MemberDTO">
 
-		select memberId, memberName, adminCheck, memberMoney, memberPoint from tbl_member
+		select * from tbl_member
 		where memberId = #{memberId} and memberPassword= #{memberPassword}
 	</select>
 	
