@@ -75,10 +75,9 @@ public class MemberController {
 		@PostMapping("/login")
 		public String loginPOST(HttpServletRequest request, MemberDTO member, RedirectAttributes rttr) throws Exception{
 //			System.out.println("login 메서드 진입");
-			System.out.println("전달된 데이터 :" +member);
+//			System.out.println("전달된 데이터 :" +member);
 			HttpSession session = request.getSession();
 			MemberDTO lvo = memberservice.memberLogin(member);
-			
 			
 			if(lvo ==null) {
 				int result =0;
@@ -86,10 +85,7 @@ public class MemberController {
 				return "redirect:/member/login";
 			}
 			session.setAttribute("member", lvo);  // 일치하는 아이디, 비밀번호 경우 (로그인 성공)
-			System.out.println(member.getMemberName());
-			System.out.println(member.getMemberPoint());
-			System.out.println(member.getMemberMoney());
-			System.out.println(member);
+			System.out.println(lvo);
 			return "redirect:/";
 		}
 		
