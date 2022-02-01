@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
 <html>
 <head>
 <meta charset="utf-8">
@@ -46,7 +45,7 @@
 									<li><a href="#">소품샵</a></li>
 									<li><a href="board/blist">커뮤니티 게시판</a></li>
 									<li><a href="#">카카오 문의</a></li>
-									<li><a href="/board/session">session확인</a></li>
+									<li><a href="/board/session">세션확인</a></li>
 								</ul>
 							</div>
 						</nav>
@@ -63,20 +62,23 @@
 							</c:if>
 
 							<c:if test="${member != null }">
-									<c:if test="${member.adminCheck == 1}">
-										<a href="/admin/adminPage">관리자 페이지</a>
-									</c:if>
-									<a href="member/info"><i class="fa fa-user-o  fa-2x"
-										aria-hidden="true"></i></a> <span>회원:${member.memberName}</span> <span>충전금액:<fmt:formatNumber
-											value="${member.memberMoney}" pattern="#,##,##" />
-									</span> <span>포인트:<fmt:formatNumber
-											value="${member.memberMoney}" pattern="#,##" />
-									</span>
-									<a id="logout_button">로그아웃</a>
+								<c:if test="${member.adminCheck == 1}">
+									<a href="/admin/adminPage">관리자 페이지</a>
+								</c:if>
+								<a href="member/info"><i class="fa fa-user-o  fa-2x"
+									aria-hidden="true"></i></a>
+								<span>회원:${member.memberName}</span>
+								<span>충전금액:<fmt:formatNumber
+										value="${member.memberMoney}" pattern="#,##,##" />
+								</span>
+								<span>포인트:<fmt:formatNumber value="${member.memberMoney}"
+										pattern="#,##" />
+								</span>
+								<a id="logout_button">로그아웃</a>
 							</c:if>
 							<li class="basket"><a href="#"><i
 									class="fa fa-shopping-bag  fa-2x" aria-hidden="true"></i>
-								<div class="basket-count">5</div></a></li>
+									<div class="basket-count">5</div></a></li>
 							<li><a href="https://www.instagram.com/sueflower_/"
 								target="_blank"><i class="fa fa-instagram fa-2x"
 									aria-hidden="true"></i></a></li>
@@ -89,19 +91,19 @@
 		</div>
 		<!-- //header-menu -->
 	</header>
-
-<script>
-	/* 로그아웃 버튼 작동 */
-	$("#logout_button").click(function(){
-		$.ajax({
-			type: "POST",
-			url:"/member/logout.do",
-			success:function(data){
-				alert("로그아웃 성공");
-				document.location.reload();
-			}
+	<script>
+		/* 로그아웃 버튼 작동 */
+		$("#logout_button").click(function() {
+			$.ajax({
+				type : "POST",
+				url : "/member/logout.do",
+				success : function(data) {
+					alert("로그아웃 성공");
+					document.location.reload();
+				}
+			})
 		})
-	})
 	</script>
+
 </body>
 </html>

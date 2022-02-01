@@ -39,7 +39,11 @@ public class MemberServiceImpl implements MemberService {
 	
 	/* 내정보 수정 */
 	@Override
+<<<<<<< HEAD
 	public int memberUpdate(MemberDTO member) throws Exception {
+=======
+	public boolean updateMember(MemberDTO member) throws Exception {
+>>>>>>> 41b85b0c8f7b742cbeaac23024d0af2256f65696
 		return membermapper.memberUpdate(member);
 	}
 	

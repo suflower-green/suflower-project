@@ -16,126 +16,67 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
 	rel="stylesheet" />
 <style>
-<
-style type ="text /css ">.input_wrap {
-	padding: 5px 20px;
-}
-
-label {
-	display: block;
-	margin: 10px 0;
-	font-size: 20px;
-}
-
-input {
-	padding: 5px;
-	font-size: 17px;
-}
-
-textarea {
-	width: 800px;
-	height: 200px;
-	font-size: 15px;
-	padding: 10px;
-}
-
-.btn {
-	display: inline-block;
-	font-size: 22px;
-	padding: 6px 12px;
-	background-color: #fff;
-	border: 1px solid #ddd;
-	font-weight: 600;
-	width: 140px;
-	height: 41px;
-	line-height: 39px;
-	text-align: center;
-	margin-left: 30px;
-	cursor: pointer;
-}
-
-.btn_wrap {
-	padding-left: 80px;
-	margin-top: 50px;
-}
 </style>
 </head>
 <body>
-	<%-- 	<div class="input_wrap">
-		<label>게시판 번호</label>
-		<input name="boardNo" readonly="readonly" value='<c:out value="${pageInfo.boardNo}"/>' >
-	</div> 
-	<div class="input_wrap">
-		<label>작성자</label><input class="bi-person-circle me-1" name="boardWriter"
-			readonly="readonly" value='<c:out value="${pageInfo.boardWriter}"/>'>
-	<label>게시판 등록일</label>
-	<input name="boardRegDate" readonly="readonly"
-		value='<fmt:formatDate pattern="yyyy/MM/dd" value="${pageInfo.boardRegDate}"/>'>
-	<label>게시판 수정일</label>
-		<input name="boardUpdateDate" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${pageInfo.boardUpdateDate}"/>' >
-	</div>
-	<div class="input_wrap">
-		<input name="boardTitle" readonly="readonly"
-			value='<c:out value="${pageInfo.boardTitle}"/>'>
-	</div> --%>
-
-	<h3>
-		<c:out value="${pageInfo.boardTitle}" />
-	</h3>
-	<h4 class="bi-person-circle me-1">
+	<%@ include file="../includes/header.jsp"%>
+	<div class="text-center"
+		style="padding-left: 60px; padding-right: 60px; padding-bottom: 40px; padding-top: 40px">
+		<h3>
+			<c:out value="${pageInfo.boardTitle}" />
+		</h3>
+		<h5 class="bi-person-circle me-1">
 		<c:out value="${pageInfo.boardWriter}" />
-	</h4>
-	<h4>
 		<fmt:formatDate pattern="yyyy/MM/dd" value="${pageInfo.boardRegDate}" />
-	</h4>
-	<hr>
-	<div class="input_wrap">
-		<label>게시판 내용</label>
-		<textarea rows="3" name="boardContent" readonly="readonly"><c:out
-				value="${pageInfo.boardContent}" /></textarea>
+		</h5>
+		<h5></h5>
+		<hr>
+		<div style="font-size: 20px" class="input_wrap">
+			<textarea rows="3" name="boardContent" readonly="readonly"><c:out
+					value="${pageInfo.boardContent}" /></textarea>
+		</div>
+		<br>
+		<hr>
+
+		<div class="btn_wrap">
+			<a class="btn" id="blist_btn">목록 페이지</a> <a class="btn"
+				id="modify_btn">수정</a>
+		</div>
+
+		<form id="infoForm" action="/board/modify" method="get">
+			<input type="hidden" id="boardNo" name="boardNo"
+				value='<c:out value="${pageInfo.boardNo}"/>'> <input
+				`
+			type="hidden" name="pageNum"
+				value='<c:out value="${cri.pageNum}"/>'> <input
+				type="hidden" name="amount" value='<c:out value="${cri.amount}"/>'>
+			<input type="hidden" name="keyword" value="${cri.keyword }">
+		</form>
 	</div>
-	<br>
-	<hr>
-
-	<div class="btn_wrap">
-		<a class="btn" id="blist_btn">목록 페이지</a> <a class="btn"
-			id="modify_btn">수정</a>
-	</div>
-
-	<form id="infoForm" action="/board/modify" method="get">
-		<input type="hidden" id="boardNo" name="boardNo"
-			value='<c:out value="${pageInfo.boardNo}"/>'> <input`
-			type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'>
-		<input type="hidden" name="amount"
-			value='<c:out value="${cri.amount}"/>'> <input type="hidden"
-			name="keyword" value="${cri.keyword }">
-	</form>
-
+	<%@ include file="../includes/footer.jsp"%>
 
 	<!-- 스크립트부분 -->
-	<script type="text/javascript" src="/resources/js/reply.js"></script>
-	<script>
-		/* 		console.log("============");
-		 console.log("JS Test");
-		 var boardNoValue = '<c:out value="${board.boardNo}"/>';
+	<script type="text/javascript" src="/resources/js/replyjs/reply.js"></script>
+	<script type="text/javascript">
+		console.log("============");
+		console.log("JS Test");
+		var boardNoValue = '<c:out value="${board.boardNo}"/>';
+		
+		replyService.getList({boardNo:boardNoValue,pageNum:1},function(list){
+			for(var i=0 , len=list.length || 0; i<len; i++){
+				console.log(list[i]);
+			}
+		});
 
-		 replyService.add({
-		 replyContent : "JS Test",
-		 replyWriter : "Tester",
-		 boardNo : boardNoValue
-		 }, function(result) {
-		 alert("result" + result);
-		 });
+		$(document).ready(function() {
+			console.log(replyService);
 
-		 $(document).ready(function() {
-		 console.log(replyService);
+			var operForm = $("#operForm");
 
-		 var operForm = $("#operForm");
-
-		 $("button[data-oper='modify']").on("click", function(e) {
-		 operForm.attr("action", "/board/modify").submit();
-		 });
-		 }); */
+			$("button[data-oper='modify']").on("click", function(e) {
+				operForm.attr("action", "/board/modify").submit();
+			});
+		});
 
 		let form = $("#infoForm");
 		let mform = $("#modifyForm");

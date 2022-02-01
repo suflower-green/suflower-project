@@ -2,6 +2,8 @@ package com.suflower.controller;
 
 
 
+import java.security.Provider.Service;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -19,6 +21,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.suflower.domain.MemberDTO;
 import com.suflower.service.MemberService;
+
+import jdk.internal.org.jline.utils.Log;
+import lombok.extern.log4j.Log4j;
 
 
 @Controller
@@ -78,14 +83,18 @@ public class MemberController {
 //			System.out.println("전달된 데이터 :" +member);
 			HttpSession session = request.getSession();
 			MemberDTO lvo = memberservice.memberLogin(member);
+<<<<<<< HEAD
 			
 			if(lvo ==null) {
+=======
+
+			if(lvo == null) {
+>>>>>>> 41b85b0c8f7b742cbeaac23024d0af2256f65696
 				int result =0;
 				rttr.addFlashAttribute("result",result);
 				return "redirect:/member/login";
 			}
 			session.setAttribute("member", lvo);  // 일치하는 아이디, 비밀번호 경우 (로그인 성공)
-			System.out.println(lvo);
 			return "redirect:/";
 		}
 		
@@ -100,6 +109,7 @@ public class MemberController {
 			session.invalidate();
 			
 		}
+		
 		
 		// 내정보
 		@GetMapping("/info")
@@ -126,6 +136,7 @@ public class MemberController {
 		}
 		
 		@PostMapping("/update")
+<<<<<<< HEAD
 		public String memberUpdatePost(HttpServletRequest request, MemberDTO dto, RedirectAttributes rttr) throws Exception{
 			
 			String uri = null;
@@ -144,6 +155,27 @@ public class MemberController {
 				uri =  "redirect:/member/update";
 			}
 			return uri;
+=======
+		public String memberUpdatePost(HttpServletRequest request,MemberDTO member, RedirectAttributes rttr) throws Exception{
+			HttpSession session = request.getSession();
+			memberservice.updateMember(member);
+			rttr.addFlashAttribute("result", "success");
+			MemberDTO dto = memberservice.readMember(member);
+			session.setAttribute("member", dto);
+			logger.info("수정완료");
+			return "redirect:/member/info";
+//			HttpSession session = request.getSession();
+//			if (memberservice.updateMember(member)==null) {
+//				// update 성공
+//				rttr.addFlashAttribute("message","회원정보 수정 완료");
+//				request.getSession().setAttribute("memberId", member.getMemberId());
+//				return "redirect:/member/info";
+//			} else {
+//				// update 실패
+//				rttr.addFlashAttribute("message","회원 정보 수정 실패");
+//				return "redirect:/member/update";
+//			}
+>>>>>>> 41b85b0c8f7b742cbeaac23024d0af2256f65696
 		}
 		
 }

@@ -21,7 +21,6 @@
 	<!-- 로그인 -->
 	<select id="memberLogin"
 		resultType="com.suflower.domain.MemberDTO">
-
 		select * from tbl_member
 		where memberId = #{memberId} and memberPassword= #{memberPassword}
 	</select>
@@ -36,16 +35,17 @@
 		
 	</select>
 		
-	<!-- 	내정보 수정	 -->
-	<update id="memberUpdate">
+		<!-- 	내정보 수정	 -->
+	<update id="memberUpdate" >
 		update tbl_member 
-		set memberName=#{memberName},
-		memberPhoneNum = #{memberPhoneNum},
-		memberMail = #{memberMail},
+		set 
+		memberName=#{memberName},
+		memberMail=#{memberMail},
+		memberPhoneNum=#{memberPhoneNum},
 		memberAddr1=#{memberAddr1},
 		memberAddr2=#{memberAddr2},
 		memberAddr3=#{memberAddr3}
-		where memberId = #{memberId}
+		where memberId=#{memberId}
 		
 	</update>
 </mapper>
