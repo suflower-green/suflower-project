@@ -63,7 +63,7 @@ public class MemberMapperTest {
     	member.setMemberMail("수정된 이메일");
     	member.setMemberPhoneNum("010-1234-5678");
     	
-    	int count = service.memberUpdate(member);
+    	boolean count = service.updateMember(member);
     	log.info("UPDATE COUNT: " + count);
     	
     }
