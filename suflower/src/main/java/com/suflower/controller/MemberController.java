@@ -22,7 +22,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.suflower.domain.MemberDTO;
 import com.suflower.service.MemberService;
 
-import jdk.internal.org.jline.utils.Log;
 import lombok.extern.log4j.Log4j;
 
 
@@ -83,13 +82,8 @@ public class MemberController {
 //			System.out.println("전달된 데이터 :" +member);
 			HttpSession session = request.getSession();
 			MemberDTO lvo = memberservice.memberLogin(member);
-<<<<<<< HEAD
 			
 			if(lvo ==null) {
-=======
-
-			if(lvo == null) {
->>>>>>> 41b85b0c8f7b742cbeaac23024d0af2256f65696
 				int result =0;
 				rttr.addFlashAttribute("result",result);
 				return "redirect:/member/login";
@@ -136,26 +130,6 @@ public class MemberController {
 		}
 		
 		@PostMapping("/update")
-<<<<<<< HEAD
-		public String memberUpdatePost(HttpServletRequest request, MemberDTO dto, RedirectAttributes rttr) throws Exception{
-			
-			String uri = null;
-			HttpSession session = request.getSession();
-			System.out.println(memberservice.memberUpdate(dto));
-			if (memberservice.memberUpdate(dto)>0) {
-				// update 성공
-				System.out.println("member update 성공 ");
-				rttr.addFlashAttribute("message","회원정보 수정 완료");
-				request.getSession().setAttribute("memberId", dto.getMemberId());
-				uri =  "redirect:/member/info";
-			} else {
-				// update 실패
-				System.out.println("member update 실패 ");
-				rttr.addFlashAttribute("message","회원 정보 수정 실패");
-				uri =  "redirect:/member/update";
-			}
-			return uri;
-=======
 		public String memberUpdatePost(HttpServletRequest request,MemberDTO member, RedirectAttributes rttr) throws Exception{
 			HttpSession session = request.getSession();
 			memberservice.updateMember(member);
@@ -175,7 +149,6 @@ public class MemberController {
 //				rttr.addFlashAttribute("message","회원 정보 수정 실패");
 //				return "redirect:/member/update";
 //			}
->>>>>>> 41b85b0c8f7b742cbeaac23024d0af2256f65696
 		}
 		
 }

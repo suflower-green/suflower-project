@@ -18,11 +18,7 @@ public interface MemberService {
 	public MemberDTO readMember(MemberDTO member) throws Exception;
 	
 	//회원정보 수정
-<<<<<<< HEAD
-	public int memberUpdate(MemberDTO member) throws Exception;
-=======
 	public boolean updateMember(MemberDTO member) throws Exception;
->>>>>>> 41b85b0c8f7b742cbeaac23024d0af2256f65696
 	
 	//회원정보 삭제
 	public void deleteMember(MemberDTO vo);
