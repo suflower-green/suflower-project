@@ -2,6 +2,8 @@ package com.suflower.controller;
 
 
 
+import java.security.Provider.Service;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -9,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +20,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.suflower.domain.MemberDTO;
 import com.suflower.service.MemberService;
+
+import jdk.internal.org.jline.utils.Log;
+import lombok.extern.log4j.Log4j;
 
 
 @Controller
@@ -73,18 +79,16 @@ public class MemberController {
 		@PostMapping("/login")
 		public String loginPOST(HttpServletRequest request, MemberDTO member, RedirectAttributes rttr) throws Exception{
 //			System.out.println("login 메서드 진입");
-			System.out.println("전달된 데이터 :" +member);
+//			System.out.println("전달된 데이터 :" +member);
 			HttpSession session = request.getSession();
 			MemberDTO lvo = memberservice.memberLogin(member);
-			System.out.println(lvo);
 
-			if(lvo ==null) {
+			if(lvo == null) {
 				int result =0;
 				rttr.addFlashAttribute("result",result);
 				return "redirect:/member/login";
 			}
 			session.setAttribute("member", lvo);  // 일치하는 아이디, 비밀번호 경우 (로그인 성공)
-			System.out.println(lvo);
 			return "redirect:/";
 		}
 		
@@ -99,6 +103,7 @@ public class MemberController {
 			session.invalidate();
 			
 		}
+		
 		
 		// 내정보
 		@GetMapping("/info")
@@ -125,19 +130,25 @@ public class MemberController {
 		}
 		
 		@PostMapping("/update")
-		public String memberUpdatePost(HttpServletRequest request, MemberDTO member, RedirectAttributes rttr) throws Exception{
-			
+		public String memberUpdatePost(HttpServletRequest request,MemberDTO member, RedirectAttributes rttr) throws Exception{
 			HttpSession session = request.getSession();
-			if (memberservice.updateMember(member)>0) {
-				// update 성공
-				rttr.addFlashAttribute("message","회원정보 수정 완료");
-				request.getSession().setAttribute("memberId", member.getMemberId());
-				return "redirect:/member/info";
-			} else {
-				// update 실패
-				rttr.addFlashAttribute("message","회원 정보 수정 실패");
-				return "redirect:/member/update";
-			}
+			memberservice.updateMember(member);
+			rttr.addFlashAttribute("result", "success");
+			MemberDTO dto = memberservice.readMember(member);
+			session.setAttribute("member", dto);
+			logger.info("수정완료");
+			return "redirect:/member/info";
+//			HttpSession session = request.getSession();
+//			if (memberservice.updateMember(member)==null) {
+//				// update 성공
+//				rttr.addFlashAttribute("message","회원정보 수정 완료");
+//				request.getSession().setAttribute("memberId", member.getMemberId());
+//				return "redirect:/member/info";
+//			} else {
+//				// update 실패
+//				rttr.addFlashAttribute("message","회원 정보 수정 실패");
+//				return "redirect:/member/update";
+//			}
 		}
 		
 }
