@@ -1,15 +1,5 @@
 @charset "UTF-8";
 
-.body_header{
-	height: 50px;
-	background-color: black;
-	
-}
-.body_header>span{
-	color: white;
-	font-size: 16px;
-	padding-right: 200px;
-}
 /* 로그인 실패시 경고글 */
 .login_warn{
     margin-top: 30px;

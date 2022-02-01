@@ -1,4 +1,3 @@
-<%@ page session="false"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -15,26 +14,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../resources/js/jquery.min.js"></script>
 <script src="../resources/js/bootstrap.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 </head>
 <body>
-
-	<c:if test="${member == null }">
 		<%@ include file="./includes/header.jsp"%>
-	</c:if>
-	<c:if test="${member == null }">
-		<div class="body_header">
-			<c:if test="${member.adminCheck == 1}">
-				<a href="/admin/adminPage">관리자 페이지</a>
-			</c:if>
-				<span>회원:${member.memberName}</span>
-				<span>충전금액:<fmt:formatNumber value="${member.memberMoney}"
-						pattern="\#,##,##" />
-				</span>
-				<span>포인트:<fmt:formatNumber value="${member.memberMoney}"
-						pattern="#,##" />
-				</span>
-		</div>
-	</c:if>
+	
 
 	<div id="banner-carousel"
 		class="banner-carousel carousel carousel-fade fade"
