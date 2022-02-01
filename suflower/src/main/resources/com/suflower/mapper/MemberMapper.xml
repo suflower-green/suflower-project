@@ -21,8 +21,7 @@
 	<!-- 로그인 -->
 	<select id="memberLogin"
 		resultType="com.suflower.domain.MemberDTO">
-
-		select memberId, memberName, adminCheck, memberMoney, memberPoint from tbl_member
+		select memberPassword,memberId, memberName, adminCheck,memberMail, memberMoney, memberPoint from tbl_member
 		where memberId = #{memberId} and memberPassword= #{memberPassword}
 	</select>
 	

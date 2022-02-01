@@ -30,7 +30,7 @@ public class ReplyController {
 	ReplyService rservice;
 	
 	// 댓글조회
-	@PostMapping(value="/newReply", consumes="application/json",produces= {MediaType.TEXT_PLAIN_VALUE})
+	@PostMapping(value="/new", consumes="application/json",produces= {MediaType.TEXT_PLAIN_VALUE})
 	public ResponseEntity<String> create(@RequestBody ReplyDTO dto){ // RequestBody를 적용해서 Json 데이터를 ReplyDTO 타입으로 변환
 		log.info("Reply DTO = "+dto);
 		int insertCount = rservice.register(dto);

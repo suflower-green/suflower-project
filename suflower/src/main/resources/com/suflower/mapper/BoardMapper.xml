@@ -6,8 +6,10 @@
 
 	<!-- 작성 -->
 	<insert id="bwrite">
-		insert into tbl_board(boardNo,boardTitle, boardContent,boardWriter)
-		values (SEQ_BOARD.nextval,#{boardTitle}, #{boardContent},#{boardWriter})
+		insert into tbl_board(boardNo,boardTitle,
+		boardContent,boardWriter)
+		values (SEQ_BOARD.nextval,#{boardTitle},
+		#{boardContent},#{boardWriter})
 	</insert>
 
 	<!-- blist조회 -->
@@ -18,24 +20,26 @@
 	<!-- 게시판 조회 -->
 	<select id="getPage" resultType="com.suflower.domain.BoardDTO">
 		select * from tbl_board
-		where boardNo = #{boardNo}
+		where
+		boardNo = #{boardNo}
 	</select>
 
 	<!-- 게시물 페이징 조회 -->
-    <select id="getListPaging" resultType="com.suflower.domain.BoardDTO">
+	<select id="getListPaging" resultType="com.suflower.domain.BoardDTO">
     <![CDATA[
-        select boardNo, boardTitle, boardContent, boardWriter, boardRegDate, boardUpdateDate from(
-                select /*+INDEX_DESC(tbl_board pk_board) */ rownum as rn, boardNo, boardTitle, boardContent, boardWriter, boardRegDate, boardUpdateDate
+        select boardNo, boardTitle, boardContent, boardWriter, boardRegdate, boardUpdateDate from(
+                select /*+INDEX_DESC(tbl_board pk_board) */ rownum  as rn, boardNo, boardTitle, boardContent, boardWriter, boardRegdate, boardUpdateDate
                 from tbl_board where rownum <= #{pageNum} * #{amount} 
-    ]]>            
-                <if test="keyword != null">
-                    and boardTitle like '%'||#{keyword}||'%' 
-                </if>
+    ]]>
+		<if test="keyword != null">
+			and boardTitle like '%'||#{keyword}||'%'
+		</if>
     <![CDATA[
                 )
         where rn > (#{pageNum} -1) * #{amount}
-    ]]>
     
+    ]]>
+
 	</select>
 
 	<!-- 게시물 총 갯수 -->
@@ -52,7 +56,8 @@
 		update tbl_board set
 		boardTitle=#{boardTitle},
 		boardContent=#{boardContent},
-		boardUpdateDate = sysdate where boardNo = #{boardNo}
+		boardUpdateDate = sysdate where boardNo =
+		#{boardNo}
 	</update>
 
 	<!-- 게시판 삭제 -->

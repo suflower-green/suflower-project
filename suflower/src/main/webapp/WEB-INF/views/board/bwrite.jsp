@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@ include file="../includes/header.jsp"%>
 	<form action="/board/bwrite" method="post">
 		<div style={border: 0}>
 			<label>Writer</label>
@@ -22,7 +23,7 @@
 		</div>
 		<button class="btn"> 전송 </button>
 	</form>
-
 <a href="/">[Home]</a>
+	<%@ include file="../includes/footer.jsp"%>
 </body>
 </html>
