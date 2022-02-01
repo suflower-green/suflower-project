@@ -1,12 +1,8 @@
-<<<<<<< HEAD
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-=======
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
->>>>>>> 07a57c2398a520db13c037b7c5e4cf6ee686ac99
 <html>
 <head>
 <meta charset="utf-8">
@@ -67,7 +63,6 @@
 							</c:if>
 
 							<c:if test="${member != null }">
-								<div class="body_header1">
 									<c:if test="${member.adminCheck == 1}">
 										<a href="/admin/adminPage">관리자 페이지</a>
 									</c:if>
@@ -77,7 +72,7 @@
 									</span> <span>포인트:<fmt:formatNumber
 											value="${member.memberMoney}" pattern="#,##" />
 									</span>
-								</div>
+									<a id="logout_button">로그아웃</a>
 							</c:if>
 							<li class="basket"><a href="#"><i
 									class="fa fa-shopping-bag  fa-2x" aria-hidden="true"></i>
@@ -95,6 +90,18 @@
 		<!-- //header-menu -->
 	</header>
 
-
+<script>
+	/* 로그아웃 버튼 작동 */
+	$("#logout_button").click(function(){
+		$.ajax({
+			type: "POST",
+			url:"/member/logout.do",
+			success:function(data){
+				alert("로그아웃 성공");
+				document.location.reload();
+			}
+		})
+	})
+	</script>
 </body>
 </html>

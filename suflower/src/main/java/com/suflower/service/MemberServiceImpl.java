@@ -39,7 +39,7 @@ public class MemberServiceImpl implements MemberService {
 	
 	/* 내정보 수정 */
 	@Override
-	public int updateMember(MemberDTO member) throws Exception {
+	public int memberUpdate(MemberDTO member) throws Exception {
 		return membermapper.memberUpdate(member);
 	}
 	

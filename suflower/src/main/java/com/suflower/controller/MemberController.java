@@ -126,19 +126,24 @@ public class MemberController {
 		}
 		
 		@PostMapping("/update")
-		public String memberUpdatePost(HttpServletRequest request, MemberDTO member, RedirectAttributes rttr) throws Exception{
+		public String memberUpdatePost(HttpServletRequest request, MemberDTO dto, RedirectAttributes rttr) throws Exception{
 			
+			String uri = null;
 			HttpSession session = request.getSession();
-			if (memberservice.updateMember(member)>0) {
+			System.out.println(memberservice.memberUpdate(dto));
+			if (memberservice.memberUpdate(dto)>0) {
 				// update 성공
+				System.out.println("member update 성공 ");
 				rttr.addFlashAttribute("message","회원정보 수정 완료");
-				request.getSession().setAttribute("memberId", member.getMemberId());
-				return "redirect:/member/info";
+				request.getSession().setAttribute("memberId", dto.getMemberId());
+				uri =  "redirect:/member/info";
 			} else {
 				// update 실패
+				System.out.println("member update 실패 ");
 				rttr.addFlashAttribute("message","회원 정보 수정 실패");
-				return "redirect:/member/update";
+				uri =  "redirect:/member/update";
 			}
+			return uri;
 		}
 		
 }
