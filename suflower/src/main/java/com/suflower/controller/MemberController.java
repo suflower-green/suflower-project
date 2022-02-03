@@ -112,14 +112,14 @@ public class MemberController {
 			
 		}
 		
-		@PostMapping("/info")
-		public String memberInfoPost(HttpServletRequest request, MemberDTO member, RedirectAttributes rttr) throws Exception{
-			
-			HttpSession session = request.getSession();
-			MemberDTO dto = memberservice.readMember(member);
-			session.setAttribute("member", dto);
-			return "redirect:/member/info";
-		}
+//		@PostMapping("/info")
+//		public String memberInfoPost(HttpServletRequest request, MemberDTO member, RedirectAttributes rttr) throws Exception{
+//			
+//			HttpSession session = request.getSession();
+//			MemberDTO dto = memberservice.readMember(member);
+//			session.setAttribute("info", dto);
+//			return "redirect:/member/info";
+//		}
 
 		
 		/* 정보 수정 */
@@ -134,21 +134,9 @@ public class MemberController {
 			HttpSession session = request.getSession();
 			memberservice.updateMember(member);
 			rttr.addFlashAttribute("result", "success");
-			MemberDTO dto = memberservice.readMember(member);
-			session.setAttribute("member", dto);
+			session.setAttribute("member", member);
 			logger.info("수정완료");
-			return "redirect:/member/info";
-//			HttpSession session = request.getSession();
-//			if (memberservice.updateMember(member)==null) {
-//				// update 성공
-//				rttr.addFlashAttribute("message","회원정보 수정 완료");
-//				request.getSession().setAttribute("memberId", member.getMemberId());
-//				return "redirect:/member/info";
-//			} else {
-//				// update 실패
-//				rttr.addFlashAttribute("message","회원 정보 수정 실패");
-//				return "redirect:/member/update";
-//			}
+			return "member/info";
 		}
 		
 }
