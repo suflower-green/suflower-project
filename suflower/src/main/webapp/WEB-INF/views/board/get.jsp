@@ -79,8 +79,6 @@
 		<div class="col-lg-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<i class="fa fa-comments fa-fw" ><c:out value="${member.memberId}"/></i>
-						<input  id="InputReplyer" value="${member.memberId}" readonly="readonly"/>
 					<button id='addReplyBtn' class="btn btn-primary btn-xs pull-right">댓글 등록</button>
 				</div>
 				<div class="panel-body">
