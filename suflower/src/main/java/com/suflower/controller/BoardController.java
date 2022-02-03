@@ -32,13 +32,10 @@ public class BoardController {
 	
 	private static final Logger log = LoggerFactory.getLogger(BoardController.class);
 	
-	@Autowired
 	BoardService bservice;
 
-	@Autowired
 	MemberService mservice;
 	
-	@Autowired
 	ReplyService rservice;
 
 	// 세션 확인용

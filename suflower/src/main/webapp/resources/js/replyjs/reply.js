@@ -24,7 +24,7 @@ var replyService = (function() {
 	}
 	function getList(param, callback, error) {
 		var boardNo = param.boardNo;
-		var pageNum = param.pageNum;
+		var pageNum = param.pageNum||1;
 		$.getJSON("/reply/pages/" + boardNo + "/" + pageNum + ".json",
 			function(data) {
 				if (callback) {
