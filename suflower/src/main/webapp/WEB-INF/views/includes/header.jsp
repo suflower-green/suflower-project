@@ -56,7 +56,7 @@
               </a>
             </li>
             <li><a href="member/login"><i class="fa fa-user-o  fa-2x" aria-hidden="true"></i></a></li>
-            <li class="basket"><a href="#"><i class="fa fa-shopping-bag  fa-2x" aria-hidden="true"></i><div class="basket-count">5</div></a></li>
+            <li class="basket"><a href="/cart"><i class="fa fa-shopping-bag  fa-2x" aria-hidden="true"></i><div class="basket-count">5</div></a></li>
             <li><a href="https://www.instagram.com/sueflower_/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
           </ul>
         </div>

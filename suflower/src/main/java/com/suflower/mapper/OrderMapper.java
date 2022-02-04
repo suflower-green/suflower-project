@@ -14,6 +14,5 @@ public interface OrderMapper {
 	
 	public int update(OrderDTO order);
 	
-	public int delete(Long orderId);
-	
+	public int delete(Long orderId);	
 }

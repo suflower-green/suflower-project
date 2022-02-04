@@ -19,10 +19,10 @@ public class OrderMapperTests {
 	@Setter(onMethod_ = @Autowired)
 	private OrderMapper mapper;
 	
-//	@Test
-//	public void testOrderList() {
-//		mapper.getList().forEach(order -> log.info(order));
-//	}
+	@Test
+	public void testOrderList() {
+		mapper.getList().forEach(order -> log.info(order));
+	}
 	
 //	@Test
 //	public void testInsert() {

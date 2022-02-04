@@ -39,51 +39,51 @@
       <div class="choose-price">
           ${product.productPrice}원
         </div>
-      <!-- <p class="description-full">
-        Half Jacket + Skiny Trousers + Boot leather
-      </p>
-      <p class="product-about">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry
-Lorem Ipsum is simply dummy text of the printing
- and typesetting industry
-      </p> -->
       <hr>
-      <div class="choose">
-        <div class="choose-size">
-          희망 수령일
-          <div class="choose-active">
-
-            <input type="date"/>
-            <!-- <input type="radio" id="s1" name="size" />
-            <label for="s1" class="size">오전</label>
-            or
-            <input type="radio" id="s2" name="size" />
-            <label for="s2" class="size">오후</label> -->
-            
-          </div>
-        </div> <!-- //choose-size -->
-        <div class="choose-separate"></div>
-        <div class="choose-quanity">
-          수량
-          <div class="choose-active">
-            <button class="plus">+</button>
-            <input type="text" readonly name="count-items" id="count-items" value="1" class="count-items">
-            <button class="minus">-</button>
-          </div>
-        </div> <!-- //chose-quanity -->
-      </div> <!-- //choose -->
-      <hr>
-      <div class="choose">
+      <form action="/cart/insert.do" method="post">
+      	<input type="hidden" name="productId" value="${cart.productId}"/>
+	      <div class="choose">
+	        <div class="choose-size">
+	          희망 수령일
+	          <div class="choose-active">
+	
+	            <input type="date" name="reservationDate"/>
+	            <!-- 
+	            <input type="radio" id="s1" name="size" />
+	            <label for="s1" class="size">오전</label>
+	            or
+	            <input type="radio" id="s2" name="size" />
+	            <label for="s2" class="size">오후</label> -->
+	            
+	          </div>
+	        </div> <!-- //choose-size -->
+	        <div class="choose-separate"></div>
+	        <div class="choose-quantity">
+	          수량 <select name="quantity">
+	          	<c:forEach begin="1" end="10" var="i">
+	          		<option value="${i}">${i}</option>
+	          	</c:forEach>
+	          </select>
+	        </div> <!-- //choose-quantity -->
+	      </div> <!-- //choose -->
+      
+      	<hr>
+      	<div class="choose">
         
         <div class="choose-order">
-          <i class="fa fa-cart-plus" aria-hidden="true"></i>
-          <i class="fa fa-heart-o" aria-hidden="true"></i>
-          <input type="submit" class="submit-order" name="submit-order" value="주문하기" onclick="location.href='/checkout.html';">
+          <a class="btn_cart">장바구니 담기</a>
+          <a class="btn_buy">바로 구매하기</a>
+          <!-- <i class="fa fa-cart-plus" aria-hidden="true"></i> -->
+          <!-- <i class="fa fa-heart-o" aria-hidden="true"></i> -->
+          <!-- <input type="submit" class="submit-order" name="submit-order" value="바로 구매하기"> -->
         </div>
-      </div><!-- //chose -->
+        
+      	</div><!-- //chose -->
+      </form>
     </div> <!-- //col -->
   </div> <!-- //container -->
 </div> <!-- //product-show -->
+
 
 
 

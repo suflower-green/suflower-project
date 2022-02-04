@@ -17,7 +17,7 @@ public interface MemberMapper {
 	/* 로그인 */
 	public MemberDTO memberLogin(MemberDTO member);
 
-	@Select("select * from tbl_member ")
+//	@Select("select * from tbl_product ")
 	public List<MemberDTO> memberList();
 	
 	// 내정보 확인
