@@ -8,8 +8,8 @@
 	<insert id="bwrite">
 		insert into tbl_board(boardNo,boardTitle,
 		boardContent,boardWriter)
-		values (SEQ_BOARD.nextval,#{boardTitle},
-		#{boardContent},#{boardWriter})
+		values (SEQ_BOARD.nextval,#{boardTitle,jdbcType=VARCHAR},
+		#{boardContent,jdbcType=VARCHAR},#{boardWriter,jdbcType=VARCHAR})
 	</insert>
 
 	<!-- blist조회 -->

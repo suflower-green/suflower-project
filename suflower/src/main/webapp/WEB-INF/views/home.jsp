@@ -20,7 +20,7 @@
   crossorigin="anonymous"></script>
 </head>
 <body>
-		<%@ include file="./includes/header.jsp"%>
+<%@ include file="./includes/header.jsp"%>
 	
 
 	<div id="banner-carousel"

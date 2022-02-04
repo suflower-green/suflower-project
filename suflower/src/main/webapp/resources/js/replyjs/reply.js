@@ -1,13 +1,12 @@
 console.log("Reply Module log ");
 
 var replyService = (function() {
-	function add(reply, callback, error) {
+	function add(replyContent, callback, error) {
 		console.log(" add reply .............");
-
 		$.ajax({
 			type: 'post',
 			url: '/reply/new',
-			data: JSON.stringify(reply),
+			data: JSON.stringify(replyContent),
 			contentType: "application/json; charset=utf-8",
 			success: function(result, status, xhr) {
 				if (callback) {

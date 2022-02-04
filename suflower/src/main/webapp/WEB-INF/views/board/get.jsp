@@ -1,5 +1,5 @@
-<%@ page session="false" language="java"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java"
+contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
@@ -29,8 +29,7 @@
 		<h5></h5>
 		<hr>
 		<div style="font-size: 20px" class="input_wrap">
-			<textarea rows="3" name="boardContent" readonly="readonly"><c:out
-					value="${pageInfo.boardContent}" /></textarea>
+						<textarea name="boardContent" class="form-control" rows="2" readonly="readonly"><c:out value="${pageInfo.boardContent}" /> </textarea>
 		</div>
 		<br>
 		<hr>
@@ -78,12 +77,27 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
+				<c:if test="${member.memberId==null}">
 				<div class="panel-heading">
-					<button id='addReplyBtn' class="btn btn-primary btn-xs pull-right">댓글 등록</button>
+						<i class="fa fa-comments fa-fw"></i> 로그인 후 이용해주세요
+					<button id="addReplyBtn" class="btn btn-primary btn-xs pull-right">댓글 등록</button>
+						<input id="InputReplyer" type="hidden" value="${member.memberId}"/>
 				</div>
 				<div class="panel-body">
-						<input id="InputReplyContent"class="form-control" placeholder="댓글을 입력하세요" />
+						<textarea id="InputReplyContent" class="form-control" rows="2" placeholder="로그인 후 이용해주세요" readonly="readonly"></textarea>
 				</div>
+				</c:if>
+				
+				<c:if test="${member.memberId!=null}">
+				<div class="panel-heading">
+					<button id="addReplyBtn" class="btn btn-primary btn-xs pull-right">댓글 등록</button>
+						<i class="fa fa-comments fa-fw"></i>${member.memberId}
+						<input id="InputReplyer" type="hidden" value="${member.memberId}"/>
+				</div>
+				<div class="panel-body">
+						<textarea id="InputReplyContent" class="form-control" rows="2" placeholder="댓글을 입력하세요"></textarea>
+				</div>
+				</c:if>
 			</div>
 		</div>
 	</div>
@@ -114,19 +128,27 @@
 			form.submit();
 		});
 		
-
- 		$("#addReplyBtn").on("click",function(e){
+		$(".chat").on("click",function(e){
+			var replyNo=$(this).data("replyNo");
+			console.log(replyNo);
+		});
+		
+		//댓글 추가버튼 
+		 $("#addReplyBtn").on("click",function(e){
+			 console.log($("#InputReplyContent").val())
+			 console.log($("#InputReplyer").val())
 			var replyContent = {
 					replyContent : $("#InputReplyContent").val(),
-					replyer: $("#InputReplyer").val(),
+					replyWriter: $("#InputReplyer").val(),
 					boardNo:boardNoValue
 					};// replyContent
 					replyService.add(replyContent,function(result){
-						alert(result);
-						
+						alert("댓글 작성 완료");
+						showList(1);
+						location.reload();
 					});
-		});	 
-		 
+		});	  
+		
 		$(document).ready(function() {
 			
 			var boardNoValue='<c:out value="${pageInfo.boardNo}"/>';

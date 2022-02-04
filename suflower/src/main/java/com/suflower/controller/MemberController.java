@@ -114,7 +114,6 @@ public class MemberController {
 		
 		@PostMapping("/info")
 		public String memberInfoPost(HttpServletRequest request, MemberDTO member, RedirectAttributes rttr) throws Exception{
-			
 			HttpSession session = request.getSession();
 			MemberDTO dto = memberservice.readMember(member);
 			session.setAttribute("member", dto);
