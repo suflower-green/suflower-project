@@ -22,7 +22,6 @@
 <body>
 <%@ include file="./includes/header.jsp"%>
 	
-
 	<div id="banner-carousel"
 		class="banner-carousel carousel carousel-fade fade"
 		data-ride="carousel" data-interval="10000">

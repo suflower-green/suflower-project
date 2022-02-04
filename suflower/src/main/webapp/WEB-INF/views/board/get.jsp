@@ -144,7 +144,6 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 					};// replyContent
 					replyService.add(replyContent,function(result){
 						alert("댓글 작성 완료");
-						showList(1);
 						location.reload();
 					});
 		});	  
