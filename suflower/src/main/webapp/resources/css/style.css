@@ -20,7 +20,7 @@ ul {
   margin: 0; }
 
 body {
-  background-color: #ffffff;
+  background-color: #f4f6f8;
   font-family: "HarmoniaSansProCyr"; }
 
 header {
@@ -117,7 +117,7 @@ header {
   background-color: #f1f1f3; }
 
 .item-1 {
-  /* background-image: url(../img/slider-img.png); */
+  background-image: url(../img/tulip.png);
   background-position: right top;
   background-repeat: no-repeat;
   background-size: contain; }
@@ -732,6 +732,13 @@ hr {
   display: inline-block;
   margin-left: 21px; }
 
+.choose .size {
+  display: inline-block;
+  width: 15px;
+  height: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0; }
 
 input[type="radio"] {
   display: none; }
@@ -741,7 +748,7 @@ input[type="radio"]:checked + label.size {
   color: #ff5912; }
 
 input[type="text"].count-items {
-  width: 100px;
+  width: 15px;
   text-align: center;
   padding: 0;
   border: none;
@@ -766,8 +773,8 @@ input[type="text"].count-items {
   font-size: 20px; }
 
 input.total {
-  
-  text-align: left;
+  width: 40px;
+  text-align: right;
   border: none; }
 
 .choose-order i {

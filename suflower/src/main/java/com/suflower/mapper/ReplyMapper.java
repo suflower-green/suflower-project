@@ -10,13 +10,13 @@ import com.suflower.domain.ReplyDTO;
 public interface ReplyMapper {
 	
 	// 댓글 입력
-	public int insert(ReplyDTO vo);
+	public int insert(ReplyDTO dto);
 
 	// 특정한 댓글 읽기
-	public ReplyDTO read(Long replyNo);
+	public ReplyDTO read(Long boardNo);
 
 	//댓글 삭제
-	public int delete (Long replyNo);
+	public int delete (Long boardNo);
 	
 	// 댓글 수정
 	public int update(ReplyDTO reply);

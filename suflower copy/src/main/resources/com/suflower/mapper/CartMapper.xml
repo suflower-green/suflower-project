@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mynatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.suflower.mapper.CartMapper">
+	
+	<!-- 장바구니에 담기-->
+	<insert id="insert">
+		insert into tbl_cart(cartId, memberId, productId, quantity) 
+		values(seq_cart.nextval, #{memberId}, #{productId}, #{quantity})
+	</insert>
+	
+	<!-- 장바구니 리스트 -->
+	<select id="getList" parameterType="String" resultType="com.suflower.domain.CartDTO">
+		
+		select cartId, c.productId, c.memberId, m.memberName, p.productName, c.quantity, 
+		productPrice, (productPrice*quantity) totalPrice
+		from tbl_member m, tbl_cart c, tbl_product p
+		where m.memberId=c.memberId and c.productId=p.productId and c.memberId='jaek1997'
+        order by cartId
+        
+	</select> 
+	
+	<select id="sumMoney" resultType="int">
+		select nvl(sum(productPrice*quantity),0)
+		from tbl_cart c, tbl_product p
+		where c.productId=p.productId and memberId=#{memberId}
+	</select>
+	
+	<select id="cartMoney" resultType="com.suflower.domain.CartDTO">
+		select productName, sum(productPrice*quantity) totalPrice
+		from tbl_cart c, tbl_product p
+		where c.productId=p.productId
+		group by productName
+		order by productName
+	</select>
+	
+	
+	
+	
+</mapper>
+	

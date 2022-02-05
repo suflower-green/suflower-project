@@ -17,13 +17,13 @@ public interface MemberMapper {
 	/* 로그인 */
 	public MemberDTO memberLogin(MemberDTO member);
 
-//	@Select("select * from tbl_product ")
+	@Select("select * from tbl_member ")
 	public List<MemberDTO> memberList();
 	
 	// 내정보 확인
 	public MemberDTO memberInfo(MemberDTO member);
 	
 	// 내정보 수정
-	public int memberUpdate(MemberDTO member);
+	public boolean memberUpdate(MemberDTO member);
 
 }

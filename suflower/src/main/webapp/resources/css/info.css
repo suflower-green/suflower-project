@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 30px;
+}
+
+.info_member{
+	text-align: center;
+}
+
+.info_member_tr{
+}
