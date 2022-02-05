@@ -16,6 +16,7 @@ import com.suflower.domain.BoardDTO;
 import com.suflower.domain.Criteria;
 import com.suflower.domain.MemberDTO;
 import com.suflower.domain.PageMakerDTO;
+import com.suflower.domain.ReplyDTO;
 import com.suflower.service.BoardService;
 import com.suflower.service.MemberService;
 import com.suflower.service.ReplyService;
@@ -55,10 +56,11 @@ public class BoardController {
 	
 	// 게시글 조회
 	@GetMapping("/get")
-	public void boardGetPageGET(long boardNo, Model model, Criteria cri) {
+	public void boardGetPageGET(long boardNo, Model model, Criteria cri,ReplyDTO replydto) {
 		System.out.println("게시글 진입");
 		model.addAttribute("pageInfo", bservice.getPage(boardNo));
 		model.addAttribute("cri", cri);
+		model.addAttribute("reply",replydto);
 	}
 
 	// 게시글 삭제

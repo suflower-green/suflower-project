@@ -11,9 +11,13 @@
   <link rel="stylesheet" href="../resources/css/font-awesome.min.css">
   <link rel="stylesheet" href="../resources/css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../resources/js/jquery.min.js"></script>
   <script src="../resources/js/bootstrap.min.js"></script>
+  <!-- 썸머노트 추가 -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 </head>
 
 

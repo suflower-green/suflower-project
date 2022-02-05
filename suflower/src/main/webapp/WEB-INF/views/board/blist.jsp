@@ -14,10 +14,9 @@
 	integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7"
 	crossorigin="anonymous">
 </head>
+<%@ include file="../includes/header.jsp"%>
 
 <body>
-
-<%@ include file="../includes/header.jsp"%>
 
 
 	<div class="text-center"
@@ -94,7 +93,6 @@
 	<script type="text/javascript">
 		// 등록 완료 alert function 
 		$(document).ready(function() {
-
 			var result = '<c:out value="${result}"/>';
 			checkAlert(result);
 			function checkAlert(result) {

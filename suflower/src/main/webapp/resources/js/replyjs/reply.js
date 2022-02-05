@@ -1,6 +1,21 @@
 console.log("Reply Module log ");
 
 var replyService = (function() {
+	function getList(param, callback, error) {
+		var boardNo = param.boardNo;
+		var pageNum = param.pageNum||1;
+		$.getJSON("/reply/pages/" + boardNo + "/" + pageNum + ".json",
+			function(data) {
+				if (callback) {
+					callback(data);
+				}
+			}).fail(function(xhr, status, err) {
+				if (error) {
+					error();
+				}
+			});
+	}
+	
 	function add(replyContent, callback, error) {
 		console.log(" add reply .............");
 		$.ajax({
@@ -21,24 +36,28 @@ var replyService = (function() {
 			}
 		})
 	}
-	function getList(param, callback, error) {
-		var boardNo = param.boardNo;
-		var pageNum = param.pageNum||1;
-		$.getJSON("/reply/pages/" + boardNo + "/" + pageNum + ".json",
-			function(data) {
-				if (callback) {
-					callback(data);
+	
+	function remove(replyNo,callback,error){
+		$.ajax({
+			type:'delete',
+			url:'/reply/'+replyNo,
+			success:function(deleteResult,status,xhr){
+				if(callback){
+					callback(deleteResult);
 				}
-			}).fail(function(xhr, status, err) {
-				if (error) {
-					error();
+			},
+			error : function(xhr,status,er){
+				if(error){
+					error(er);
 				}
-			});
-		console.log("콘솔 보드넘버 확인 "+boardNo+"< 이게값임");
-		console.log("콘솔 페이지넘버 확인 "+pageNum+"< 이게값임");
+			}
+		});
 	}
+	
+	
 	return {
 		add: add,
 		getList: getList,
+		remove : remove
 	};
 })();

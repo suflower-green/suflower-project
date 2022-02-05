@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -6,40 +7,45 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
- <script type="text/javascript" src="../resource/smartEditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 	<%@ include file="../includes/header.jsp"%>
 	<form action="/board/bwrite" method="post">
-		<div style="border:"0}>
+		<div style="padding-left: 110px; padding-right: 110px; padding-bottom: 40px; padding-top: 40px; content: center">
 			<div class="input_wrap">
-				<label>Title</label> <input name="boardTitle">
+				<textarea name="boardTitle" class="form-control" rows="2" placeholder="제목을 입력하세요"></textarea>
+				<br>
 			</div>
-			<div id="summernote"></div>
-			<textarea class="form-control" name="boardContent" id="boardContent"
-				style="width: 90%; height: 500px;"></textarea>
+			<textarea name="boardContent" id="boardContent" ></textarea>
+			<button type="submit" class="btn btn-outline-secondary pull-center">전송</button>
 		</div>
-	
-		<button class="btn">전송</button>
-		<input name="boardWriter" value="${member.memberId}" type="hidden" />
+		<input type="hidden" name="boardWriter" value="${member.memberId}" />
+
 	</form>
-	<table>
-		<tr>
-			<th>내용</th>
-			<td><textarea id="popContent" name="popContent" cols="108"
-					rows="15"></textarea></td>
-		</tr>
-		</table>
 	<%@ include file="../includes/footer.jsp"%>
 
 </body>
 <script type="text/javascript">
-var oEditors = [];
-	nhn.husky.EZCreator.createInIFrame({
-		oAppRef : oEditors,
-		elPlaceHolder : "popContent", //textarea ID
-		sSkinURI : "../resource/smartEditor/SmartEditor2Skin.html", //skin경로
-		fCreator : "createSEditor2",
-	});
+
+	$(document).ready(function() {
+		$('#boardContent').summernote({
+						height : 400, // 에디터 높이
+						focus : true, // 에디터 로딩후 포커스를 맞출지 여부
+						lang : "ko-KR", // 한글 설정
+						placeholder : '내용을 입력하세요',
+						disableResizeEditor : true, // 크기 조절 기능 삭제
+						toolbar : [[ 'fontname',[ 'fontname' ] ],[ 'fontsize',[ 'fontsize' ] ],
+							['style',['bold','italic','underline','strikethrough','clear' ] ],
+								['color',[ 'forecolor','color' ] ],
+								[ 'table', [ 'table' ] ],['para',['ul', 'ol','paragraph' ] ],
+								[ 'height', [ 'height' ] ],
+								['insert',[ 'picture','link','video' ] ],
+								['view',[ 'fullscreen','help' ] ] ],
+						fontNames : [ 'Arial','Arial Black','Comic Sans MS','Courier New', '맑은 고딕','궁서', '굴림체', '굴림', '돋움체','바탕체' ],
+						fontSizes : [ '8', '9', '10', '11','12', '14', '16', '18','20', '22', '24', '28','30', '36', '50', '72' ]
+					});
+});
 </script>
 </html>
+
