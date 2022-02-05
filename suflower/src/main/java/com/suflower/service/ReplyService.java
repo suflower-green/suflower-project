@@ -7,11 +7,11 @@ import com.suflower.domain.ReplyDTO;
 
 public interface ReplyService {
 	
-	public int register(ReplyDTO vo);
+	public int register(ReplyDTO dto);
 	
 	public ReplyDTO get(Long replyNo);
 	
-	public int modify(ReplyDTO vo);
+	public int modify(ReplyDTO dto);
 	
 	public int remove(Long replyNo);
 	

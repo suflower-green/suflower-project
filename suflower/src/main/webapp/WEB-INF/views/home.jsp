@@ -1,7 +1,7 @@
-<%@ page session="false" %>
-  <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <html>
 <head>
   <meta charset="utf-8">
@@ -10,25 +10,33 @@
   <link rel="stylesheet" href="/resources/css/animate.css">
   <link rel="stylesheet" href="/resources/css/font-awesome.min.css">
   <link rel="stylesheet" href="/resources/css/style.css">
+<link rel="stylesheet" href="../resources/css/login.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="/resources/js/jquery.min.js"></script>
   <script src="/resources/js/bootstrap.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 </head>
+
+
 <body>
-<%@ include file ="./includes/header.jsp" %>
+<%@ include file="./includes/header.jsp"%>
+	
+	<div id="banner-carousel"
+		class="banner-carousel carousel carousel-fade fade"
+		data-ride="carousel" data-interval="10000">
+		<ol class="carousel-indicators">
+			<li class="active" data-slide-to="0" data-target="#banner-carousel"></li>
+			<li data-slide-to="1" data-target="#banner-carousel"></li>
+			<li data-slide-to="2" data-target="#banner-carousel"></li>
+		</ol>
+		<!-- //Indicators -->
 
-<div id="banner-carousel" class="banner-carousel carousel carousel-fade fade" data-ride="carousel" data-interval="10000">
-  <ol class="carousel-indicators">
-    <li class="active" data-slide-to="0" data-target="#banner-carousel"></li>
-    <li data-slide-to="1" data-target="#banner-carousel"></li>
-    <li data-slide-to="2" data-target="#banner-carousel"></li>
-  </ol> <!-- //Indicators -->
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
 
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-
-    
 
     <div class="item item-1 active">
       <div class="container">

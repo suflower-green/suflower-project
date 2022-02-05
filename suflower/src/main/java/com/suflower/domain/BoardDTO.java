@@ -19,6 +19,7 @@ public class BoardDTO {
     private Date boardRegDate;
     /* 수정 날짜 */
     private Date boardUpdateDate;
+    
  
 
 }

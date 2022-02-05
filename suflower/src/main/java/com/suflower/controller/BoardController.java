@@ -1,7 +1,6 @@
 package com.suflower.controller;
 
 
-import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +16,6 @@ import com.suflower.domain.BoardDTO;
 import com.suflower.domain.Criteria;
 import com.suflower.domain.MemberDTO;
 import com.suflower.domain.PageMakerDTO;
-import com.suflower.domain.ReplyDTO;
 import com.suflower.service.BoardService;
 import com.suflower.service.MemberService;
 import com.suflower.service.ReplyService;
@@ -34,13 +32,10 @@ public class BoardController {
 	
 	private static final Logger log = LoggerFactory.getLogger(BoardController.class);
 	
-	@Autowired
 	BoardService bservice;
 
-	@Autowired
 	MemberService mservice;
 	
-	@Autowired
 	ReplyService rservice;
 
 	// 세션 확인용
