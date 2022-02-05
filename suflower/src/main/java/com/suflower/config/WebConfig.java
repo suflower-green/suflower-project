@@ -1,6 +1,8 @@
 package com.suflower.config;
 
 import javax.servlet.ServletRegistration;
+
+import org.apache.catalina.security.SecurityConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
