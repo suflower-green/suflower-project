@@ -29,6 +29,10 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
       
 
       registration.setInitParameter("throwExceptionIfNoHandlerFound", "true");
+      
+      MultipartConfigElement multipartConfig = new 
+    		  MultipartConfigElement("/Users/johnlee/Desktop/upload/temp", 20971520, 41943040, 20971520);
+      registration.setMultipartConfig(multipartConfig);
    }//customizeRegistration
    
    

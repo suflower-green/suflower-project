@@ -42,13 +42,13 @@ public class ProductController {
 		return mv;
 	}
 	
-	@RequestMapping("/write")
-	public String write() {
-		return "product/write";
+	@RequestMapping("/productRegisterForm")
+	public String productRegister() {
+		return "product/productRegisterForm";
 	}
 	
 	@RequestMapping("/insert")
-	public String insert(@RequestParam MultipartFile img, HttpServletRequest request, ProductDTO product) {
+	public String insert(HttpServletRequest request, ProductDTO product) {
 		// ** Uploadfile (Image) 처리
 		// => MultipartFile 타입의 uploadfilef 의 정보에서 
 		//    upload된 image 와 화일명을 get 처리,
@@ -68,9 +68,9 @@ public class ProductController {
 		// 2) 위 의 값을 이용해서 실제저장위치 확인 
 		// => 개발중인지, 배포했는지 에 따라 결정
 		if (realPath.contains(".eclipse."))
-			 realPath = "/Desktop/suflower-project/suflower/src/main/webapp/resources/uploadImage/";
+			 realPath = "/Users/johnlee/Desktop/suflower-project/suflower/src/main/webapp/resources/uploadImage/";
 		// realPath = "D:/MTest/MyWork/Spring02/src/main/webapp/resources/"+vo.getId()+"/";
-		else realPath += "resources\\uploadImage\\";
+		else realPath += "../resources\\uploadImage\\";
 		
 		// ** 폴더 만들기 (File 클래스활용)
 		// => 위의 저장경로에 폴더가 없는 경우 (uploadImage가 없는경우)  만들어 준다
@@ -80,7 +80,7 @@ public class ProductController {
 		// => 존재하지 않으면 디렉토리 생성
 		
 		// ** 기본 이미지 지정하기 
-		String file1, file2="resources/uploadImage/tulip.png";
+		String file1, file2="../resources/uploadImage/tulip.png";
 		
 		// ** MultipartFile
 		// => 업로드한 파일에 대한 모든 정보를 가지고 있으며 이의 처리를 위한 메서드를 제공한다.
@@ -103,11 +103,12 @@ public class ProductController {
 				e.printStackTrace();
 			} // real 위치에 전송된 File 붙여넣기
 			// 2) Table 저장위한 경로 
-			file2 = "resources/uploadImage/"+ uploadfilef.getOriginalFilename();
+//			file2 = "resources/uploadImage/"+ uploadfilef.getOriginalFilename();
+			file2 = uploadfilef.getOriginalFilename();
 		}
 		
 		product.setUploadfile(file2);
-	
+		service.register(product);
 		
 		return "redirect:/product/productList";
 	}
@@ -132,7 +133,7 @@ public class ProductController {
 			// 1) 저장폴더지정
 			String realPath = request.getRealPath("/");
 			if (realPath.contains(".eclipse."))
-				 realPath = "/Desktop/suflower-project/suflower/src/main/webapp/resources/uploadImage/";
+				 realPath = "/Users/johnlee/Desktop/suflower-project/suflower/src/main/webapp/resources/uploadImage/";
 			else realPath += "resources\\uploadImage\\"; // 배포환경
 			File f1 = new File(realPath);
 			if ( !f1.exists() ) f1.mkdir();
