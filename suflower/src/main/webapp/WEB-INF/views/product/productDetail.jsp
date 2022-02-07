@@ -20,7 +20,7 @@
   <div class="container">
     <div class="col-lg-5 col-md-5 col-sm-12">
       <div class="gallery-panel">
-        <img id="largeImage" src="img/image_03_large.png">
+        <img id="largeImage" src="../resources/uploadImage/${productDetail.uploadfile }">
       </div>
       <!-- <div id="thumbs" class="thumbs">
         <div class="thumb">
@@ -35,13 +35,14 @@
       </div> -->
     </div> <!-- //col -->
     <div class="col-lg-7 col-md-7 col-sm-12">
-      <h1><c:out value="${product.productName}"/></h1>
+      <input type="hidden" name="productId" value="${productDetail.productId}"/>
+      <h1><c:out value="${productDetail.productName}"/></h1>
       <div class="choose-price">
-          ${product.productPrice}원
+          ${productDetail.productPrice}원
         </div>
       <hr>
-      <form action="/cart/insert.do" method="post">
-      	<input type="hidden" name="productId" value="${cart.productId}"/>
+      <form action="/cart/insert" method="post">
+      	<%-- <input type="hidden" name="productId" value="${cart.productId}"/> --%>
 	      <div class="choose">
 	        <div class="choose-size">
 	          희망 수령일
@@ -71,11 +72,12 @@
       	<div class="choose">
         
         <div class="choose-order">
-          <a class="btn_cart">장바구니 담기</a>
-          <a class="btn_buy">바로 구매하기</a>
+          <!-- <a class="btn_cart">장바구니 담기</a> -->
+          <!--<a class="btn_buy">바로 구매하기</a> -->
           <!-- <i class="fa fa-cart-plus" aria-hidden="true"></i> -->
           <!-- <i class="fa fa-heart-o" aria-hidden="true"></i> -->
-          <!-- <input type="submit" class="submit-order" name="submit-order" value="바로 구매하기"> -->
+          <input type="submit" class="insert-cart" name="insert-cart" value="장바구니에 추가"> 
+          <!-- <input type="submit" class="submit-order" name="submit-order" value="바로 구매하기">  -->
         </div>
         
       	</div><!-- //chose -->
@@ -88,6 +90,10 @@
 
 
 <%@ include file ="../includes/footer.jsp" %>
+
+
+
+
 <script src="../resources/js/custom.js"></script>
 </body>
 </html>

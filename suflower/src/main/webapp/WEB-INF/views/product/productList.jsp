@@ -6,7 +6,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
-    <meta name="keywords" content="Boukuets" />
+    <meta name="keywords" content="Bouquets" />
     <meta name="description" content="" />
     <meta name="page_type" content="np-template-header-footer-from-plugin" />
     <title>Home</title>
@@ -53,20 +53,20 @@
 
 <section class="u-align-center u-clearfix u-section-1" id="carousel_3ad7">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h2 class="u-custom-font u-text u-text-1">Sue Flower Products</h2>
+        <h2>Sue Flower Products</h2>
         <p class="u-text u-text-2"></p>
         <div class="u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-list u-list-1">
           	<div class="u-repeater u-repeater-1">
-          	<c:forEach var="list" items="${product}">
+          	<c:forEach var="list" items="${productList}">
             	<div class="u-align-center u-container-style u-list-item u-repeater-item" >
             	
               		<div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
-               	 		<%-- <a href="/product/productDetail">
-               				<img src="${product.image}" alt="꽃사진"
+						<a href="productDetail?productId=${list.productId}">
+               				<img src="../resources/uploadImage/${list.uploadfile}" alt="꽃사진"
                   			class="u-expanded-width u-image u-image-default u-image-2"
                   			data-image-width="293"
                   			data-image-height="293"/>
-               			</a> --%>
+               			</a> 
                 		<a href="productDetail?productId=${list.productId}"><span>"${list.productName}"</span></a>
                 		<span>${list.productPrice}원</span>
               		</div>

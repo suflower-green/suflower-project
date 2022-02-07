@@ -14,9 +14,8 @@
 	
 	<!-- ProductMapper의 insertProduct -->
 	<insert id="insertProduct">
-		
-		insert into tbl_product(productId, productType, productName, productQuantity, productPrice) 
-		values(seq_product.nextval, #{productType}, #{productName}, #{productQuantity}, #{productPrice})
+		insert into tbl_product(productId, productType, productName, productQuantity, productPrice, filename) 
+		values(seq_product.nextval, #{productType}, #{productName}, #{productQuantity}, #{productPrice}, #{filename})
 	</insert>
 	
 	<!-- ProductMapper의 insertProductSelectKey -->
@@ -26,8 +25,8 @@
 			select seq_product.nextval from dual
 		</selectKey>
 		
-		insert into tbl_product (productId, productType, productName, productQuantity, productPrice)
-		values (#{productId}, #{productType}, #{productName}, #{productQuantity}, #{productPrice})
+		insert into tbl_product (productId, productType, productName, productQuantity, productPrice, filename)
+		values (#{productId}, #{productType}, #{productName}, #{productQuantity}, #{productPrice}, #{filename})
 	</insert>
 
 	<!-- ProductMapper의 readProduct -->
@@ -45,8 +44,13 @@
 		update tbl_product set productType=#{productType}, 
 		productName=#{productName}, 
 		productQuantity=#{productQuantity}, 
-		productPrice=#{productPrice}
+		productPrice=#{productPrice},
+		filename=#{filename}
 		where productId=#{productId}
 	</update>
+	
+	<select id="uploadfile" resultType="String">
+		select uploadfile from tbl_product where productId=#{productId}
+	</select>
 </mapper>
 	
