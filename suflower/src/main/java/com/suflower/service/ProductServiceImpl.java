@@ -52,5 +52,13 @@ public class ProductServiceImpl implements ProductService{
 		
 		return mapper.productList();
 	}
+
+	@Override
+	public String uploadfile(Long productId) {
+		
+		return mapper.uploadfile(productId);
+	}
+	
+	
 	
 }//ProductServiceImpl

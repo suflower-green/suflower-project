@@ -19,6 +19,8 @@ public interface ProductMapper {
 	public int deleteProduct(Long productId);
 	
 	public int updateProduct(ProductDTO product);
+	
+	public String uploadfile(Long productId);
 
 	
 }
