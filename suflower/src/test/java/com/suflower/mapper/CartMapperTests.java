@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.suflower.domain.CartDTO;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -33,12 +34,13 @@ public class CartMapperTests {
 //		
 //		cart.setMemberId("jaek1997");
 //		cart.setQuantity(4);
-//		cart.setProductId(3L);
+//		cart.setProductId(5L);
+//		cart.setReservationDate("2022-01-02");
 //	
 //		
 //		mapper.insert(cart);
 //		
-//		Assertions.assertThat(cart.getProductId()).isEqualTo(3L);
+//		Assertions.assertThat(cart.getProductId()).isEqualTo(5L);
 //	}
 	
 //	@Test

@@ -16,4 +16,6 @@ public interface ProductService {
 	
 	public List<ProductDTO> getList();
 	
+	public String uploadfile(Long productId);
+	
 }//ProductService
