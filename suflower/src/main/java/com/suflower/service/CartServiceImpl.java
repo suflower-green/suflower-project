@@ -11,6 +11,8 @@ import com.suflower.mapper.CartMapper;
 public class CartServiceImpl implements CartService{
 
 	
+	
+
 	private final CartMapper mapper;
 	
 	
@@ -67,5 +69,10 @@ public class CartServiceImpl implements CartService{
 		return mapper.updateCart(cart);
 	}
 
+	@Override
+	public int countItems(String memberId) {
+		
+		return mapper.countItems(memberId);
+	}
 	
 }
