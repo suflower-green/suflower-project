@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.suflower.domain.MemberDTO;
@@ -76,6 +77,7 @@ public class MemberController {
 			return "redirect:/member/login";
 		}
 		session.setAttribute("member", lvo); // 일치하는 아이디, 비밀번호 경우 (로그인 성공)
+		session.setAttribute("memberId", lvo.getMemberId()); // 아이디값 세션에 저장
 		return "redirect:/";
 	}
 
@@ -116,5 +118,35 @@ public class MemberController {
 		logger.info("수정완료");
 		return "member/info";
 	}
-
+	
+	@RequestMapping(value = "/delete")
+    public ModelAndView mdelete(HttpServletRequest request, 
+          ModelAndView mv, MemberDTO dto, RedirectAttributes rttr) throws Exception {
+       String uri = "home"; 
+       String id = null;
+       logger.info("delete 진입");
+       HttpSession session = request.getSession(false);
+       if ( session!=null && session.getAttribute("memberId")!=null ) {
+          id =(String)session.getAttribute("memberId");
+          // ** 삭제 가능
+          // => 관리자 작업인경우 : 이미 vo에 삭제할 ID 가 set 되어있음
+          // => 관지자 작업아닌경우: session 에서 get한 ID 를 vo에 set 
+          if (!id.equals("admin")) dto.setMemberId(id);
+          
+          if ( memberservice.deleteMember(dto)>0) {
+             // 삭제 성공 : 성공 message, home, session무효화
+             if (!id.equals("admin")) {
+                session.invalidate();
+                mv.addObject("message", " 탈퇴 성공.....") ;
+             }
+          }else {
+             uri="redirect:/";
+             rttr.addFlashAttribute("message", "탈퇴 오류 : 다시 하세요....");
+          }
+       }
+       mv.setViewName(uri); 
+       return mv;
+    } //delete
+	
+	
 }

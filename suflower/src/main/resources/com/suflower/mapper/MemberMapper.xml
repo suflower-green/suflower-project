@@ -52,4 +52,9 @@
 		where memberId=#{memberId}
 		
 	</update>
+	
+	<delete id="memberDelete">
+	delete from tbl_member where memberId=#{memberId}
+	
+	</delete>
 </mapper>

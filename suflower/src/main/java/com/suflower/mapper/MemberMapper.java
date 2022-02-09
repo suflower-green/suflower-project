@@ -26,4 +26,6 @@ public interface MemberMapper {
 	// 내정보 수정
 	public boolean memberUpdate(MemberDTO member);
 
+	// 멤버 삭제
+	public int memberDelete(MemberDTO member);
 }

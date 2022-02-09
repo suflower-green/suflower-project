@@ -61,17 +61,14 @@
               <a href="#">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </a>
-            </li>
-
+            </li>				
+							
 							<c:if test="${member ==null }">
 								<li><a href="/member/login"><i
 										class="fa fa-user-o  fa-2x" aria-hidden="true"></i></a></li>
 							</c:if>
 
 							<c:if test="${member != null }">
-								<c:if test="${member.adminCheck == 1}">
-									<a href="/admin/adminPage">관리자 페이지</a>
-								</c:if>
 								<a href="/member/info"><i class="fa fa-user-o  fa-2x"
 									aria-hidden="true"></i></a>
 								<span>회원:${member.memberName}</span>
@@ -98,6 +95,11 @@
 		</div>
 		<!-- //header-menu -->
 	</header>
+	<c:if test="${message != null }">
+		<script>
+		alert('${message}');
+		</script>
+	</c:if>
 	<script>
 		/* 로그아웃 버튼 작동 */
 		$("#logout_button").click(function() {
@@ -110,6 +112,7 @@
 				}
 			})
 		})
+		
 	</script>
 
 </body>
