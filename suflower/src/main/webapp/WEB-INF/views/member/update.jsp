@@ -74,71 +74,78 @@
 </script>
 <body>
 <%@ include file="../includes/header.jsp"%>
-	<h2>내 정보 수정</h2>
+<%@ include file="../includes/sidebar.jsp"%>
 	<form action="/member/update" id="update_form" method="post">
-		<table border="1" width="1000px" height="500px">
+		<div class="update_tb">
+			<div class="update_btn">
+				<h2>내 정보 수정</h2>
+			</div>
+			<table border="1" width="1000px" height="500px">
 
-			<tr>
-				<td>I D</td>
-				<td><input type="text" name="memberId" value="${member.memberId}"
-					readonly></td>
-			</tr>
-			<tr>
-				<td>비밀번호</td>
-				<td><input type="password" name="memberPassword" value="${member.memberPassword}"></td>
-			</tr>
-			<tr>
-				<td>이름</td>
-				<td><input type="text" name="memberName" value="${member.memberName}"></td>
-			</tr>
-			<tr>
-				<td>이메일</td>
-				<td><input type="text" name="memberMail"
-					value="${member.memberMail}"></td>
-			</tr>
-			<tr>
-				<td>핸드폰 번호</td>
-				<td><input type="text" name="memberPhoneNum"
-					value="${member.memberPhoneNum}"></td>
-			</tr>
-			<tr>
-				<td>우편 번호</td>
-				<td><input type="text" name="memberAddr1" id="oaddress"
-					value="${member.memberAddr1}" readonly> &nbsp;&nbsp; <input
-					type="button" value="우편번호 찾기" id="" onclick="execPostCode()"><br></td>
-			</tr>
-			<tr>
-				<td>주소</td>
-				<td><input class="form-control" type="text" name="memberAddr2"
-					id="address" value="${member.memberAddr2}" readonly><br></td>
-			</tr>
-			<tr>
-				<td>상세 주소</td>
-				<td><input class="form-control" type="text"
-					name="memberAddr3" id="detailaddress"
-					value="${member.memberAddr3}"></td>
-			</tr>
-			<tr>
-				<td>가입일자</td>
-				<td>${member.memberRegDate}</td>
-			</tr>
-			<tr>
-				<td>충전금액</td>
-				<td>${member.memberMoney}</td>
-			</tr>
-			<tr>
-				<td>포인트</td>
-				<td>${member.memberPoint}</td>
-			</tr>
-		</table>
-		<input type="button" value="메인으로" class="btn"
-			onclick="location.href='/'"></input> <input type="button"
-			class="update_button" value="수정">&nbsp;&nbsp;
-		<c:if test="${not empty message}">
-		
-			<br>=> ${message}<br>
-			<br>
-		</c:if>
+				<tr>
+					<td>I D</td>
+					<td><input type="text" name="memberId"
+						value="${member.memberId}" readonly></td>
+				</tr>
+				<tr>
+					<td>비밀번호</td>
+					<td><input type="password" name="memberPassword"
+						value="${member.memberPassword}"></td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td><input type="text" name="memberName"
+						value="${member.memberName}"></td>
+				</tr>
+				<tr>
+					<td>이메일</td>
+					<td><input type="text" name="memberMail"
+						value="${member.memberMail}"></td>
+				</tr>
+				<tr>
+					<td>핸드폰 번호</td>
+					<td><input type="text" name="memberPhoneNum"
+						value="${member.memberPhoneNum}"></td>
+				</tr>
+				<tr>
+					<td>우편 번호</td>
+					<td><input type="text" name="memberAddr1" id="oaddress"
+						value="${member.memberAddr1}" readonly> &nbsp;&nbsp; <input
+						type="button" value="우편번호 찾기" id="" onclick="execPostCode()"><br></td>
+				</tr>
+				<tr>
+					<td>주소</td>
+					<td><input class="form-control" type="text" name="memberAddr2"
+						id="address" value="${member.memberAddr2}" readonly><br></td>
+				</tr>
+				<tr>
+					<td>상세 주소</td>
+					<td><input class="form-control" type="text" name="memberAddr3"
+						id="detailaddress" value="${member.memberAddr3}"></td>
+				</tr>
+				<tr>
+					<td>가입일자</td>
+					<td>${member.memberRegDate}</td>
+				</tr>
+				<tr>
+					<td>충전금액</td>
+					<td>${member.memberMoney}</td>
+				</tr>
+				<tr>
+					<td>포인트</td>
+					<td>${member.memberPoint}</td>
+				</tr>
+			</table>
+			<div class="update_btn">
+				 <input type="button"
+					class="update_button" value="수정">&nbsp;&nbsp;
+				<c:if test="${not empty message}">
+
+					<br>=> ${message}<br>
+					<br>
+				</c:if>
+			</div>
+		</div>
 	</form>
 	<script>
 		$('.update_button').click(function() {

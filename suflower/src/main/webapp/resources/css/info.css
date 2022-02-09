@@ -1,7 +1,55 @@
 @charset "UTF-8";
 
-* {
+
+.info{
+	align-content: center;
+}
+
+.info_tb{
+	text-align: center;
+	padding-left: 320px;
+	top: -80px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+body{
+	text-align: center;
+}
+
+.sidebar{
+	margin-left:40%;
+	margin-right:auto;
+	background:white;
+	width: 200px;
+	height: 100px;
+	top: 20px;
+	left: 100px;
+}
+
+.sidebar_nav{
+	width:200px;
+	font-size:20px;
+	left: 0;
+}
+
+.sidebar_blind{
+	list-style: none;
+	text-align: left;
+	text-indent: 10px;
+}
+
+
+
+/* update */
+.update_tb{
+	text-align: left;
+	position: relative;
 	margin: 0;
-	padding: 0;
-	font-size: 30px;
+	padding-left: 320px;
+	top: -210px;
+}
+.update_btn{
+	text-align: center;
+	top: 10px;
 }
