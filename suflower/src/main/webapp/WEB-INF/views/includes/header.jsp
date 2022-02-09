@@ -61,8 +61,8 @@
               <a href="#">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </a>
-            </li>
-
+            </li>				
+							
 							<c:if test="${member ==null }">
 								<li><a href="/member/login"><i
 										class="fa fa-user-o  fa-2x" aria-hidden="true"></i></a></li>
@@ -82,6 +82,9 @@
 										pattern="#,##" />
 								</span>
 								<a id="logout_button">로그아웃</a>
+								<c:if test="${member.adminCheck == 0}">
+									<a href="/member/delete">회원탈퇴</a>
+								</c:if>
 							</c:if>
 							<li class="basket"><a href="#"><i
 									class="fa fa-shopping-bag  fa-2x" aria-hidden="true"></i>
@@ -98,6 +101,11 @@
 		</div>
 		<!-- //header-menu -->
 	</header>
+	<c:if test="${message != null }">
+		<script>
+		alert('${message}');
+		</script>
+	</c:if>
 	<script>
 		/* 로그아웃 버튼 작동 */
 		$("#logout_button").click(function() {
@@ -110,6 +118,7 @@
 				}
 			})
 		})
+		
 	</script>
 
 </body>

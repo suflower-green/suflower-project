@@ -21,5 +21,5 @@ public interface MemberService {
 	public boolean updateMember(MemberDTO member) throws Exception;
 	
 	//회원정보 삭제
-	public void deleteMember(MemberDTO vo);
+	public int deleteMember(MemberDTO member) throws Exception;
 }

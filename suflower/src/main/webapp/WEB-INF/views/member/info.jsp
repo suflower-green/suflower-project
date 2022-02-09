@@ -17,9 +17,9 @@
 <%@ include file="../includes/header.jsp"%>
 
 <body>
-
 <h2>마이페이지</h2>
-<table border="1" width="1000px" height="500px">
+<div class="info_tb">
+<table class="info-form" border="1" width="1000px" height="500px">
 
 	<tr >
 		<td>아이디</td>
@@ -62,11 +62,13 @@
 		<td>${member.memberPoint}</td>
 	</tr>
 </table>
+</div>
 <c:if test="${not empty message}">
 <br>=> ${message}<br><br> 
 </c:if>
 <input type="button" value="메인으로" class="btn" onclick="location.href='/'"></input>
 <input type="button" value="내 정보수정 " class="btn" onclick="location.href='/member/update'"></input>
+
 
 </body>
 
