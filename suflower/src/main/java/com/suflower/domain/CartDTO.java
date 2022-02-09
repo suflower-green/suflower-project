@@ -16,4 +16,7 @@ public class CartDTO {
 	private String reservationDate;
 	private int quantity;
 	private Long totalPrice;
+	private Long sumTotalPrice;
+	private int totalCartItems;
+	private String uploadfile;
 }
