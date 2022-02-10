@@ -21,4 +21,6 @@ public interface CartService {
 	public int countCart(String memberId, Long productId);
 	
 	public int updateCart(CartDTO cart);
+	
+	public int countItems(String memberId);
 }

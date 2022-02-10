@@ -138,9 +138,10 @@
 		
  		// 댓글 삭제버튼
  		$(".removeReplyBtn").on("click",function(e){
- 			
-			var replyNo =  document.getElementById("removeReplyBtn").getAttribute('data-value');
-			console.log("삭제버튼");
+ 			var replyNo = 
+			/* var replyNo =  document.getElementById("removeReplyBtn").getAttribute('data-value');
+			 */
+			 console.log("삭제버튼");
 			console.log(replyNo);
 			
 /* 						var replyNo = $(this).data("rnoatag");
