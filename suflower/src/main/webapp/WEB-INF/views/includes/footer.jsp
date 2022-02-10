@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title>Sue Flower</title>
-  <link rel="stylesheet" href="../resources/css/bootstrap.css">
   <link rel="stylesheet" href="../resources/css/animate.css">
   <link rel="stylesheet" href="../resources/css/font-awesome.min.css">
   <link rel="stylesheet" href="../resources/css/style.css">
