@@ -2098,6 +2098,7 @@ a:focus {
 .u-opacity-65 > .u-container-layout:before {
   opacity: 0.65;
 }
+
 :not(.u-effect-fade) > .u-opacity-60,
 .u-opacity-60:before,
 .u-opacity-60 > .u-container-layout:before {

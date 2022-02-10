@@ -107,3 +107,7 @@ body, input, textarea, select, button, table {
 #totalPrice{
     color:red;
 }
+
+.product-name{
+	font-size: 17px;
+}

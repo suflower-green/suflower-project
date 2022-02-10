@@ -5,9 +5,9 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.suflower.domain.CartDTO;
 import com.suflower.service.CartService;
@@ -53,6 +53,46 @@ public class CartController {
 			return mv;
 		}
 		
+	}
+	
+	@RequestMapping("/delete")
+	public ModelAndView delete(ModelAndView mv, int cartId) {
+		
+		service.delete(cartId);
+		
+		mv.setViewName("redirect:/cart/cartList");
+		return mv;
+	}
+	
+	@RequestMapping("/deleteAll")
+	public ModelAndView deleteAll(ModelAndView mv, HttpSession session) {
+		
+		String loginId = (String) session.getAttribute("loginId");
+		
+		if(loginId != null) {
+			service.deleteAll(loginId);
+			mv.setViewName("redirect:/cart/cartList");
+		}else {
+			mv.setViewName("/member/login");
+		}
+		return mv;
+	}
+	
+	@RequestMapping("/update")
+	public ModelAndView updateCart(ModelAndView mv, CartDTO cart, HttpSession session,
+			@RequestParam("cartId") int cartId, @RequestParam("quantity") int quantity) {
+		
+		String loginId = (String) session.getAttribute("loginId");
+		if(loginId != null) {
+			cart.setCartId(cartId);
+			cart.setQuantity(quantity);
+			service.updateCart(cart);
+			mv.setViewName("redirect:/cart/cartList");
+		}else {
+			mv.setViewName("/member/login");
+		}
+	
+		return mv;
 	}
 
 }

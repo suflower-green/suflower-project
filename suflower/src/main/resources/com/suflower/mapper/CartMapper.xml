@@ -49,6 +49,17 @@
 		where memberId=#{memberId}
 	</select>
 	
+	<update id="updateCart">
+		update tbl_cart set quantity=#{quantity} where cartId=#{cartId}
+	</update>
+	
+	<delete id="delete">
+		delete from tbl_cart where cartID=#{cartId}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from tbl_cart where memberId=#{memberId}
+	</delete>
 	
 </mapper>
 	
