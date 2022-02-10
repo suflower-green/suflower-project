@@ -77,7 +77,7 @@ public class MemberController {
 			return "redirect:/member/login";
 		}
 		session.setAttribute("member", lvo); // 일치하는 아이디, 비밀번호 경우 (로그인 성공)
-		session.setAttribute("memberId", lvo.getMemberId()); // 아이디값 세션에 저장
+		session.setAttribute("loginId", member.getMemberId());
 		return "redirect:/";
 	}
 
@@ -126,8 +126,8 @@ public class MemberController {
        String id = null;
        logger.info("delete 진입");
        HttpSession session = request.getSession(false);
-       if ( session!=null && session.getAttribute("memberId")!=null ) {
-          id =(String)session.getAttribute("memberId");
+       if ( session!=null && session.getAttribute("loginId")!=null ) {
+          id =(String)session.getAttribute("loginId");
           // ** 삭제 가능
           // => 관리자 작업인경우 : 이미 vo에 삭제할 ID 가 set 되어있음
           // => 관지자 작업아닌경우: session 에서 get한 ID 를 vo에 set 

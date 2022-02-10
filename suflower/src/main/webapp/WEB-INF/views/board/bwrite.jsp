@@ -1,7 +1,5 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +15,7 @@
 				<textarea name="boardTitle" class="form-control" rows="2" placeholder="제목을 입력하세요"></textarea>
 				<br>
 			</div>
-			<textarea name="boardContent" id="boardContent" ></textarea>
+			<textarea name="summernote" id="boardContent" ></textarea>
 			<button type="submit" class="btn btn-outline-secondary pull-center">전송</button>
 		</div>
 		<input type="hidden" name="boardWriter" value="${member.memberId}" />

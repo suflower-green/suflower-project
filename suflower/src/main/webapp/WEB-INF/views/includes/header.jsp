@@ -78,9 +78,9 @@
 								<span>포인트:<fmt:formatNumber value="${member.memberMoney}"
 										pattern="#,##" />
 								</span>
-								<a id="logout_button">로그아웃</a>
+								<a id="logout_button" href="javascript:void(0);">로그아웃</a>
 							</c:if>
-							<li class="basket"><a href="#"><i
+							<li class="basket"><a href="/cart/cartList"><i
 									class="fa fa-shopping-bag  fa-2x" aria-hidden="true"></i>
 									<div class="basket-count">5</div></a></li>
 							<li><a href="https://www.instagram.com/sueflower_/"

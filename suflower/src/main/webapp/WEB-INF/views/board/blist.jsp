@@ -8,7 +8,6 @@
 <head>
 <meta charset="UTF-8">
 <title>목록페이지입니다.</title>
-<script src="../resources/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
 	integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7"
@@ -17,7 +16,6 @@
 <%@ include file="../includes/header.jsp"%>
 
 <body>
-
 
 	<div class="text-center"
 		style="padding-left: 60px; padding-right: 60px; padding-bottom: 40px; padding-top: 40px">
@@ -43,13 +41,9 @@
 			<c:forEach items="${blist}" var="blist">
 				<tr>
 					<td><c:out value="${blist.boardWriter}" /></td>
-					<td><a class="move" href='<c:out value="${blist.boardNo}"/>'>
-							<c:out value="${blist.boardTitle}" />
-					</a></td>
-					<td><fmt:formatDate pattern="yyyy.MM.dd hh:mm"
-							value="${blist.boardRegDate}" /></td>
-					<td><fmt:formatDate pattern="yyyy.MM.dd hh:mm"
-							value="${blist.boardUpdateDate}" /></td>
+					<td><a class="move" href='<c:out value="${blist.boardNo}"/>'><c:out value="${blist.boardTitle}" /></a></td>
+					<td><fmt:formatDate pattern="yyyy.MM.dd hh:mm" value="${blist.boardRegDate}" /></td>
+					<td><fmt:formatDate pattern="yyyy.MM.dd hh:mm" value="${blist.boardUpdateDate}" /></td>
 				</tr>
 			</c:forEach>
 		</table>
@@ -75,11 +69,12 @@
 				</c:if>
 			</ul>
 		</nav>
-		<div class="pull-right">
-			<input type="text" name="keyword" value="${pageMaker.cri.keyword}">
-			<button>검색</button>
+		<div class="search_wrap">
+			<div class="search_area">
+				<input type="text" name="keyword" value="${pageMaker.cri.keyword}">
+				<button>검색</button>
+			</div>
 		</div>
-
 
 		<form id="moveForm" method="get">
 			<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
@@ -109,17 +104,11 @@
 		});
 
 		let moveForm = $("#moveForm");
-		$(".move")
-				.on(
-						"click",
-						function(e) {
-							e.preventDefault();
-
-							moveForm
-									.append("<input type='hidden' name='boardNo' value='"
-											+ $(this).attr("href") + "'>");
-							moveForm.attr("action", "/board/get");
-							moveForm.submit();
+		$(".move").on("click",function(e) {
+				e.preventDefault();
+				moveForm.append("<input type='hidden' name='boardNo' value='"+ $(this).attr("href") + "'>");
+				moveForm.attr("action", "/board/get");
+				moveForm.submit();
 						});
 
 		$("#pageInfo a").on("click", function(e) {
@@ -134,9 +123,11 @@
 		$(".search_area button").on("click", function(e) {
 			e.preventDefault();
 			let val = $("input[name='keyword']").val();
+			
 			moveForm.find("input[name='keyword']").val(val);
 			moveForm.find("input[name='pageNum']").val(1);
 			moveForm.submit();
+			
 		});
 	</script>
 </body>
