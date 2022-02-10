@@ -29,7 +29,7 @@
     <![CDATA[
         select boardNo, boardTitle, boardContent, boardWriter, boardRegdate, boardUpdateDate from(
                 select /*+INDEX_DESC(tbl_board pk_board) */ rownum  as rn, boardNo, boardTitle, boardContent, boardWriter, boardRegdate, boardUpdateDate
-                from tbl_board where rownum <= #{pageNum} * #{amount} 
+                from tbl_board where rownum <= #{pageNum} * #{amount}
     ]]>
 		<if test="keyword != null">
 			and boardTitle like '%'||#{keyword}||'%'
