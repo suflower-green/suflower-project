@@ -54,7 +54,7 @@
 	</update>
 	
 	<delete id="delete">
-		delete from tbl_cart where cartID=#{cartId}
+		delete from tbl_cart where cartId=#{cartId}
 	</delete>
 	
 	<delete id="deleteAll">
