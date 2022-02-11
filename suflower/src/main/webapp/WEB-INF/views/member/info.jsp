@@ -15,23 +15,11 @@
 	crossorigin="anonymous"></script>
 
 <%@ include file="../includes/header.jsp"%>
+		<%@ include file="../includes/sidebar.jsp"%>
 <body>
 	<div class="info">
-<!-- 		<div class="sidebar"> -->
-<!-- 			<ul class="sidebar_nav"> -->
-<!-- 				<li class="sidebar_blind"><a href="#"><span>회원정보</span> </a></li> -->
-<!-- 				<li class="sidebar_blind"><a href="/member/update"> <span>정보수정</span> -->
-<!-- 				</a></li> -->
-<!-- 				<li class="sidebar_blind"><a href="#"><span>포인트</span> </a></li> -->
-<!-- 				<li class="sidebar_blind"><a href="#"><span>회원탈퇴</span> </a></li> -->
-<!-- 				<li class="sidebar_blind"><a href="/"><span>홈으로</span> </a></li> -->
-
-<!-- 			</ul> -->
-<!-- 		</div> -->
-
 		<div class="info_tbform">
-			<table border="1" width="800px" height="500px" class="info_tb">
-			<%@ include file="../includes/sidebar.jsp"%>
+			<table border="1" width="800px" height="500px" class="info_tbv card" >
 				<tr>
 					<td>아이디</td>
 					<td>${member.memberId}</td>
