@@ -15,52 +15,56 @@
 	crossorigin="anonymous"></script>
 
 <%@ include file="../includes/header.jsp"%>
-		<%@ include file="../includes/sidebar.jsp"%>
 <body>
-	<div class="info">
-		<div class="info_tbform">
-			<table border="1" width="800px" height="500px" class="info_tbv card" >
-				<tr>
-					<td>아이디</td>
-					<td>${member.memberId}</td>
-				</tr>
-				<tr>
-					<td>이름</td>
-					<td>${member.memberName}</td>
-				</tr>
-				<tr>
-					<td>이메일</td>
-					<td>${member.memberMail}</td>
-				</tr>
-				<tr>
-					<td>핸드폰 번호</td>
-					<td>${member.memberPhoneNum}</td>
-				</tr>
-				<tr>
-					<td>우편 번호</td>
-					<td>${member.memberAddr1}</td>
-				</tr>
-				<tr>
-					<td>주소</td>
-					<td>${member.memberAddr2}</td>
-				</tr>
-				<tr>
-					<td>상세 주소</td>
-					<td>${member.memberAddr3}</td>
-				</tr>
-				<tr>
-					<td>가입일자</td>
-					<td>${member.memberRegDate}</td>
-				</tr>
-				<tr>
-					<td>충전금액</td>
-					<td>${member.memberMoney}</td>
-				</tr>
-				<tr>
-					<td>포인트</td>
-					<td>${member.memberPoint}</td>
-				</tr>
-			</table>
+	<div class="container">
+		<div>
+			<div class="info_tbform">
+				<div>
+					<%@ include file="../includes/sidebar.jsp"%>
+					<table border="1" width="800px" height="500px" class="info_tbv">
+						<tr>
+							<td>아이디</td>
+							<td>${member.memberId}</td>
+						</tr>
+						<tr>
+							<td>이름</td>
+							<td>${member.memberName}</td>
+						</tr>
+						<tr>
+							<td>이메일</td>
+							<td>${member.memberMail}</td>
+						</tr>
+						<tr>
+							<td>핸드폰 번호</td>
+							<td>${member.memberPhoneNum}</td>
+						</tr>
+						<tr>
+							<td>우편 번호</td>
+							<td>${member.memberAddr1}</td>
+						</tr>
+						<tr>
+							<td>주소</td>
+							<td>${member.memberAddr2}</td>
+						</tr>
+						<tr>
+							<td>상세 주소</td>
+							<td>${member.memberAddr3}</td>
+						</tr>
+						<tr>
+							<td>가입일자</td>
+							<td>${member.memberRegDate}</td>
+						</tr>
+						<tr>
+							<td>충전금액</td>
+							<td>${member.memberMoney}</td>
+						</tr>
+						<tr>
+							<td>포인트</td>
+							<td>${member.memberPoint}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
