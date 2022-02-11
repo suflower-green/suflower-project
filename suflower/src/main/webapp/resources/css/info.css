@@ -78,3 +78,11 @@
 .info_tbv input{
 	text-align: center;
 }
+#header_info {
+	text-align: right;
+    padding: 0;
+}
+
+#header_span{
+	font-size: 25px;
+}
