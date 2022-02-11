@@ -5,13 +5,9 @@
 <head>
 <meta charset="utf-8">
 <title>Product show</title>
-<link rel="stylesheet" href="../resources/css/bootstrap.css">
-<link rel="stylesheet" href="../resources/css/animate.css">
-<link rel="stylesheet" href="../resources/css/font-awesome.min.css">
-<link rel="stylesheet" href="../resources/css/style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="../resources/js/jquery.min.js"></script>
-<script src="../resources/js/bootstrap.min.js"></script>
+
+
+
 
 
 
@@ -44,6 +40,7 @@
 					value="${productDetail.productId}" id="productId" />
 				<h1>
 					<c:out value="${productDetail.productName}" />
+					
 				</h1>
 				<div class="choose-price">
 					<fmt:formatNumber value="${productDetail.productPrice }"
@@ -55,21 +52,20 @@
 				<%-- <input type="hidden" name="productId" value="${cart.productId}"/> --%>
 				<div class="choose">
 					<div class="choose-size">
-						희망 수령일
-						<div class="choose-active">
 
-							<input type="date" name="reservationDate" id="reservationDate" />
-							<!-- 
-	            <input type="radio" id="s1" name="size" />
-	            <label for="s1" class="size">오전</label>
-	            or
-	            <input type="radio" id="s2" name="size" />
-	            <label for="s2" class="size">오후</label> -->
-
+						<div class="wrapper">
+							<label for="datepicker">예약일 입력 <input type="text"
+								name="reservationDate" id="reservationDate" autocomplete="off" required>
+							</label><span>수량</span>
+							<span class="validity"><select name="quantity" id="quantity">
+							<c:forEach begin="1" end="10" var="i">
+								<option value="${i}">${i}</option>
+							</c:forEach>
+						</select></span>
 						</div>
 					</div>
 					<!-- //choose-size -->
-					<div class="choose-separate"></div>
+					<%-- <div class="choose"></div>
 					<div class="choose-quantity">
 						수량 <select name="quantity" id="quantity">
 							<c:forEach begin="1" end="10" var="i">
@@ -79,7 +75,7 @@
 					</div>
 					<!-- //choose-quantity -->
 				</div>
-				<!-- //choose -->
+				<!-- //choose --> --%>
 
 				<hr>
 				<div class="choose">
@@ -132,7 +128,7 @@ aria-labelledby="myModalLabel" aria-hidden="true">
 	<script>
 	$(document).ready(function(){
 		$("#cartInsert").on("click", function(){
-			if(${member.memberId == null}){
+			if(${loginId == null}){
 				alert("로그인 후 이용 가능합니다");
 				location.href="/member/login";
 			}else{
@@ -151,17 +147,24 @@ aria-labelledby="myModalLabel" aria-hidden="true">
 								}
 						},
 						error: function(e){
-							alert("error:" + e);
+							console.log(e);
+							alert("장바구니에 추가하지 못했습니다");
 						}
 					})
 				}
 			}
 		})
+		$( function() {
+			$( "#reservationDate" ).datepicker({
+				dateFormat: "yy-mm-dd"
+				,	duration: "fast"
+			})
+		} )
 	});
 
 </script>
 
-
-	<script src="../resources/js/custom.js"></script>
+	<script src="../resources/js/jquery-ui.js"></script>
+	<!-- <script src="../resources/js/custom.js"></script> -->
 </body>
 </html>
