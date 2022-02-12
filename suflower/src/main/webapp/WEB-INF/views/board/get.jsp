@@ -32,8 +32,9 @@
 		<hr>
 
 		<div class="btn_wrap">
-			<a class="btn" id="blist_btn">목록 페이지</a> <a class="btn"
-				id="modify_btn">수정</a>
+			<a class="btn" id="blist_btn">목록 페이지</a> 
+			<a class="btn" id="modify_btn">수정</a>
+
 		</div>
 
 		<form id="infoForm" action="/board/modify" method="get">
@@ -59,8 +60,8 @@
 						<li class="left clearfix" data-replyNo='12'>
 							<div>
 								<div class="header">
-									<strong class="primary-font"></strong> <small
-										class="pull-right text-muted"></small>
+									<strong class="primary-font"></strong>
+									 <small class="pull-right text-muted"></small>
 									<hr>
 								</div>
 								<p></p>
@@ -71,7 +72,6 @@
 			</div>
 		</div>
 	</div>
-
 	<!-- 댓글 등록 -->
 	<div class="row">
 		<div class="col-lg-12">
@@ -104,22 +104,15 @@
 			</div>
 		</div>
 	</div>
-
+		<input class="input123" type="hidden" value=123>
+		<a data-value='ㅋㅋ루삥뽕' class = 'removeReplyBtn' id = 'removeReplyBtn'>삭제</a>
+	
 	<%@ include file="../includes/footer.jsp"%>
 
 	<!-- 스크립트부분 -->
 	<script type="text/javascript" src="/resources/js/replyjs/reply.js"></script>
 	<script type="text/javascript">
-		
 		var boardNoValue = '<c:out value="${pageInfo.boardNo}"/>';
-		replyService.add({
-			boardNo : boardNoValue,
-			pageNum : 1
-		}, function(list) {
-			for (var i = 0, len = list.length || 0; i < len; i++) {
-				console.log(list[i]);
-			}
-		});
 
 		let form = $("#infoForm");
 		let mform = $("#modifyForm");
@@ -129,37 +122,52 @@
 			form.attr("action", "/board/blist");
 			form.submit();
 		});
+
 		// 수정페이지로 이동
 		$("#modify_btn").on("click", function(e) {
 			form.attr("action", "/board/modify");
 			form.submit();
 		});
-
-		$(".chat").on("click", function(e) {
-			var replyNo = $(this).data("replyNo");
-		});
-
-		// 댓글 삭제버튼 (replyService.remove)
-		$("#removeReplyBtn").on("click", function(e) {
-			var replyNo = $(this).data("replyNo");
-			console.log(list[i].replyNo);
-			consol.log("remove btn 실행")
+		
+	/* 	$(".chat").on("click","li",function(e){
+			var replyNo = $(this).attr("data-rno");
+			console.log(replyNo)
+			
+		}); */
+		
+		
+ 		// 댓글 삭제버튼
+ 		$(".removeReplyBtn").on("click",function(e){
+ 			var replyNo = 
+			/* var replyNo =  document.getElementById("removeReplyBtn").getAttribute('data-value');
+			 */
+			 console.log("삭제버튼");
+			console.log(replyNo);
+			
+/* 						var replyNo = $(this).data("rnoatag");
+ 			console.log("삭제 버튼");
+			console.log(replyNo);
 			replyService.remove(replyNo, function(result) {
 				alert(result);
-			});
-		});
+				location.reload();
+			});  */
+		}); 
+		
+		// 댓글 수정버튼
+		function modifyReplyBtn(){
+			console.log("수정 버튼");
+			};
 
-		//댓글 추가버튼 (replyService.add)
+		//댓글 등록버튼 (replyService.add)
 		$("#addReplyBtn").on("click", function(e) {
 			var replyContent = {
 				replyContent : $("#InputReplyContent").val(),
 				replyWriter : $("#InputReplyer").val(),
 				boardNo : boardNoValue
-			};// replyContent
-			replyService.add(replyContent, function(result) {
-				alert("댓글 작성 완료");
+				};// replyContent
+				replyService.add(replyContent, function(result) {
 				location.reload();
-			});
+				});// replyService.add
 		});
 
 		$(document).ready(function() {
@@ -167,47 +175,32 @@
 			var replyUL = $(".chat");
 			var operForm = $("#operForm");
 	
-			$("button[data-oper='modify']")
-					.on(
-							"click",
-							function(e) {
-								operForm.attr("action",
-										"/board/modify")
-										.submit();
-							});
+			$("button[data-oper='modify']").on("click",function(e) {
+					operForm.attr("action","/board/modify").submit();
+				});
 			
 			/* 댓글 리스트 (replyService.getList)*/
 			showList(1);
-			function showList(pageNum) {replyService.getList({
-						boardNo : boardNoValue,
-						pageNum : pageNum || 1
-					},
-					function(list) {
+			function showList(pageNum){
+				replyService.getList({boardNo : boardNoValue,pageNum : pageNum || 1},function(list) {
 						var str = "";
-						if (list == null
-								|| list.length == 0) {
+						if (list == null || list.length == 0) {
 							replyUL.html("");
 							return;
 						}
 						for (var i = 0, len = list.length || 0; i < len; i++) {
-							str += "<li class='left clearfix' data-replyNo='"+list[i].replyNo+"'>";
-							str += "<div  style='margin-top : 0px'><div class='header'><strong class='primary-font'>"
-									+ list[i].replyWriter
-									+ "</strong>&nbsp&nbsp&nbsp&nbsp&nbsp <button type='button' class='btn btn-sm btn-primary' id='btnUpdate'>수정</button> <button type='button' class='btn btn-sm btn-primary' id='btnDelete'>삭제</button>";
-
-							str += "<small class='pull-right text-muted'>"
-									+ list[i].replyDate
-									+ "</small></div>";
-							str += "<p>"
-									+ list[i].replyContent
-									+ "</p></div></li>";
-							console
-									.log(list[i].replyNo);
+							str += "<li data-rno='"+list[i].replyNo+"'>";
+							str += "<div style='margin-top : 0px'><div class='header'><strong class='primary-font'>"
+									+ list[i].replyWriter+"</strong>&nbsp&nbsp&nbsp&nbsp&nbsp <a href='javascript:modifyReplyBtn();'>수정</a> <a data-value='"+list[i].replyNo+"' class = 'removeReplyBtn' id = 'removeReplyBtn'>삭제</a>"
+/* 									<button type='button' class='btn btn-sm btn-primary' id='btnUpdate'>수정</button> <button type='button' class='btn btn-sm btn-primary' id='btnDelete'>삭제</button>";
+ */
+							str += "<small class='pull-right text-muted'>"+ list[i].replyDate+ "</small></div>";
+							str += "<p>"+ list[i].replyContent+"</p></div></li>";
+						console.log(list[i].replyNo);
 						}
 						replyUL.html(str);
 					}); // endfunction
 			} // end showList
-	
 		}); // ready function
 	</script>
 </body>

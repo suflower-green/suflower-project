@@ -8,7 +8,6 @@
 <title>Insert title here</title>
 </head>
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-<link rel="stylesheet" href="/resources/css/info.css">
 <script src="https://code.jquery.com/jquery-3.4.1.js"
 	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 	crossorigin="anonymous"></script>
@@ -77,13 +76,12 @@
 </script>
 <body>
 <%@ include file="../includes/header.jsp"%>
-<%@ include file="../includes/sidebar.jsp"%>
 	<form action="/member/update" id="update_form" method="post">
-		<div class="update_tb">
+		<div class="container">
+			<%@ include file="../includes/sidebar.jsp"%>
 			<div class="update_btn">
-				<h2>내 정보 수정</h2>
-			</div>
-			<table border="1" width="1000px" height="500px">
+				<div>
+					<table border="1" width="800px" height="600px" class="info_tbv">
 
 				<tr>
 					<td>I D</td>
@@ -143,10 +141,10 @@
 				 <input type="button"
 					class="update_button" value="수정">&nbsp;&nbsp;
 				<c:if test="${not empty message}">
-
-					<br>=> ${message}<br>
-					<br>
-				</c:if>
+						<br>=> ${message}<br>
+						<br>
+					</c:if>
+				</div>
 			</div>
 		</div>
 	</form>

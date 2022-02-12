@@ -6,6 +6,7 @@
 <head>
   <meta charset="utf-8">
   <title>Sue Flower</title>
+  <link rel="stylesheet" href="/resources/css/info.css">
   <link rel="stylesheet" href="../resources/css/bootstrap.css">
   <link rel="stylesheet" href="../resources/css/animate.css">
   <link rel="stylesheet" href="../resources/css/font-awesome.min.css">
@@ -57,41 +58,34 @@
         </div>
         <div class="col-2 text-right">
           <ul class="service-inform">
-            <li>
-              <a href="#">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </a>
-            </li>				
 							
 							<c:if test="${member ==null }">
 								<li><a href="/member/login"><i
 										class="fa fa-user-o  fa-2x" aria-hidden="true"></i></a></li>
 							</c:if>
-
 							<c:if test="${member != null }">
-								<a href="/member/info"><i class="fa fa-user-o  fa-2x"
+							<a href="/member/info"><i class="fa fa-user-o  fa-2x"
 									aria-hidden="true"></i></a>
-								<span>회원:${member.memberName}</span>
-								<span>충전금액:<fmt:formatNumber
-										value="${member.memberMoney}" pattern="#,##,##" />
-								</span>
-								<span>포인트:<fmt:formatNumber value="${member.memberMoney}"
-										pattern="#,##" />
-								</span>
-								<a id="logout_button">로그아웃</a>
 							</c:if>
-							<li class="basket"><a href="#"><i
+							<li class="basket"><a href="/cart/cartList"><i
 									class="fa fa-shopping-bag  fa-2x" aria-hidden="true"></i>
 									<div class="basket-count">5</div></a></li>
 							<li><a href="https://www.instagram.com/sueflower_/"
 								target="_blank"><i class="fa fa-instagram fa-2x"
 									aria-hidden="true"></i></a></li>
+
 						</ul>
 					</div>
 				</div>
 				<!-- // row -->
 			</div>
 			<!-- //container -->
+			<div id="header_info" class="container">
+				<c:if test="${member != null }">
+					<span id="header_span">회원:${member.memberName} <a id="logout_button"
+						href="javascript:void(0);">로그아웃</a></span>
+				</c:if>
+			</div>
 		</div>
 		<!-- //header-menu -->
 	</header>

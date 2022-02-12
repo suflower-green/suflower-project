@@ -23,8 +23,8 @@
 
 <!-- Custom styles for this template-->
 <link href="../resources/css/sb-admin-2.min.css" rel="stylesheet">
-
 <link rel="stylesheet" href="/resources/css/join.css">
+
 <script src="https://code.jquery.com/jquery-3.4.1.js"
 	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 	crossorigin="anonymous"></script>
@@ -254,6 +254,7 @@
 											$("#join_form").attr("action",
 													"/member/register");
 											$("#join_form").submit();
+											alert("가입완료...");
 										}
 										return false;
 									});

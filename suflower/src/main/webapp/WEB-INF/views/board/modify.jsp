@@ -66,6 +66,7 @@
 			var chk = confirm("정말 수정할거양??");
 			if (chk) {
 				mform.submit();
+				javascript:history.go(-1);
 			}
 		});
 

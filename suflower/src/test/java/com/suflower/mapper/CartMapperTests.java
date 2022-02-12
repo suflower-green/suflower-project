@@ -21,11 +21,11 @@ public class CartMapperTests {
 	@Setter(onMethod_= {@Autowired})
 	private CartMapper mapper;
 	
-	@Test
-	public void testList() {
-		mapper.getList("jaek1997");
-		
-	}
+//	@Test
+//	public void testList() {
+//		mapper.getList("jkl");
+//		
+//	}
 	
 //	@Test
 //	public void testInsert() {
@@ -46,7 +46,7 @@ public class CartMapperTests {
 //	@Test
 //	public void testSumMoney() {
 //		
-//		Assertions.assertThat(mapper.sumMoney("jaek1997")).isNotNull();
+//		Assertions.assertThat(mapper.sumMoney("jkl")).isNotNull();
 //		
 //	}
 	
@@ -55,6 +55,20 @@ public class CartMapperTests {
 //		
 //		Assertions.assertThat(mapper.cartMoney()).isNotNull();
 //	}
+
 	
+//	@Test
+//	public void testUpdateCart() {
+//		
+//		CartDTO cart = new CartDTO();
+//		cart.setQuantity(4);
+//		cart.setCartId(83);
+//		Assertions.assertThat(mapper.updateCart(cart)).isEqualTo(1);
+//	}
 	
+//	@Test
+//	public void testDelete() {
+//		
+//		Assertions.assertThat(mapper.delete(83)).isEqualTo(1);
+//	}
 }

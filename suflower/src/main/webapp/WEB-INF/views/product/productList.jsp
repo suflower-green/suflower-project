@@ -69,7 +69,7 @@
                   			data-image-height="293"/>
                			</a> 
                 		<a href="productDetail?productId=${list.productId}"><span>"${list.productName}"</span></a>
-                		<span>${list.productPrice}원</span>
+                		<fmt:formatNumber value="${list.productPrice }" pattern="#,###,###"/>원
               		</div>
               		
             	</div>
