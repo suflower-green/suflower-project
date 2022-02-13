@@ -15,9 +15,9 @@
 	
 	<insert id="insert">
 		
-		insert into tbl_order(orderId, productId, orderQuantity, orderDate, memberId, receiverName, receiverAddr1, receiverAddr2, receiverPhoneNum)
-		 values(seq_order.nextval, #{productId}, #{orderQuantity}, #{orderDate}, #{memberId}, 
-		 #{receiverName}, #{receiverAddr1}, #{receiverAddr2}, #{receiverPhoneNum})
+		insert into tbl_order(orderId, productId, quantity, memberId, sumTotalPrice, reservationDate, orderDate, senderName, receiverName, receiverAddress1, receiverAddress2, receiverContact)
+		 values(seq_order.nextval, #{productId}, #{quantity}, #{memberId}, #{sumTotalPrice}, #{reservationDate}, sysdate, #{senderName}, 
+		 #{receiverName}, #{receiverAddress1}, #{receiverAddress2}, #{receiverContact})
 	</insert>
 	
 	<!-- ProductMapper의 insertProductSelectKey -->
