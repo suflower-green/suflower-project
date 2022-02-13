@@ -111,7 +111,8 @@
 				<tr>
 					<td>우편 번호</td>
 					<td><input type="text" name="memberAddr1" id="oaddress"
-						value="${member.memberAddr1}" readonly> &nbsp;&nbsp; <input
+						value="${member.memberAddr1}" readonly> &nbsp;&nbsp; 
+					<input
 						type="button" value="우편번호 찾기" id="" onclick="execution_daum_address()"><br></td>
 				</tr>
 				<tr>

@@ -35,6 +35,7 @@
       </div> -->
 			</div>
 			<!-- //col -->
+			<form action="/order/checkoutProduct" method="post">
 			<div class="col-lg-7 col-md-7 col-sm-12">
 				<input type="hidden" name="productId"
 					value="${productDetail.productId}" id="productId" />
@@ -76,7 +77,7 @@
 					<!-- //choose-quantity -->
 				</div>
 				<!-- //choose --> --%>
-
+				</form>
 				<hr>
 				<div class="choose">
 
@@ -88,6 +89,7 @@
 						<!-- <button type="button" class="insert-cart" name="insert-cart" value="장바구니에 추가">장바구니 추가</button> -->
 						<!-- <input type="submit" class="submit-order" name="submit-order" value="바로 구매하기">  -->
 						<button id="cartInsert">장바구니에 추가</button>
+						<input type="submit" id="orderSubmitFromDetail" value="바로 구매하기" style="width:150px; height:30px"></input>
 					</div>
 
 				</div>
@@ -160,6 +162,30 @@ aria-labelledby="myModalLabel" aria-hidden="true">
 				,	duration: "fast"
 			})
 		} )
+		/* $("#orderSubmitFromDetail").on("click", function(){
+			if(${loginId == null}){
+				alert("로그인 후 이용 가능합니다");
+				location.href="/member/login";
+			}else{
+				if(confirm("바로 구매하시겠습니까?")){
+					$.ajax({
+						type : "POST",
+						url : "/order/checkoutProduct",
+						data : {"productId":$("#productId").val(),
+							"reservationDate":$("#reservationDate").val(), 
+							"quantity":$("#quantity").val()},
+						dataType : "text",
+						success:function(d){
+							location.href="/order/orderCheckout";
+						},
+						error: function(e){
+							console.log(e);
+							alert("구매페이지가 점검중에 있습니다. 잠시후에 이용 부탁드립니다.");
+						}
+					})
+				}
+			}
+		}) */
 	});
 
 </script>
