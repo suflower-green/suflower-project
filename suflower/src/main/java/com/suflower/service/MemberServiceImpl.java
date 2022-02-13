@@ -43,8 +43,10 @@ public class MemberServiceImpl implements MemberService {
 		return membermapper.memberUpdate(member);
 	}
 	
+	/* 멤버 삭제 */
 	@Override
-	public void deleteMember(MemberDTO vo) {
+	public int deleteMember(MemberDTO member) {
+		return membermapper.memberDelete(member);
 		
 	}
 }

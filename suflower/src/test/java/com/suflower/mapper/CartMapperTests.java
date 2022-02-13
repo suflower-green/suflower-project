@@ -55,10 +55,20 @@ public class CartMapperTests {
 //		
 //		Assertions.assertThat(mapper.cartMoney()).isNotNull();
 //	}
+
 	
-	@Test
-	public void testCountItems() {
-		
-		Assertions.assertThat(mapper.countItems("jkl")).isNotNull();
-	}
+//	@Test
+//	public void testUpdateCart() {
+//		
+//		CartDTO cart = new CartDTO();
+//		cart.setQuantity(4);
+//		cart.setCartId(83);
+//		Assertions.assertThat(mapper.updateCart(cart)).isEqualTo(1);
+//	}
+	
+//	@Test
+//	public void testDelete() {
+//		
+//		Assertions.assertThat(mapper.delete(83)).isEqualTo(1);
+//	}
 }

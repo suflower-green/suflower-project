@@ -12,7 +12,7 @@ public interface CartMapper {
 	
 	public List<CartDTO> getList(String memberId);
 	
-	public void delete(int cartId);
+	public int delete(int cartId);
 	
 	public int deleteAll(String memberId);
 	

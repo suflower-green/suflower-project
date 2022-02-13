@@ -6,14 +6,15 @@
 <head>
   <meta charset="utf-8">
   <title>Sue Flower</title>
-  <link rel="stylesheet" href="/resources/css/bootstrap.css">
+  
   <link rel="stylesheet" href="/resources/css/animate.css">
   <link rel="stylesheet" href="/resources/css/font-awesome.min.css">
   <link rel="stylesheet" href="/resources/css/style.css">
-<link rel="stylesheet" href="../resources/css/login.css">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="/resources/js/jquery.min.js"></script>
   <script src="/resources/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/resources/css/bootstrap.css">
 <script
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="

@@ -16,30 +16,26 @@
 
 <title>Sueflower 로그인</title>
 
-<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
 <!-- Custom fonts for this template-->
 <link href="../resources/vendor/fontawesome-free/css/all.min.css"
 	rel="stylesheet" type="text/css">
 <link
 	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
 	rel="stylesheet">
-	
   <script> 
      $.noConflict(); //이때부터 jQuery는 $ 식별자를 포기하고 jQuery() 를 사용함    
     </script>
 <!-- Custom styles for this template-->
 <link href="../resources/css/sb-admin-2.min.css" rel="stylesheet">
-<link href="../resources/css/login.css" rel="stylesheet">
+	<link rel="stylesheet" href="../resources/css/login.css">
+<!-- Custom styles for this template-->
+
 
 </head>
 
 
 <body class="bg-gradient-primary">
 
-<%@ include file="../includes/header.jsp"%>
 
 	<div class="container">
 
@@ -98,10 +94,10 @@
 									</form>
 									<hr>
 									<div class="text-center">
-										<a class="small" href="forgot-password.html">비밀번호 찾기</a>
+										<a class="small" href="register">회원가입</a>
 									</div>
 									<div class="text-center">
-										<a class="small" href="register">회원가입</a>
+										<a class="small" href="/">홈으로 돌아가기</a>
 									</div>
 								</div>
 							</div>
@@ -135,5 +131,4 @@
 	</script>
 
 </body>
-<%@ include file ="../includes/footer.jsp" %>
 </html>

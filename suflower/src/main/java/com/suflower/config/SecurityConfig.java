@@ -16,6 +16,7 @@ import lombok.extern.log4j.Log4j;
 @EnableWebSecurity
 @Log4j
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+	
    
    @Override
    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -33,13 +34,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
    protected void configure(HttpSecurity http) throws Exception {
       http.csrf().disable();
       http.authorizeRequests()
-         .antMatchers("/exam/all").permitAll()
-         .antMatchers("/exam/admin").access("hasRole('ROLE_ADMIN')")
-         .antMatchers("/exam/member").access("hasRole('ROLE_MEMBER')")
-         .antMatchers("/member/update").permitAll()
-         .antMatchers("/member/login").permitAll();
+         .antMatchers("/sample/all").permitAll()
+         .antMatchers("/sample/admin").access("hasRole('ROLE_ADMIN')")
+         .antMatchers("/sample/member").access("hasRole('ROLE_MEMBER')");
+//         .antMatchers("/member/update").permitAll()
+//         .antMatchers("/member/login").permitAll();
       
-      http.formLogin().loginPage("/member/login").loginProcessingUrl("/");
+      http.formLogin()
+      .loginPage("/customlogin")
+      .loginProcessingUrl("/ogin")
+      .successHandler(loginSuccessHandler());
       
    }
    
