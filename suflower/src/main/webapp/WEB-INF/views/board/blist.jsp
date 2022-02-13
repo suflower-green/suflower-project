@@ -31,8 +31,8 @@
 		<table id="dtBasicExample" class="table table-striped table-bordered table">
 			<thead>
 				<tr class="text-dark">
-					<th class="text-center"><h3>작성자</h3></th>
-					<th class="text-center"><h4>제목</h4></th>
+					<th class="text-center col-md-2"><h3>작성자</h3></th>
+					<th class="text-center col-md-6"><h4>제목</h4></th>
 					<th class="text-center">작성일</th>
 					<th class="text-center">수정일</th>
 				</tr>
@@ -69,10 +69,11 @@
 				</c:if>
 			</ul>
 		</nav>
-		<div class="search_wrap">
-			<div class="search_area">
-				<input type="text" name="keyword" value="${pageMaker.cri.keyword}">
-				<button>검색</button>
+		
+		<div style="height:30px;width:30%;margin-left: 43%" class="search_wrap">
+			<div style="float:left" class="search_area">
+				<input style="margin-top:0; height:30px;float:left; width:80%" type="text" class="form-control form-control-user" placeholder="검색어 입력" name="keyword" value="${pageMaker.cri.keyword}">
+				<button style="height:30px;float:left">검색</button>
 			</div>
 		</div>
 
@@ -82,6 +83,7 @@
 			<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">
 		</form>
 	</div>
+	
 
 	<%@ include file="../includes/footer.jsp"%>
 
