@@ -30,7 +30,7 @@
         <div class="col-sm-2">
           <div class="logo">
             <a href="/">
-              <img src="../resources/img/logo.png" alt="">
+              <img src="../resources/img/sueflower_logo.PNG" alt="">
             </a>
           </div>
         </div>
@@ -51,7 +51,6 @@
                 <li><a href="#">소품샵</a></li>
                 <li><a href="/board/blist">커뮤니티 게시판</a></li>
                 <li><a href="#">카카오 문의</a></li>
-				<li><a href="/board/session">세션확인</a></li>
 			</ul>
             </div>
           </nav>

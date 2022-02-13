@@ -18,7 +18,6 @@ var replyService = (function() {
 	}
 	// 댓글 등록
 	function add(replyContent, callback, error) {
-		console.log(" add reply .............");
 		$.ajax({
 			type: 'post',
 			url: '/reply/new',
@@ -48,6 +47,7 @@ var replyService = (function() {
 			success:function(deleteResult,status,xhr){
 				if(callback){
 					callback(deleteResult);
+					alert("댓글 삭제 완료");
 				}
 			},
 			error : function(xhr,status,er){
@@ -58,15 +58,25 @@ var replyService = (function() {
 		});
 	}
 	
-	//댓글 번호 추출
-	function get(replyNo,callback,error){
-		$.get("/reply/"+replyNo+".json",function(result){
-			if(callback){
-				callback(result);
-			}
-		}).fail(function(xhr,status,err){
-			if(error){
-				error();
+	
+	// 댓글 수정
+	function update(replyContent,callback,error){
+		$.ajax({
+			type:'put',
+			url:'/reply/'+replyContent.replyNo,
+			data:JSON.stringify(replyContent),
+			contentType: "application/json; charset=utf-8",
+			success:function(result,status,xhr){
+				if(callback){
+					callback(result);
+					alert("댓글 수정 완료");
+				}
+			},
+			error : function(xhr,status,er){
+					alert("댓글을 입력해주세요");
+				if(error){
+					error(er);
+				}
 			}
 		});
 	}
@@ -76,6 +86,6 @@ var replyService = (function() {
 		add: add,
 		getList: getList,
 		remove : remove,
-		get : get
+		update : update
 	};
 })();

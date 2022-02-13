@@ -22,7 +22,7 @@
   	
   	<!-- 댓글 업데이트 -->
   	<update id="update">
-  		update tbl_reply set reply = #{reply},updatedate = sysdate where replyNo = #{replyNo}
+  		update tbl_reply set replyContent = #{replyContent},replyupdatedate = sysdate where replyNo = #{replyNo}
   	</update>
   	
   	<!-- 특정 게시물의 댓글을 가져옴 -->

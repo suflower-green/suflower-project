@@ -35,8 +35,7 @@ public class ReplyController {
 		log.info("Reply DTO = " + dto);
 		int insertCount = rservice.register(dto);
 		log.info("Reply Insert Count = " + insertCount);
-		return insertCount == 1 ? new ResponseEntity<>("success", HttpStatus.OK)
-				: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		return insertCount == 1 ? new ResponseEntity<>("success", HttpStatus.OK): new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
 	// 특정 게시물의 댓글목록 확인
@@ -51,13 +50,15 @@ public class ReplyController {
 		return new ResponseEntity<>(rservice.getList(cri, boardNo), HttpStatus.OK);
 	}
 
-	// 댓글 삭제,조회
-	@GetMapping(value = "/{replyNo}", produces = { MediaType.APPLICATION_XML_VALUE,
-			MediaType.APPLICATION_JSON_UTF8_VALUE })
-	public ResponseEntity<ReplyDTO> get(@PathVariable("replyNo") Long replyNo) {
-		log.info("get :" + replyNo);
-		return new ResponseEntity<>(rservice.get(replyNo), HttpStatus.OK);
-	}
+	// 댓글 조회
+	// 댓글 조회
+	/*
+	 * @GetMapping(value = "/{replyNo}", produces = {
+	 * MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_UTF8_VALUE })
+	 * public ResponseEntity<ReplyDTO> get(@PathVariable("replyNo") Long replyNo) {
+	 * log.info("get :" + replyNo); return new
+	 * ResponseEntity<>(rservice.get(replyNo), HttpStatus.OK); }
+	 */
 
 	@DeleteMapping(value = "/{replyNo}", produces = { MediaType.TEXT_PLAIN_VALUE })
 	public ResponseEntity<String> remove(@PathVariable("replyNo") Long replyNo) {

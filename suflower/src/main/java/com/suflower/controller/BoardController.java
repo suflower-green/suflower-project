@@ -39,11 +39,6 @@ public class BoardController {
 	
 	ReplyService rservice;
 
-	// 세션 확인용
-	@GetMapping("/session")
-	public void SessionGet() {
-	}
-
 	// 게시글 페이징 조회
 	@GetMapping("/blist")
 	public void boardListGET(Model model, Criteria cri,MemberDTO memberdto) {

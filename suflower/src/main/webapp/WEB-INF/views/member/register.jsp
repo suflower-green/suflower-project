@@ -156,13 +156,9 @@
 		var phonenumCheck = false; //전화번호
 		var addressCheck = false; // 주소
 
-		$(document).ready(
-				function() {
+		$(document).ready(function() {
 					//회원가입 버튼(회원가입 기능 작동)
-					$(".join_button")
-							.click(
-									function() {
-
+					$(".join_button").click(function() {
 										/* 입력값 변수 */
 										var id = $('.id_input').val(); // id 입력란
 										var pw = $('.pw_input').val(); // 비밀번호 입력란
