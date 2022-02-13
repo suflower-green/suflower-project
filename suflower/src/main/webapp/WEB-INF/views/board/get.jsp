@@ -15,7 +15,8 @@
 </head>
 <body>
 	<%@ include file="../includes/header.jsp"%>
-	<div style="padding-left: 60px; padding-right: 60px; padding-bottom: 40px; padding-top: 40px">
+	<div
+		style="padding-left: 60px; padding-right: 60px; padding-bottom: 40px; padding-top: 40px">
 		<h3>
 			<c:out value="${pageInfo.boardTitle}" />
 		</h3>
@@ -24,17 +25,15 @@
 			<fmt:formatDate pattern="yyyy/MM/dd" value="${pageInfo.boardRegDate}" />
 		</h5>
 		<hr>
-		<div>
-			${pageInfo.boardContent}
-		<%-- 	<textarea id ="boardContent" name="boardContent" class="form-control" readonly="readonly">${pageInfo.boardContent}</textarea> --%>
-		</div>
+		<div>${pageInfo.boardContent}</div>
 		<br>
 		<hr>
 
 		<div class="btn_wrap">
-			<a class="btn" id="blist_btn">목록 페이지</a> 
-			<a class="btn" id="modify_btn">수정</a>
-
+			<a class="btn" id="blist_btn">목록 페이지</a>
+			<c:if test='${member.memberId == pageInfo.boardWriter}'>
+				<a class="btn" id="modify_btn">수정</a>
+			</c:if>
 		</div>
 
 		<form id="infoForm" action="/board/modify" method="get">
@@ -48,8 +47,7 @@
 	</div>
 
 	<!-- 댓글 리스트 부분 -->
-	<div class="row"
-		style="padding-left: 60px; padding-right: 60px; padding-bottom: 40px; padding-top: 40px"">
+	<div class="row" style="padding-left: 60px; padding-right: 60px; padding-bottom: 40px; padding-top: 40px">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -60,11 +58,9 @@
 						<li class="left clearfix" data-replyNo='12'>
 							<div>
 								<div class="header">
-									<strong class="primary-font"></strong>
-									 <small class="pull-right text-muted"></small>
-									<hr>
+									<strong class="primary-font"></strong> 
+									<small class="pull-right text-muted"></small>
 								</div>
-								<p></p>
 							</div>
 						</li>
 					</ul>
@@ -73,7 +69,7 @@
 		</div>
 	</div>
 	<!-- 댓글 등록 -->
-	<div class="row">
+	<div class="row" style="padding-left: 60px; padding-right: 60px; padding-bottom: 40px; padding-top: 40px">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
 				<c:if test="${member.memberId==null}">
@@ -91,22 +87,18 @@
 
 				<c:if test="${member.memberId!=null}">
 					<div class="panel-heading">
-						<button id="addReplyBtn" class="btn btn-primary btn-xs pull-right">댓글
-							등록</button>
+						<button id="addReplyBtn" class="btn btn-primary btn-xs pull-right">댓글등록</button>
 						<i class="fa fa-comments fa-fw"></i>${member.memberId} <input
 							id="InputReplyer" type="hidden" value="${member.memberId}" />
 					</div>
 					<div class="panel-body">
-						<textarea id="InputReplyContent" class="form-control" rows="2"
-							placeholder="댓글을 입력하세요"></textarea>
+						<textarea id="InputReplyContent" class="form-control" rows="2"placeholder="댓글을 입력하세요"></textarea>
 					</div>
 				</c:if>
 			</div>
 		</div>
 	</div>
-		<input class="input123" type="hidden" value=123>
-		<a data-value='ㅋㅋ루삥뽕' class = 'removeReplyBtn' id = 'removeReplyBtn'>삭제</a>
-	
+
 	<%@ include file="../includes/footer.jsp"%>
 
 	<!-- 스크립트부분 -->
@@ -129,46 +121,7 @@
 			form.submit();
 		});
 		
-	/* 	$(".chat").on("click","li",function(e){
-			var replyNo = $(this).attr("data-rno");
-			console.log(replyNo)
-			
-		}); */
-		
-		
- 		// 댓글 삭제버튼
- 		$(".removeReplyBtn").on("click",function(e){
- 			var replyNo = 
-			/* var replyNo =  document.getElementById("removeReplyBtn").getAttribute('data-value');
-			 */
-			 console.log("삭제버튼");
-			console.log(replyNo);
-			
-/* 						var replyNo = $(this).data("rnoatag");
- 			console.log("삭제 버튼");
-			console.log(replyNo);
-			replyService.remove(replyNo, function(result) {
-				alert(result);
-				location.reload();
-			});  */
-		}); 
-		
-		// 댓글 수정버튼
-		function modifyReplyBtn(){
-			console.log("수정 버튼");
-			};
 
-		//댓글 등록버튼 (replyService.add)
-		$("#addReplyBtn").on("click", function(e) {
-			var replyContent = {
-				replyContent : $("#InputReplyContent").val(),
-				replyWriter : $("#InputReplyer").val(),
-				boardNo : boardNoValue
-				};// replyContent
-				replyService.add(replyContent, function(result) {
-				location.reload();
-				});// replyService.add
-		});
 
 		$(document).ready(function() {
 			var boardNoValue = '<c:out value="${pageInfo.boardNo}"/>';
@@ -190,17 +143,67 @@
 						}
 						for (var i = 0, len = list.length || 0; i < len; i++) {
 							str += "<li data-rno='"+list[i].replyNo+"'>";
-							str += "<div style='margin-top : 0px'><div class='header'><strong class='primary-font'>"
-									+ list[i].replyWriter+"</strong>&nbsp&nbsp&nbsp&nbsp&nbsp <a href='javascript:modifyReplyBtn();'>수정</a> <a data-value='"+list[i].replyNo+"' class = 'removeReplyBtn' id = 'removeReplyBtn'>삭제</a>"
-/* 									<button type='button' class='btn btn-sm btn-primary' id='btnUpdate'>수정</button> <button type='button' class='btn btn-sm btn-primary' id='btnDelete'>삭제</button>";
- */
+							str += "<div id='replyDiv" + list[i].replyNo + "' style='margin-top : 0px'><div class='header'><strong class='primary-font'>"+ list[i].replyWriter+"</strong>&nbsp&nbsp&nbsp&nbsp&nbsp"
+							if("${member.memberId}" == (list[i].replyWriter)){
+							str += "<a href='javascript:void(0);' data-replyno='"+list[i].replyNo+"' data-replycontent='"+list[i].replyContent+"' data-replywriter='"+ list[i].replyWriter+"'  class='modifyReplyBtn'>수정</a>"
+							str += "<a href='javascript:void(0);' data-replyno='"+list[i].replyNo+"' class='removeReplyBtn'>삭제</a>"
 							str += "<small class='pull-right text-muted'>"+ list[i].replyDate+ "</small></div>";
-							str += "<p>"+ list[i].replyContent+"</p></div></li>";
-						console.log(list[i].replyNo);
+							str += "<p id='textContent" + list[i].replyNo + "'>"+list[i].replyContent+"</p></div></li><br>";
+							}else{
+							str += "<small class='pull-right text-muted'>"+ list[i].replyDate+ "</small></div>";
+							str += "<p id='textContent" + list[i].replyNo + "'>"+list[i].replyContent+"</p></div></li><br>";
+							} ;
+							console.log("로그인 아이디"+"${member.memberId}");
+							console.log("글쓴 아이디"+list[i].replyWriter);
 						}
 						replyUL.html(str);
+						// 댓글 삭제버튼
+					    $(".removeReplyBtn").on("click",function(e){
+					    	var chk= confirm("삭제할거임?");
+					    	if(chk){
+							 var replyNo = $(this).data("replyno");
+							 replyService.remove(replyNo, function(result) {
+									showList(1);
+									});
+					    	}
+						 }); // removeReplyBtn
+						 
+						// 댓글 수정버튼
+ 						$(".modifyReplyBtn").on("click", function(e) {
+							var replyNo = $(this).data('replyno');
+							var replyContent = $(this).data('replycontent');
+							var replyWriter = $(this).data('replywriter');
+							$('#replyDiv'+replyNo).replaceWith("<strong class='primary-font'>"+replyWriter+"</strong>&nbsp&nbsp&nbsp&nbsp&nbsp <a href='javascript:void(0);' id='modifyReplySuccess'>수정완료</a> <a href='javascript:void(0);' id='modifyReplycancel'>취소</a><textarea id = 'InputmodifyReplyContent' class='textContent form-control' rows='2'>"+replyContent+"</textarea></div></li>");
+							
+							
+							 $("#modifyReplySuccess").on("click", function(e) {
+					  			var replyContent = {replyNo,replyContent : $("#InputmodifyReplyContent").val()} // replyContent
+								replyService.update(replyContent, function(result) {
+									showList(1);
+								});// replyService.add
+							});
+							
+							 $("#modifyReplycancel").on("click", function(e) {
+									showList(1);
+								});// replycancel
+					    });
 					}); // endfunction
 			} // end showList
+			
+
+			//댓글 등록버튼 (replyService.add)
+			$("#addReplyBtn").on("click", function(e) {
+				var replyContent = {
+					replyContent : $("#InputReplyContent").val(),
+					replyWriter : $("#InputReplyer").val(),
+					boardNo : boardNoValue
+					};// replyContent
+					replyService.add(replyContent, function(result) {
+						showList(1);
+						document.getElementById("InputReplyContent").value='';
+					});// replyService.add
+			}); // addReplyBtn
+			
 		}); // ready function
 	</script>
 </body>

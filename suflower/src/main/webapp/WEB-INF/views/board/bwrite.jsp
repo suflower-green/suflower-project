@@ -15,10 +15,10 @@
 				<textarea name="boardTitle" class="form-control" rows="2" placeholder="제목을 입력하세요"></textarea>
 				<br>
 			</div>
-			<textarea name="summernote" id="boardContent" ></textarea>
+			<textarea name="boardContent" id="boardContent" ></textarea>
 			<button type="submit" class="btn btn-outline-secondary pull-center">전송</button>
-		</div>
 		<input type="hidden" name="boardWriter" value="${member.memberId}" />
+		</div>
 
 	</form>
 	<%@ include file="../includes/footer.jsp"%>
