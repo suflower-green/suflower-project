@@ -30,7 +30,7 @@
         <div class="col-sm-2">
           <div class="logo">
             <a href="/">
-              <img src="../resources/img/logo.png" alt="">
+              <img src="../resources/img/sueflower_logo.PNG" alt="">
             </a>
           </div>
         </div>

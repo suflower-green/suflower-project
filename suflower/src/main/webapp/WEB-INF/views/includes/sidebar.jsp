@@ -20,7 +20,7 @@
 			</a></li>
 			<li class="sidebar_blind"><a href="/member/update"> <span>정보수정</span>
 			</a></li>
-			<li class="sidebar_blind"><a href="#"><span>포인트</span> </a></li>
+			<li class="sidebar_blind"><a href="/member/point"><span>포인트</span> </a></li>
 			<li class="sidebar_blind">
 			<c:if test="${member.adminCheck == 0}">
 					<a href="/member/delete"><span>회원탈퇴</span></a>

@@ -148,5 +148,11 @@ public class MemberController {
        return mv;
     } //delete
 	
+	@GetMapping("/point")
+	public void memberShowPoint() {
+		logger.info("memberShowPoint 진입");
+		
+	}
+
 	
 }
