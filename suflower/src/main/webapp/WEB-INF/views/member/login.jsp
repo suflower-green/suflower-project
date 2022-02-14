@@ -32,7 +32,6 @@
 
 
 </head>
-<%@ include file="../includes/header.jsp" %>
 
 <body class="bg-gradient-primary">
 
@@ -107,7 +106,6 @@
 
 		</div>
 
-<%@ include file ="../includes/footer.jsp" %>
 	</div>
 
 	<!-- Bootstrap core JavaScript-->
