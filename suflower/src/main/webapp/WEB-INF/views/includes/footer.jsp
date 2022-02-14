@@ -21,32 +21,25 @@
       <div class="col-lg-3 col-md-3 col-sm-3">
         <a href="#"><img src="../resources/img/suflowerSmallLogo.png" alt=""></a>
         <p class="copyright">
-          shopy c 2022 . your copy right here
+        Open~Close<br>
+          𝟷𝟷:𝟶𝟶 - 𝟸𝟷:𝟶𝟶 (𝟸,𝟺 sᴜɴᴅᴀʏ ᴏғғ)
         </p>
       </div>
       <div class="col-lg-2 col-md-2 col-sm-2">
         <ul>
-          <li><a href="#">about us</a></li>
-          <li><a href="#">contact us</a></li>
-          <li><a href="#">support</a></li>
+          <li>𝐒𝐮𝐞 𝐟𝐥𝐨𝐰𝐞𝐫 & 𝐓𝐞𝐚 <br><br></li>
+          <li>#기흥역꽃집 #용인꽃집 #플라워카페<br><br></li>
+          <li>주소:기흥로 𝟻𝟾-𝟷<br><br></li>
+          <li>예약 문의  ᴅᴍ ✕ pf.kakao.com/_xhBhqb<br><br></li>
         </ul>
       </div>
-      <div class="col-lg-2 col-md-2 col-sm-2">
-        <ul  class="footer-col-min">
-          <li><a href="#">our feed</a></li>
-          <li><a href="#">terms and conditions</a></li>
-          <li><a href="#">our privacy</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-2 col-md-2 col-sm-2">
+      <div class="col-lg-3 col-md-3 col-sm-2" style="text-align: left;">
         <ul>
-          <li><a href="#">join us</a></li>
-          <li><a href="#">live support</a></li>
+          <li>꽃 선물 기념일<br><br></li>
+          <li>졸업식, 생일, 시상식<br><br></li>
+          <li>화이트데이, 발렌타인데이<br><br></li>
+          <li>어버이날, 스승의날, 어린이날<br><br></li>
         </ul>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-2 text-right">
-        <h5>Payment Methods</h5>
-        <img src="../resources/img/payment.png" alt="">
       </div>
     </div>
   </div>

@@ -10,11 +10,11 @@
 </head>
 <link rel="stylesheet" href="/resources/css/info.css">
 <body>
-	<div class="sidebar">
+	<div class="sidebar2">
 		<ul class="sidebar_nav">
 			<li class="sidebar_blind">
 			<c:if test="${member.adminCheck == 1}">
-					<a href="/member/adminPage"><span>관리자페이지</span></a>
+					<a href="/admin/adminPage"><span>관리자페이지</span></a>
 				</c:if></li>
 			<li class="sidebar_blind"><a href="/member/info"><span>회원정보</span>
 			</a></li>

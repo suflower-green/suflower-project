@@ -29,7 +29,7 @@
 	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 	crossorigin="anonymous"></script>
 </head>
-
+<%@ include file="../includes/header.jsp" %>
 <body class="bg-gradient-primary">
 
 	<div class="container">
@@ -365,6 +365,7 @@
 				});
 
 	</script>
+	
 </body>
-
+<%@ include file ="../includes/footer.jsp" %>
 </html>

@@ -32,7 +32,7 @@
 
 
 </head>
-
+<%@ include file="../includes/header.jsp" %>
 
 <body class="bg-gradient-primary">
 
@@ -68,9 +68,7 @@
 										<div class="form-group">
 											<div class="custom-control custom-checkbox small">
 												<input type="checkbox" class="custom-control-input"
-													id="customCheck"> <label
-													class="custom-control-label" for="customCheck">아이디
-													저장 </label>
+													id="customCheck"> 
 											</div>
 											<c:if test="${result == 0}">
 												<div class="login_warn">사용자 ID 또는 비밀번호를 잘못 입력하셨습니다.</div>
@@ -109,6 +107,7 @@
 
 		</div>
 
+<%@ include file ="../includes/footer.jsp" %>
 	</div>
 
 	<!-- Bootstrap core JavaScript-->
@@ -129,6 +128,5 @@
 			$('#login_form').submit();
 		});
 	</script>
-
 </body>
 </html>
