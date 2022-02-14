@@ -31,8 +31,8 @@
 		<table id="dtBasicExample" class="table table-striped table-bordered table">
 			<thead>
 				<tr class="text-dark">
-					<th class="text-center col-md-2"><h3>작성자</h3></th>
-					<th class="text-center col-md-6"><h4>제목</h4></th>
+					<th class="text-center col-md-2">작성자</th>
+					<th class="text-center col-md-6">제목</th>
 					<th class="text-center">작성일</th>
 					<th class="text-center">수정일</th>
 				</tr>

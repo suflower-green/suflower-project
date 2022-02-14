@@ -19,7 +19,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-3 col-md-3 col-sm-3">
-        <a href="#"><img src="../resources/img/sueflower_logo.PNG" alt=""></a>
+        <a href="#"><img src="../resources/img/suflowerSmallLogo.png" alt=""></a>
         <p class="copyright">
           shopy c 2022 . your copy right here
         </p>
