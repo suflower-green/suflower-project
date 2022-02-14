@@ -10,7 +10,7 @@
 </head>
 <link rel="stylesheet" href="/resources/css/info.css">
 <body>
-	<div class="sidebar">
+	<div class="sidebar2">
 		<ul class="sidebar_nav">
 			<li class="sidebar_blind">
 			<c:if test="${member.adminCheck == 1}">

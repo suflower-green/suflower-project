@@ -4,27 +4,26 @@
 	pageEncoding="UTF-8"%>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Sue Flower</title>
-  
-  <link rel="stylesheet" href="/resources/css/animate.css">
-  <link rel="stylesheet" href="/resources/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/resources/css/style.css">
+<meta charset="utf-8">
+<title>Sue Flower</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="/resources/js/jquery.min.js"></script>
-  <script src="/resources/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="/resources/css/bootstrap.css">
-<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/resources/css/animate.css">
+<link rel="stylesheet" href="/resources/css/font-awesome.min.css">
+<link rel="stylesheet" href="/resources/css/style.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/resources/js/jquery.min.js"></script>
+<script src="/resources/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/resources/css/bootstrap.css">
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+	crossorigin="anonymous"></script>
 </head>
 
 
 <body>
-<%@ include file="./includes/header.jsp"%>
-	
+	<%@ include file="./includes/header.jsp"%>
+
 	<div id="banner-carousel"
 		class="banner-carousel carousel carousel-fade fade"
 		data-ride="carousel" data-interval="10000">
@@ -39,23 +38,23 @@
 		<div class="carousel-inner">
 
 
-    <div class="item item-1 active">
-      <div class="container">
-        <div class="banner-contain">
-          <h1>꽃다발 Bouquets</h1>
-          <p class="combo-kit">특별한 날, 꽃으로</p>
-          <p class="description">임명식, 졸업식, 입학식, 생일, 기념일 </p>
-          <div class="combo-order">
-            가격 : 10000원 ~
-            <a href="#">
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i> Order now
-            </a>
-          </div>
-        </div>
-      </div>
-    </div><!--//item-->
-    
-    <!-- <div class="item item-2">
+			<div class="item item-1 active">
+				<div class="container">
+					<div class="banner-contain">
+						<h1>꽃다발 Bouquets</h1>
+						<p class="combo-kit">특별한 날, 꽃으로</p>
+						<p class="description">임명식, 졸업식, 입학식, 생일, 기념일</p>
+						<div class="combo-order">
+							가격 : 10000원 ~ <a href="#"> <i class="fa fa-shopping-bag"
+								aria-hidden="true"></i> Order now
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--//item-->
+
+			<!-- <div class="item item-2">
       <div class="container">
         <div class="banner-contain">
           <h1>꽃 Flowers</h1>
@@ -71,7 +70,7 @@
       </div>
     </div>//item -->
 
-   <!-- <div class="item item-3">
+			<!-- <div class="item item-3">
       <div class="container">
         <div class="banner-contain">
           <h1>소품 Props</h1>
@@ -86,9 +85,11 @@
         </div>
       </div>
     </div>//item -->
-  </div><!--//carousel-inner-->
-</div><!--//carousel-->
-<%@ include file ="./includes/footer.jsp" %>
+	<%@ include file="./includes/footer.jsp"%>
+		</div>
+		<!--//carousel-inner-->
+	</div>
+	<!--//carousel-->
 </body>
 </html>
 
