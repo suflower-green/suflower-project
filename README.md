@@ -29,7 +29,7 @@
 ### 2. 사용 기술 스택
 Client Side: HTML, CSS, JavaScript(JQuery), Bootstrap Library(Open Source)
 
-Server Side: Java 1.8, Spring Framework 4(Maven) 
+Server Side: Java 1.8, Spring Framework 4(Maven), myBatis
 
 
 ## 팀 멤버
