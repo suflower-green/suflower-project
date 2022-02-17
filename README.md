@@ -1,4 +1,4 @@
-# 수플라워 웹사이트
+# 수플라워 웹사이트 V.1
 
 ## 프로젝트 Description
 
@@ -26,27 +26,11 @@
 <b>게시판 사용</b>(게시판 등록,조회,수정,삭제 및 댓글 등록,조회,수정,삭제)
 
 
-
-
 ### 2. 사용 기술 스택
 Client Side: HTML, CSS, JavaScript(JQuery), Bootstrap Library(Open Source)
 
 Server Side: Java 1.8, Spring Framework 4(Maven) 
 
-
-<br><br><br><br><br>
-## 프로젝트 회고
-<li>이재경</li>
-#### 여기다가 쓰세요
-
-<li>서명원</li>
-#### 여기다가 쓰세요
-
-<li>전성우</li>
-#### 여기다가 쓰세요
-
-<li>조욱현</li>
-#### 여기다가 쓰세요
 
 ## 팀 멤버
 <li>이재경(https://github.com/DataJlee)</li>
